@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 access_token.txt
+test_models.py
