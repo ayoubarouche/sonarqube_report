@@ -11,8 +11,19 @@ sonar = SonarCloudClient(sonarcloud_url=sonarclout_url , token=sonarcloud_token)
 
 
 projects = list(sonar.projects.search_projects("aroucheayoubkestar"))
-
+branches = sonar.project_branches.search_project_branches(project="linux-test")
+issues = list(sonar.issues.search_issues(componentKeys="linux-test",branch="master"))
 print("the list of projects is : ")
 print("------------------------------------")
 
 print(projects)
+
+print("")
+print("branches are ")
+print(branches)
+
+
+print()
+
+print("the isssuer of is : ")
+print(issues)
