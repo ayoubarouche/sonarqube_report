@@ -12,7 +12,8 @@
 ##### Use Case diagram :
 the Main Functionalities of the project is :
 
-<img src="doc/diagrams/Use_Case_Diagram/diag_use_case.png">
+<img src="doc/diagrams/Use_Case_diagram/diag_use_case.PNG">
+
 ##### Sequence diagram : 
 
 the general idea of how the script works is : 
