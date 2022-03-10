@@ -38,14 +38,14 @@ class Project :
 
 
 #Testing 
-jsn= {'organization': 'aroucheayoubkestar',
- 'key': 'linux-test', 
-'name': 'linux-test',
- 'qualifier': 'TRK', 'visibility': 'public', 'lastAnalysisDate': '2022-03-07T14:09:21+0100', 
-'revision': 'fc24e4e8c8f76b2de52c8edf3ff5ef5db855b610'} 
+# jsn= {'organization': 'aroucheayoubkestar',
+#  'key': 'linux-test', 
+# 'name': 'linux-test',
+#  'qualifier': 'TRK', 'visibility': 'public', 'lastAnalysisDate': '2022-03-07T14:09:21+0100', 
+# 'revision': 'fc24e4e8c8f76b2de52c8edf3ff5ef5db855b610'} 
 
-prjet = Project()
-prjet.parse_json(jsn)
-print(prjet.organization,prjet.revision,prjet.lastAnalysisDate)
+# prjet = Project()
+# prjet.parse_json(jsn)
+# print(prjet.organization,prjet.revision,prjet.lastAnalysisDate)
 
 

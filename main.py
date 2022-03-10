@@ -3,12 +3,6 @@ from unicodedata import name
 
 from json_generator.parsing.parse_arguments import entry_point_cli, entry_point_file
 
-from json_generator.models.branch import Branch
-
-from json_generator.models.project import project
-
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="process some integers")
 
@@ -28,9 +22,13 @@ if __name__ == "__main__":
     cli_parser.add_argument("-p","--password",metavar='',dest="password",help="insert password")
     cli_parser.add_argument("-t","--token",metavar='',dest="token",help="insert token")
 
-
+    result = None
     args = parser.parse_args()
     if(args.config_method=='f'):
         entry_point_file(args)
     if(args.config_method=='c'):
-        entry_point_cli(args)
+        result = entry_point_cli(args)
+        if not result:
+            cli_parser.print_help()
+        else : 
+            print("the method for auth used is : "+result["auth"])
