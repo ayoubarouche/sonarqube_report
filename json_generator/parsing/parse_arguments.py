@@ -6,8 +6,6 @@ from json_generator.models.issue import Issue
 
 from json_generator.models.project import Project
 
-def entry_point_file(args):
-    print("hello from the entry point file !")
 
 def entry_point_cli(args):
     print("you choosed cli : ")
@@ -16,10 +14,12 @@ def entry_point_cli(args):
         if(args.token):
             print("you inserted the token and it's value is : "+args.token)
             parsing_results["auth"] = "t"
-
+            parsing_results["token"] = args.token
         elif(args.username and args.password):
             print("you inserted usename and password and it's value are : "+"username : "+args.username+" and it's password are : "+args.password)
             parsing_results["auth"] = "up"
+            parsing_results["username"] = args.username
+            parsing_results["password"] = args.password
         else :
             print("please enter the token or username and password (see help for more details !)")
             return None

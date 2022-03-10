@@ -1,7 +1,8 @@
 import argparse
 from unicodedata import name
 
-from json_generator.parsing.parse_arguments import entry_point_cli, entry_point_file
+from json_generator.parsing.parse_arguments import entry_point_cli
+from json_generator.parsing.parsing_file import entry_point_file
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="process some integers")
@@ -10,7 +11,7 @@ if __name__ == "__main__":
     subparsers = parser.add_subparsers(help="commands",required="True" ,metavar="configuration method" ,dest="config_method")
     # for the file 
     file_parser = subparsers.add_parser('f',help="use config file ")
-    file_parser.add_argument("file_path",metavar='[path of file]', help="the path of the file for example (/home/user/sonarqube.json")
+    file_parser.add_argument("file_path",metavar='[path of file]', help="the path of the file for example : /home/user/sonarqube.json")
 
     # for command line : 
 
@@ -26,7 +27,29 @@ if __name__ == "__main__":
     result = None
     args = parser.parse_args()
     if(args.config_method=='f'):
-        entry_point_file(args)
+        result = entry_point_file(args.file_path)
+        if not result:
+            print("error parsing the json file :(")
+        else : 
+            print("the method for auth used is : "+result["auth"])
+            if result["auth"] == "t":
+                print("the token is : "+result["token"])
+            elif result["auth"] == "up":
+                print("the username is : "+result["username"] +" and the password is : "+result["password"])
+
+  
+            print("the sonar qube url is : "+result["sonarqube-url"])
+            # print all issues : 
+            for project in result["projects"]:
+                print("the project key is : "+project.key)
+                print("-------------------------------------------")
+                for branch in project.branches : 
+                    print("the project branch name is : "+branch.name)
+                    print()
+                    for issue in branch.issues : 
+                        print(" the issues are : ")
+                        print(issue.key)
+                print()
     if(args.config_method=='c'):
         result = entry_point_cli(args)
         if not result:
