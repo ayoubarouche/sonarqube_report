@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     cli_parser = subparsers.add_parser('c',help="use command line")
 
-
+    cli_parser.add_argument("-s","--sonarqube-server",metavar="",required = "True", dest="sonarqube_url", help="insert the sonarqube server url ")
     cli_parser.add_argument("-pb","--project-branch",metavar='',required="True" , dest="project_branch",help="insert the projects and branch of each project project_key:branch1#branch2,project... for example httpreq:master#debug,kestar:master#develop")
     cli_parser.add_argument("-u","--username",metavar='',dest="username",help="insert username")
     cli_parser.add_argument("-p","--password",metavar='',dest="password",help="insert password")
@@ -51,14 +51,18 @@ if __name__ == "__main__":
                         print(issue.key)
                 print()
     if(args.config_method=='c'):
+        #for now the command we tested is : python3 main.py c -s www.sonarqube.io -pb kestar:master#main -i bug,vur -t helloworld 
         result = entry_point_cli(args)
         if not result:
             cli_parser.print_help()
         else : 
             print("the method for auth used is : "+result["auth"])
             # print all issues : 
+            print("the sonar qube server is : "+result["sonarqube_url"])
             for project in result["projects"]:
+                print("the project name is : "+project.key)
                 for branch in project.branches : 
+                    print("the branch name is : "+branch.name)
                     for issue in branch.issues: 
                         print("the issue is : "+issue.key)
                     print()

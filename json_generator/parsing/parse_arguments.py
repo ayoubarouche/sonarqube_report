@@ -9,7 +9,7 @@ from json_generator.models.project import Project
 
 def entry_point_cli(args):
     print("you choosed cli : ")
-    if(args.project_branch and args.issues):
+    if(args.project_branch and args.issues and args.sonarqube_url):
         parsing_results ={}
         if(args.token):
             print("you inserted the token and it's value is : "+args.token)
@@ -30,7 +30,7 @@ def entry_point_cli(args):
             for branch in project.branches :
                 branch.issues = issues_list
         parsing_results["projects"] = project_list 
-        
+        parsing_results["sonarqube_url"] = args.sonarqube_url
         return parsing_results
     else :
         
