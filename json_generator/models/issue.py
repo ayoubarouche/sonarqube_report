@@ -28,8 +28,22 @@ class Issue:
         self.tags = tags
         self.comments = comments
         return
+
     def get_status(self):
         return self.status 
+    
+    def parse_jsonissues(self,json_str):
+        self.key=json_str['key']
+        self.rule=json_str['rule']
+        self.resolution=json_str['resolution']
+        self.status=json_str['status']
+        self.severity=json_str['severity']
+        self.message=json_str['message']
+        self.author=json_str['author']
+        self.components=json_str['components']
+        self.tags=json_str['tags']
+        self.comments=json_str['comments']
+
 
 
 class Component :
@@ -46,6 +60,7 @@ class Component :
         self.name = name 
         self.path = path
         return
+        
     #getting the component name : (imporatant for the issue : )\
 
     def get_component_name(self):
@@ -53,4 +68,9 @@ class Component :
     def get_component_path(self):
         return self.path
 
-        
+    def parse_jsoncomponent(self,json_str):
+        self.key=json_str['key']
+        self.enabled=json_str['enabled']
+        self.qualifier=json_str['qualifier']
+        self.name=json_str['name']
+        self.path=json_str['path']
