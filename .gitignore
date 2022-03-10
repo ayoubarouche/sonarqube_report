@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 access_token.txt
 test_models.py
+
+config_file.json

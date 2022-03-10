@@ -17,10 +17,11 @@ if __name__ == "__main__":
     cli_parser = subparsers.add_parser('c',help="use command line")
 
 
-    cli_parser.add_argument("-pb","--project-branch",metavar='',required="True" , dest="project_branch",help="insert the projects and branch of each project project_key:branch1|branch2,project... for example httpreq:master|debug,kestar:master|develop")
+    cli_parser.add_argument("-pb","--project-branch",metavar='',required="True" , dest="project_branch",help="insert the projects and branch of each project project_key:branch1#branch2,project... for example httpreq:master#debug,kestar:master#develop")
     cli_parser.add_argument("-u","--username",metavar='',dest="username",help="insert username")
     cli_parser.add_argument("-p","--password",metavar='',dest="password",help="insert password")
     cli_parser.add_argument("-t","--token",metavar='',dest="token",help="insert token")
+    cli_parser.add_argument("-i","--issues",dest="issues",metavar="" , required="True" , help = "insert the issue tag list")
 
     result = None
     args = parser.parse_args()
@@ -32,3 +33,10 @@ if __name__ == "__main__":
             cli_parser.print_help()
         else : 
             print("the method for auth used is : "+result["auth"])
+            # print all issues : 
+            for project in result["projects"]:
+                for branch in project.branches : 
+                    for issue in branch.issues: 
+                        print("the issue is : "+issue.key)
+                    print()
+                print()
