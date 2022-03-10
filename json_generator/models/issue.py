@@ -53,4 +53,18 @@ class Component :
     def get_component_path(self):
         return self.path
 
+
+
+# to handle the convertion from the issue -> files (components) to file(component) -> issues
+class FileMapping: 
+    def __init__(self,issue_key , component_key) :
+        self.issue_key = issue_key 
+        self.component_key = component_key
+
+    def get_component_key(self):
+        return self.component_key 
+    
+    def get_issue_key(self):
+        return self.issue_key
+
         
