@@ -104,9 +104,6 @@ def issues_parser(issues_dict):
     if not isinstance(issues_dict,list):
         return None
     else : 
-        issues_list = []
-        for issue in issues_dict:
-            issue_object = Issue(key = issue)
-            issues_list.append(issue_object)
-        return issues_list
+        issue = Issue(key=None , tags = issues_dict)
+        return [issue]
 

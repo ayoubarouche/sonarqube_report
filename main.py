@@ -48,7 +48,7 @@ if __name__ == "__main__":
                     print()
                     for issue in branch.issues : 
                         print(" the issues are : ")
-                        print(issue.key)
+                        print(str(issue.tags))
                 print()
     if(args.config_method=='c'):
         #for now the command we tested is : python3 main.py c -s www.sonarqube.io -pb kestar:master#main -i bug,vur -t helloworld 
@@ -64,6 +64,6 @@ if __name__ == "__main__":
                 for branch in project.branches : 
                     print("the branch name is : "+branch.name)
                     for issue in branch.issues: 
-                        print("the issue is : "+issue.key)
+                        print("the issue is : "+str(issue.tags))
                     print()
                 print()

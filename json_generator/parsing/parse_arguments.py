@@ -60,13 +60,10 @@ def cli_parse_branchs(branches):
     return branches_objects
 
 def cli_parse_issues(args):
-    splitted_issues = args.split(',')
-    issues_objects = []
-    for issue in splitted_issues:
-        issues_objects.append(Issue(key=issue))
-    
-    return issues_objects 
-    
+    issue = Issue(key=None , tags=args)
+    splitted_tags = args.split(',')
+    issue.tags = splitted_tags
+    return [issue]
 
 
 
