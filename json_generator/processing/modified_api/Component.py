@@ -14,20 +14,12 @@ class ModifiedSonarQubeClient:
     """
 
     DEFAULT_URL = "http://localhost:9000"
-    def __init__(self,sonarqubeclient) -> None:
-       self.__init__(sonarqube_url = sonarqubeclient.sonarqube_url, username = sonarqubeclient.username , password=sonarqubeclient.password , token = sonarqubeclient.token , verify = sonarqubeclient.verify , timeout= sonarqubeclient.timeout )
-    def __init__(self, sonarqube_url=None, username=None, password=None, token=None, verify=None, timeout=None):
-
-        self.base_url = strip_trailing_slash(sonarqube_url or self.DEFAULT_URL)
-
+    def __init__(self,sonarcloudclient) -> None:
+       self.__init__(sonarqube_url = sonarcloudclient.sonarcloud_url, token = sonarcloudclient.token ,timeout= sonarcloudclient.timeout )
+    def __init__(self, sonarcloud_url, token, timeout=None):
+        self.base_url = strip_trailing_slash(sonarcloud_url)
         _session = requests.Session()
-        if token:
-            _session.auth = (token, "")
-        elif username and password:
-            _session.auth = (username, password)
-        if verify is not None:
-            _session.verify = verify
-
+        _session.auth = (token, "")
         self.session = _session
         self.timeout = timeout
 
