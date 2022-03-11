@@ -14,7 +14,7 @@ class ModifiedSonarQubeClient:
     """
 
     DEFAULT_URL = "http://localhost:9000"
-    
+
     def __init__(self, sonarcloud_url, token, timeout=None):
         self.base_url = strip_trailing_slash(sonarcloud_url)
         _session = requests.Session()
@@ -34,13 +34,13 @@ class ModifiedSonarQubeClient:
 
  
 
-class ModifiedSonarQubeIssues(SonarQubeIssues):
+class ModifiedSonarQubeIssues(RestClient):
     def __init__(self, **kwargs):
         """
 
         :param kwargs:
         """
-        super(SonarQubeIssues, self).__init__(**kwargs)
+        super(ModifiedSonarQubeIssues, self).__init__(**kwargs)
 
     def get(self, key):
         result = list(self.search_issues(issues=key))
