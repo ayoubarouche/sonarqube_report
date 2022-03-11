@@ -50,16 +50,26 @@ class Issue:
         return self.status 
     
     def parse_jsonissues(self,json_str):
-        self.key=json_str['key']
-        self.rule=json_str['rule']
-        self.resolution=json_str['resolution']
-        self.status=json_str['status']
-        self.severity=json_str['severity']
-        self.message=json_str['message']
-        self.author=json_str['author']
-        self.components=json_str['components']
-        self.tags=json_str['tags']
-        self.comments=json_str['comments']
+        if 'key' in json_str:
+            self.key= json_str['key'] 
+        if 'rule' in json_str: 
+            self.rule=json_str['rule']
+        if 'resolution' in json_str:
+            self.resolution=json_str['resolution']
+        if 'status' in json_str:
+            self.status=json_str['status']
+        if 'severity' in json_str:    
+            self.severity=json_str['severity']
+        if 'message' in json_str:
+            self.message=json_str['message']
+        if 'author' in json_str:
+            self.author=json_str['author']
+        if 'components' in json_str:
+            self.components=json_str['components']
+        if 'tags' in json_str:
+            self.tags=json_str['tags']
+        if 'comments' in json_str:
+            self.comments=json_str['comments']
 
 
 
