@@ -6,21 +6,14 @@ from sonarqube.utils.common import GET, POST,PAGE_GET
 from sonarqube.utils.common import strip_trailing_slash
 from sonarqube.utils.rest_client import RestClient
 import requests
+from sonarqube import SonarCloudClient
 
-
-class ModifiedSonarQubeClient:
+class ModifiedSonarCloudClient(SonarCloudClient):
     """
     A Python Client for SonarQube Server APIs.
     """
 
     DEFAULT_URL = "http://localhost:9000"
-
-    def __init__(self, sonarcloud_url, token, timeout=None):
-        self.base_url = strip_trailing_slash(sonarcloud_url)
-        _session = requests.Session()
-        _session.auth = (token, "")
-        self.session = _session
-        self.timeout = timeout
 
 
     @property
@@ -30,17 +23,17 @@ class ModifiedSonarQubeClient:
 
         :return:
         """
-        return ModifiedSonarQubeIssues(api=self)
+        return ModifiedSonarCloudIssues(api=self)
 
- 
 
-class ModifiedSonarQubeIssues(RestClient):
+
+class ModifiedSonarCloudIssues(RestClient):
     def __init__(self, **kwargs):
         """
 
         :param kwargs:
         """
-        super(ModifiedSonarQubeIssues, self).__init__(**kwargs)
+        super(ModifiedSonarCloudIssues, self).__init__(**kwargs)
 
     def get(self, key):
         result = list(self.search_issues(issues=key))
