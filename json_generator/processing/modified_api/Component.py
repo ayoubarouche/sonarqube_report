@@ -14,7 +14,7 @@ class ModifiedSonarQubeClient:
     """
 
     DEFAULT_URL = "http://localhost:9000"
-    def __init__(self,sonarcloudclient) -> None:
+    def __init__(self,sonarcloudclient):
        self.__init__(sonarqube_url = sonarcloudclient.sonarcloud_url, token = sonarcloudclient.token ,timeout= sonarcloudclient.timeout )
     def __init__(self, sonarcloud_url, token, timeout=None):
         self.base_url = strip_trailing_slash(sonarcloud_url)
