@@ -69,13 +69,15 @@ class Component :
                     enabled=None, # is it enabled or not 
                     qualifier=None, # the type example FIL ( file )
                     name=None, # the name of the component 
-                    path=None, # the path of the component 
+                    path=None,
+                    issues = [] # the path of the component 
                 ):
         self.key = key 
         self.enabled = enabled 
         self.qualifeir = qualifier
         self.name = name 
         self.path = path
+        self.issues = issues
         return
         
     #getting the component name : (imporatant for the issue : )\
