@@ -3,8 +3,21 @@ from unicodedata import name
 
 from json_generator.parsing.parse_arguments import entry_point_cli
 from json_generator.parsing.parsing_file import entry_point_file
+from json_generator.processing.file_cmp import get_componentKeys
+from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient   
+
 
 if __name__ == "__main__":
+
+    sonarclout_url = "https://sonarcloud.io/"
+
+    file = open("access_token.txt",'r')
+    line = file.readlines()
+#reading the first line that contains the access token 
+    sonarcloud_token = line[0]
+
+    sonar=ModifiedSonarCloudClient(sonarcloud_url=sonarclout_url,token=sonarcloud_token)
+
     parser = argparse.ArgumentParser(description="process some integers")
 
 
@@ -67,3 +80,13 @@ if __name__ == "__main__":
                         print("the issue is : "+str(issue.tags))
                     print()
                 print()
+
+            listr= get_componentKeys(result["projects"],result["projects"].branches,result["projects"].branches[0].issues) 
+
+            print(listr)
+            
+
+            
+
+
+    

@@ -1,6 +1,6 @@
 from json_generator.models.issue import Component
 from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient   
-from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components   
+from json_generator.processing.file_cmp import get_componentKeys
 
 sonarclout_url = "https://sonarcloud.io/"
 
@@ -19,23 +19,11 @@ issues = list(sonar.issues.search_issues(componentKeys="ayoubarouche_linux-autot
 # components = sonar.components.get_project_component_and_ancestors("ayoubarouche_linux-autotools-gh-actions-sc",branch="main")
 #cmp=Component(key=None).search_components_in_issues(componentKeys="ayoubarouche_linux-autotools-gh-actions-sc",branch="main")
 # sonar.issues.issue_set_tags("AX9vlR8A1T4myP5e-Jjo","security")
-#components = list(sonar.components.search_components(organization ="kestar",qualifiers="FIL"))
-components = list(sonar.components.get_components_tree(component="ayoubarouche_linux-autotools-gh-actions-sc", qualifiers="FIL"))
-componts = []
-comp1 = Component(key="ayoubarouche_linux-autotools-gh-actions-sc:src/hello.cpp")
-comp2 = Component(key="ayoubarouche_linux-autotools-gh-actions-sc:src/main.cpp")
-componts.append(comp1)
-componts.append(comp2)
-branch="main"
-comps = add_issues_to_all_components(sonar=sonar , components = componts , branch=branch,tags="update")
+# components = list(sonar.components.search_components(organization ="kestar",qualifiers="FIL"))
+# components = list(sonar.components.get_components_tree(component="ayoubarouche_linux-autotools-gh-actions-sc", qualifiers="FIL"))
+cmp=get_componentKeys("ayoubarouche_linux-autotools-gh-actions-sc","main","security")
 
-for comp in comps :
-    print("the component key is "+comp.key)
-    for issue in comp.issues :
-        
-        print('============')
-        print(issue.message)
-    print()
+
 # print()
 # print("the list of projects is : ")
 # print("------------------------------------")
@@ -54,12 +42,14 @@ for comp in comps :
 # print()
 
 # print("the isssuer of is : ")
-
+#print(issues)
 # print(len(issues))
 # print(type(issues))
 
 # print()
 # print("cmponent is :")
 
-# print(Mdf)
+print(type(Mdf[0]))
+print(Mdf[1]["qualifier"])
+print(cmp)
 # print(components)
