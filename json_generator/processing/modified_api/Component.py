@@ -3,11 +3,60 @@ from sonarqube.utils.config import (
     API_ISSUES_SEARCH_ENDPOINT,
 )
 from sonarqube.utils.common import GET, POST,PAGE_GET
-
+from sonarqube.utils.common import strip_trailing_slash
 from sonarqube.utils.rest_client import RestClient
+import requests
 
+
+class ModifiedSonarQubeClient:
+    """
+    A Python Client for SonarQube Server APIs.
+    """
+
+    DEFAULT_URL = "http://localhost:9000"
+    def __init__(self,sonarqubeclient) -> None:
+       self.__init__(sonarqube_url = sonarqubeclient.sonarqube_url, username = sonarqubeclient.username , password=sonarqubeclient.password , token = sonarqubeclient.token , verify = sonarqubeclient.verify , timeout= sonarqubeclient.timeout )
+    def __init__(self, sonarqube_url=None, username=None, password=None, token=None, verify=None, timeout=None):
+
+        self.base_url = strip_trailing_slash(sonarqube_url or self.DEFAULT_URL)
+
+        _session = requests.Session()
+        if token:
+            _session.auth = (token, "")
+        elif username and password:
+            _session.auth = (username, password)
+        if verify is not None:
+            _session.verify = verify
+
+        self.session = _session
+        self.timeout = timeout
+
+
+    @property
+    def components_issues(self):
+        """
+        SonarQube issues Operations
+
+        :return:
+        """
+        return Component(api=self)
+
+ 
 
 class Component(SonarQubeIssues):
+    def __init__(self, **kwargs):
+        """
+
+        :param kwargs:
+        """
+        super(SonarQubeIssues, self).__init__(**kwargs)
+
+    def get(self, key):
+        result = list(self.search_issues(issues=key))
+        for issue in result:
+            if issue["key"] == key:
+                return issue
+
     @PAGE_GET(API_ISSUES_SEARCH_ENDPOINT, item="components")
     def search_issues(
         self,
