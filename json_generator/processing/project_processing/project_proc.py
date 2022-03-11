@@ -15,12 +15,6 @@ arg_proj=cli_parse_project(arg2)
 args_branch=cli_parse_branchs(arg3)
 args_issue=cli_parse_issues(arg4)
 
-#get proj 
-def get_project(arg_proj):
-    project=list(sonar.projects.search_projects(arg_proj.organization))
-    tojson = json.dumps(project)
-    return tojson
-
 def append_to_jsonfile(data_filename,data):
     with open(data_filename, mode='w') as f:
         datafile=json.load(f)
@@ -32,15 +26,49 @@ def append_to_jsonfile(data_filename,data):
                         indent=4,  
                         separators=(',',': '))
 
+#get proj 
+def get_project(arg_proj):
+    project=list(sonar.projects.search_projects(arg_proj.organization,arg_proj.key))
+    tojson = json.dumps(project)
+    Pr=arg_proj.parse_jsonProject(tojson)
+    return Pr
+
+def get_details_of_project(arg_proj):
+
+
     
 def get_all_project(args_proj):
     for P in args_proj:
         json_format=get_project(P)
-        jsonfile=open("json_file","w")
-        append_to_jsonfile(jsonfile,json_format)
-    
-    return jsonfile
+        
 
+def get_branches_of_project(arg_proj):
+    branches = sonar.project_branches.search_project_branches(arg_proj.key)
+    json_obj=dumps(branches)
+    Branchs=Branch()
+    br=Branchs.parse_jsonbranch(json_obj)
+    return br
+
+def get_issues_of_project(arg_proj,args_branch):
+    list_issue=[]
+    for b in args_branch:
+        issues =list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=b["branches"][0]["name"]))
+        tojsonissue=json.dumps(issues)
+        list_issue.append(tojsonissue)
+    Issuee=Issue()
+    obj_issues=[]
+    for i in list_issue:
+        iss=Issuee.parse_jsonissues(i)
+        obj_issues.append(iss)
+    return obj_issues
+        
+
+        
+
+
+
+
+    
 
 
 

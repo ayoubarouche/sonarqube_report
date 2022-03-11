@@ -33,6 +33,7 @@ class Branch:
         self.status=json_str['status']
         self.analysisDate=json_str['analysisDate']
         self.commit=json_str['commit']
+        return self
 
 
 #Testing 
