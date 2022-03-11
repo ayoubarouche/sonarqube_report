@@ -39,11 +39,11 @@ class ModifiedSonarQubeClient:
 
         :return:
         """
-        return Component(api=self)
+        return ModifiedSonarQubeIssues(api=self)
 
  
 
-class Component(SonarQubeIssues):
+class ModifiedSonarQubeIssues(SonarQubeIssues):
     def __init__(self, **kwargs):
         """
 
@@ -58,7 +58,7 @@ class Component(SonarQubeIssues):
                 return issue
 
     @PAGE_GET(API_ISSUES_SEARCH_ENDPOINT, item="components")
-    def search_issues(
+    def search_components(
         self,
         componentKeys=None,
         branch=None,
