@@ -131,3 +131,5 @@ access_token.txt
 test_models.py
 
 config_file.json
+
+tests.py
