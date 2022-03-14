@@ -1,7 +1,9 @@
 {
-    "sonarqube-url":"www.sonarqube.io",
+    "sonarqube-url":"https://sonarcloud.io/",
     "authentication" : {
-            "token": "244c917830120d98db5aa054103721cc632a69bb"
+            
+            "username" :"aroucheayoub",
+            "password":"helloworld"
         
     },
 

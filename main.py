@@ -1,24 +1,18 @@
 import argparse
 from unicodedata import name
+from entry import main
 
 from json_generator.parsing.parse_arguments import entry_point_cli
 from json_generator.parsing.parsing_file import entry_point_file
 from json_generator.processing.file_cmp import get_componentKeys
+from json_generator.processing.issue_processing.issue_proc import get_issues_by_severity
 from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
 from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient
 from json_generator.processing.project_processing.project_proc import get_branches_of_project, get_project, get_spec_issues_of_project   
 
 
 if __name__ == "__main__":
-
-    sonarclout_url = "https://sonarcloud.io/"
-
-    file = open("access_token.txt",'r')
-    line = file.readlines()
-#reading the first line that contains the access token 
-    sonarcloud_token = line[0]
-
-    sonar=ModifiedSonarCloudClient(sonarcloud_url=sonarclout_url,token=sonarcloud_token)
+   
 
     parser = argparse.ArgumentParser(description="process some integers")
 
@@ -47,80 +41,21 @@ if __name__ == "__main__":
         if not result:
             print("error parsing the json file :(")
         else : 
-            print("the method for auth used is : "+result["auth"])
-            # print all issues : 
-            print("the sonar qube server is : "+result["sonarqube_url"])
-            for project in result["projects"]:
-                print("the project name is : "+project.key)
-                project.organization=result["organization"]
-                detailled_project = get_project(sonar , project)
-                print("detailled project is : "+detailled_project.lastAnalysisDate)
-                for branch in project.branches : 
-                    detailled_branch = get_branches_of_project(sonar, project)
-                    print("the detailled branch is :"+str(detailled_branch[0].name))
-                    print("the branch name is : "+branch.name)
-
-                    if branch.issues: 
-                        issue = branch.issues[0]
-                        # getting the issues of branch : 
-                        detailled_issues  = get_spec_issues_of_project(sonar , project , branch , issue)
-                  #      issues_with_wont_fix = get_issues_by_tag(list_issues , severity , category)
-                    #    len(issues_with_wont_fix)
-                        #secand part : getting issues in each file 
-                        list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
-                        files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue)
-
-                        print("the issues are : ")
-                    else : 
-                        print()
-                        # for iss in issues:
-                        #     print("the issue message is : "+iss.message)
-                        # print("the issue is : "+str(issue.tags))
-                        
-                        # print("the list is : ")
-                        # print(str(len(listr)))
-                        # print("the length is " +str(len(listr)))
-                        
-                        # print("the issue containing tags is :"+str(issue.tags))
-                        # for compo in componenets :
-                        #     print('for the component : '+compo.key)
-                        #     for hello in compo.issues : 
-                        #         print("the issue is : "+str(hello.key)+" and the resolution is : "+str(hello.creationDate))
-                
+            sonar = None
+            if result["auth"] == "t":
+                sonar=ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token=result["token"])
+            else :
+                sonar = ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token = None).auth.authenticate_user(result["username"],result["password"])
+            main(object=result , sonar = sonar)
     if(args.config_method=='c'):
         #for now the command we tested is : python3 main.py c -s www.sonarqube.io -pb kestar:master#main -i bug,vur -t helloworld 
         result = entry_point_cli(args)
         if not result:
             cli_parser.print_help()
         else : 
-            print("the method for auth used is : "+result["auth"])
-            # print all issues : 
-            print("the sonar qube server is : "+result["sonarqube_url"])
-            for project in result["projects"]:
-                print("the project name is : "+project.key)
-                project.organization=result["organization"]
-                for branch in project.branches : 
-                    print("the branch name is : "+branch.name)
-                    for issue in branch.issues: 
-                        print("the issue is : "+str(issue.tags))
-                        listr= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
-                        print("the list is : ")
-                        print(str(len(listr)))
-                        print("the length is " +str(len(listr)))
-                        componenets = add_issues_to_all_components(branch=branch , components=listr , sonar=sonar , issue_containing_tags=issue)
-                        print("the issue containing tags is :"+str(issue.tags))
-                        for compo in componenets :
-                            print('for the component : '+compo.key)
-                            for hello in compo.issues : 
-                                print("the issue is : "+str(hello.key)+" and the resolution is : "+str(hello.severity))
-                print()
-                print()
-
-
-           
-            
-
-            
-
-
-    
+            sonar = None
+            if result["auth"] == "t":
+                sonar=ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token=result["token"])
+            else :
+                sonar = ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token = None).auth.authenticate_user(result["username"],result["password"])
+            main(object=result , sonar = sonar)
