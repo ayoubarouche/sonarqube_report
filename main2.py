@@ -1,4 +1,6 @@
-from json_generator.processing.project_processing.project_proc import get_project, get_all_project,append_to_jsonfile
+from lzma import FORMAT_XZ
+from json_generator.models.issue import Issue
+from json_generator.processing.project_processing.project_proc import get_issues_of_project, get_project, get_all_project,append_to_jsonfile, get_spec_issues_of_project
 import argparse
 from unicodedata import name
 
@@ -75,8 +77,20 @@ if __name__ == "__main__":
                 project.organization=result["organization"]
                 pr=get_project(sonar,project)
                 print("project are :" + pr.name)
-                # print("branches of this project are :"+branchee)
-                # for branch in project.branches : 
+                br=get_branches_of_project(sonar,project)
+                print("branches of this project are :"+ str(br[0].name))
+                for b in br:
+                    issuee=Issue(key=None,tags=["security","update"])
+                    Issu=get_spec_issues_of_project(sonar,project,b,issuee)
+                    print("issues of this project are :")
+                    for l in range(len(Issu)):
+
+                        print(Issu[l].tags)
+                    
+
+
+
+                # for branch in project.branches : 8
                 #     print("the branch name is : "+branch.name)
                 #     for issue in branch.issues: 
                 #         print("the issue is : "+str(issue.tags))

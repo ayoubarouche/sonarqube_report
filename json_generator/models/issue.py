@@ -2,6 +2,7 @@
 a model to handle an issue it will generate informations like the component infos (componenet contains the file name etc) .
 """
 
+import json
 from sonarqube.utils.rest_client import RestClient
 from sonarqube.utils.config import (
     API_ISSUES_SEARCH_ENDPOINT,
@@ -30,6 +31,9 @@ class Issue:
                  severity=None, # Minor - Major
                  message=None, # the message of the issue
                  author=None,  # the author of the issue 
+                 type=None,
+                 creationDate=None,
+                 updateDate=None,
                  components=[], # the components that had the issue
                  tags=[],
                  comments = []
@@ -41,6 +45,9 @@ class Issue:
         self.severity = severity 
         self.message = message 
         self.author = author 
+        self.type=type
+        self.creationDate=creationDate
+        self.updateDate=updateDate
         self.components = components 
         self.tags = tags
         self.comments = comments
@@ -64,6 +71,12 @@ class Issue:
             self.message=json_str['message']
         if 'author' in json_str:
             self.author=json_str['author']
+        if 'type' in json_str:
+            self.type=json_str['type']
+        if 'creationDate' in json_str:
+            self.creationDate=json_str['creationDate']
+        if 'updateDate' in json_str:
+            self.updateDate=json_str['updateDate']
         if 'components' in json_str:
             self.components=json_str['components']
         if 'tags' in json_str:

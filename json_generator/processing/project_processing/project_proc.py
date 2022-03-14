@@ -49,10 +49,13 @@ def get_all_project(sonar,args_proj):
         
 
 def get_branches_of_project(sonar,arg_proj):
-    branches = list(sonar.project_branches.search_project_branches(arg_proj.key))
-    Branchs=Branch(name=None)
-    br=Branchs.parse_jsonbranch(branches)
-    return br
+    branches = sonar.project_branches.search_project_branches(arg_proj.key)
+    brs=[]
+    for b in branches['branches']:
+        Branchs=Branch(name=None)
+        Branchs.parse_jsonbranch(b)
+        brs.append(Branchs)
+    return brs
 
 def get_branches_of_all_projects(sonar,args_proj):
     branchesList=[]
@@ -62,15 +65,12 @@ def get_branches_of_all_projects(sonar,args_proj):
     return branchesList
 
 def get_issues_of_project(sonar,arg_proj,args_branch):
-    list_issue=[]
-    for b in args_branch:
-        issues =list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=b.name))
-        list_issue.append(issues)
-    Issuee=Issue()
+    issues =list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=args_branch.name))
     obj_issues=[]
-    for i in list_issue:
-        iss=Issuee.parse_jsonissues(i)
-        obj_issues.append(iss)
+    for i in issues:
+        Issuee=Issue(key=None)
+        Issuee.parse_jsonissues(i)
+        obj_issues.append(Issuee)
     return obj_issues
 
 def get_issues_of_all_projects(sonar,args_proj,args_branch):
@@ -83,14 +83,12 @@ def get_issues_of_all_projects(sonar,args_proj,args_branch):
         
 def get_spec_issues_of_project(sonar,arg_proj,args_branch,args_issue):
     listofissues=[]
-    if args_branch:
-        for b in args_branch:
-            if args_issue :
-                for i in args_issue:
-                    issues=list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=b.name,tags=i.tags))
-                    iss=Issue(key=None)
-                    iss.parse_jsonissues(issues)
-                    listofissues.append(iss)
+    result_issue_tags = ",".join(map(str, args_issue.tags))
+    issues=list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=args_branch.name,tags=result_issue_tags))
+    for i in issues:
+        iss=Issue(key=None)
+        iss.parse_jsonissues(i)
+        listofissues.append(iss)
 
     return listofissues     
     
