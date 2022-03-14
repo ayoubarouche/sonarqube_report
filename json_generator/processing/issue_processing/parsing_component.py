@@ -35,7 +35,7 @@ def add_issues_to_all_components(sonar , components ,issue_containing_tags ,  br
         issues = add_issues_to_component(sonar = sonar , component = component ,issue_tags=issue_containing_tags.tags , branch = branch)
         if issues : 
             print("there is issues ")
-            comp = Component(key=component.key , issues = issues)
+            comp = Component(key=component.key ,name = component.name ,  issues = issues)
             result_components.append(comp)
         else : 
             print("there is no issues !")

@@ -3,8 +3,8 @@
     "authentication" : {
             
             "username" :"aroucheayoub",
-            "password":"helloworld"
-        
+            "password":"helloworld",
+            "token":"244c917830120d98db5aa054103721cc632a69bb"
     },
 
     "projects":[
