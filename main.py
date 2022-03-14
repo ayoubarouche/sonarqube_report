@@ -36,6 +36,7 @@ if __name__ == "__main__":
     cli_parser.add_argument("-p","--password",metavar='',dest="password",help="insert password")
     cli_parser.add_argument("-t","--token",metavar='',dest="token",help="insert token")
     cli_parser.add_argument("-i","--issues",dest="issues",metavar="" , required="True" , help = "insert the issue tag list")
+    cli_parser.add_argument("-o","--org",dest="organization",metavar="" , help = "insert the org tag ")
 
     result = None
     args = parser.parse_args()
@@ -74,16 +75,20 @@ if __name__ == "__main__":
             print("the sonar qube server is : "+result["sonarqube_url"])
             for project in result["projects"]:
                 print("the project name is : "+project.key)
+                project.organization=result["organization"]
                 for branch in project.branches : 
                     print("the branch name is : "+branch.name)
                     for issue in branch.issues: 
                         print("the issue is : "+str(issue.tags))
+                        listr= get_componentKeys(sonar,project,branch,issue) 
+                        print(listr)
+                        
+                        
                     print()
                 print()
 
-            listr= get_componentKeys(result["projects"],result["projects"].branches,result["projects"].branches[0].issues) 
 
-            print(listr)
+           
             
 
             

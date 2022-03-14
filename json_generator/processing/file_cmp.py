@@ -7,7 +7,7 @@ import json
 
 # file = open("access_token.txt",'r')
 # line = file.readlines()
-# #reading the first line that contains the access token 
+# # #reading the first line that contains the access token 
 # sonarcloud_token = line[0]
 
 # sonar=ModifiedSonarCloudClient(sonarcloud_url=sonarclout_url,token=sonarcloud_token)
@@ -17,15 +17,21 @@ import json
 # args_issue=cli_parse_issues(arg4)
 
 
-def get_componentKeys(arg_proj,args_branch,args_issue):
-    comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=args_issue.tags))
-    l=len(comp)
+def get_componentKeys(sonar,arg_proj,args_branch,args_issue):
     listofcomponent=[]
-    
+    comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=args_issue.tags))
+    if not comp:
+        return None
     for i in comp:
         if i["qualifier"]=="FIL":
-            listofcomponent.append(comp[i)
-        
+                
+                comp_object=Component(key=None)
+                comp_object.parse_jsoncomponent(i)
+                listofcomponent.append(comp_object)
+    for j in range(len(listofcomponent)):
+        print("key components are :" + listofcomponent[j].key)
+       
     return listofcomponent
+
 
 

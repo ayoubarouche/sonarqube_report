@@ -31,6 +31,11 @@ def entry_point_cli(args):
                 branch.issues = issues_list
         parsing_results["projects"] = project_list 
         parsing_results["sonarqube_url"] = args.sonarqube_url
+        if args.organization :
+            parsing_results["organization"]=args.organization
+        else:
+            parsing_results["organization"]="kestar"
+
         return parsing_results
     else :
         
