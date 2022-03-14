@@ -30,6 +30,7 @@ def entry_point_cli(args):
             for branch in project.branches :
                 branch.issues = issues_list
         parsing_results["projects"] = project_list 
+        parsing_results["issue"] = issues_list
         parsing_results["sonarqube_url"] = args.sonarqube_url
         if args.organization :
             parsing_results["organization"]=args.organization

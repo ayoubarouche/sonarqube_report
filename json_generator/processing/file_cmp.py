@@ -17,9 +17,14 @@ import json
 # args_issue=cli_parse_issues(arg4)
 
 
-def get_componentKeys(sonar,arg_proj,args_branch,args_issue):
+def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
     listofcomponent=[]
-    comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=args_issue.tags))
+    print("the arg issues : "+str(args_issue.tags))
+    comp =None 
+    if args_issue:
+        comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=args_issue.tags))
+    else :
+        comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name))
     if not comp:
         return None
     for i in comp:

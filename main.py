@@ -4,7 +4,9 @@ from unicodedata import name
 from json_generator.parsing.parse_arguments import entry_point_cli
 from json_generator.parsing.parsing_file import entry_point_file
 from json_generator.processing.file_cmp import get_componentKeys
-from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient   
+from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
+from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient
+from json_generator.processing.project_processing.project_proc import get_spec_issues_of_project   
 
 
 if __name__ == "__main__":
@@ -46,24 +48,41 @@ if __name__ == "__main__":
             print("error parsing the json file :(")
         else : 
             print("the method for auth used is : "+result["auth"])
-            if result["auth"] == "t":
-                print("the token is : "+result["token"])
-            elif result["auth"] == "up":
-                print("the username is : "+result["username"] +" and the password is : "+result["password"])
-
-  
-            print("the sonar qube url is : "+result["sonarqube-url"])
             # print all issues : 
+            print("the sonar qube server is : "+result["sonarqube_url"])
             for project in result["projects"]:
-                print("the project key is : "+project.key)
-                print("-------------------------------------------")
+                print("the project name is : "+project.key)
+                project.organization=result["organization"]
                 for branch in project.branches : 
-                    print("the project branch name is : "+branch.name)
-                    print()
-                    for issue in branch.issues : 
-                        print(" the issues are : ")
-                        print(str(issue.tags))
-                print()
+                    print("the branch name is : "+branch.name)
+
+                    if branch.issues: 
+                        issue = branch.issues[0]
+                        # getting the issues of branch : 
+                        detailled_issues  = get_spec_issues_of_project(sonar , project , branch , issue)
+                  #      issues_with_wont_fix = get_issues_by_tag(list_issues , severity , category)
+                    #    len(issues_with_wont_fix)
+                        #secand part : getting issues in each file 
+                        list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
+                        files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue)
+
+                        print("the issues are : ")
+                    else : 
+
+                        # for iss in issues:
+                        #     print("the issue message is : "+iss.message)
+                        # print("the issue is : "+str(issue.tags))
+                        
+                        # print("the list is : ")
+                        # print(str(len(listr)))
+                        # print("the length is " +str(len(listr)))
+                        
+                        # print("the issue containing tags is :"+str(issue.tags))
+                        # for compo in componenets :
+                        #     print('for the component : '+compo.key)
+                        #     for hello in compo.issues : 
+                        #         print("the issue is : "+str(hello.key)+" and the resolution is : "+str(hello.creationDate))
+                
     if(args.config_method=='c'):
         #for now the command we tested is : python3 main.py c -s www.sonarqube.io -pb kestar:master#main -i bug,vur -t helloworld 
         result = entry_point_cli(args)
@@ -80,11 +99,17 @@ if __name__ == "__main__":
                     print("the branch name is : "+branch.name)
                     for issue in branch.issues: 
                         print("the issue is : "+str(issue.tags))
-                        listr= get_componentKeys(sonar,project,branch,issue) 
-                        print(listr)
-                        
-                        
-                    print()
+                        listr= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
+                        print("the list is : ")
+                        print(str(len(listr)))
+                        print("the length is " +str(len(listr)))
+                        componenets = add_issues_to_all_components(branch=branch , components=listr , sonar=sonar , issue_containing_tags=issue)
+                        print("the issue containing tags is :"+str(issue.tags))
+                        for compo in componenets :
+                            print('for the component : '+compo.key)
+                            for hello in compo.issues : 
+                                print("the issue is : "+str(hello.key)+" and the resolution is : "+str(hello.severity))
+                print()
                 print()
 
 

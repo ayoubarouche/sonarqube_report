@@ -1,0 +1,21 @@
+{
+    "sonarqube-url":"www.sonarqube.io",
+    "authentication" : {
+            "token": "244c917830120d98db5aa054103721cc632a69bb"
+        
+    },
+
+    "projects":[
+        {   "project-key":"ayoubarouche_linux-autotools-gh-actions-sc",
+            "branches":[
+            {
+                "branch-name":"main",
+                "issues":["update" , "security"]
+            }
+
+                    ]
+        }
+
+    ]
+
+}

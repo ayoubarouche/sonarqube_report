@@ -22,6 +22,10 @@ def parse_file(file):
         json_file.close()
     
     result = {}
+    if "organization" in json_object:
+        result["organization"] = json_object["organization"]
+    else :
+        result["organization"] = "kestar"
     if 'sonarqube-url' and "projects" and "authentication" in json_object:
         auth_method = auth_parser(json_object["authentication"])
         projects = projects_parser(list(json_object["projects"]))
@@ -36,10 +40,13 @@ def parse_file(file):
                 result["username"] = auth_method["username"]
                 result["password"]= auth_method["password"]
             result["projects"] = projects
-            result["sonarqube-url"] = sonarqube_url
+            result["sonarqube_url"] = sonarqube_url
+            
             return result
     else : 
         print("error parsing the json file please verify it !!")
+
+    
 
     for project in projects : 
         print("the branches are : ")
