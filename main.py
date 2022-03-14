@@ -6,7 +6,7 @@ from json_generator.parsing.parsing_file import entry_point_file
 from json_generator.processing.file_cmp import get_componentKeys
 from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
 from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient
-from json_generator.processing.project_processing.project_proc import get_spec_issues_of_project   
+from json_generator.processing.project_processing.project_proc import get_branches_of_project, get_project, get_spec_issues_of_project   
 
 
 if __name__ == "__main__":
@@ -53,7 +53,11 @@ if __name__ == "__main__":
             for project in result["projects"]:
                 print("the project name is : "+project.key)
                 project.organization=result["organization"]
+                detailled_project = get_project(sonar , project)
+                print("detailled project is : "+detailled_project.lastAnalysisDate)
                 for branch in project.branches : 
+                    detailled_branch = get_branches_of_project(sonar, project)
+                    print("the detailled branch is :"+str(detailled_branch[0].name))
                     print("the branch name is : "+branch.name)
 
                     if branch.issues: 
@@ -68,7 +72,7 @@ if __name__ == "__main__":
 
                         print("the issues are : ")
                     else : 
-
+                        print()
                         # for iss in issues:
                         #     print("the issue message is : "+iss.message)
                         # print("the issue is : "+str(issue.tags))
