@@ -41,7 +41,7 @@ def parse_file(file):
                 result["password"]= auth_method["password"]
             result["projects"] = projects
             result["sonarqube_url"] = sonarqube_url
-            
+            result["issues"] = None
             return result
     else : 
         print("error parsing the json file please verify it !!")

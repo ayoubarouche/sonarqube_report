@@ -5,10 +5,10 @@
 from json_generator.models.issue import Component, Issue
 
 
-def add_issues_to_component(sonar , component,issue_tags,branch):
-    result_issue_tags = ",".join(map(str, issue_tags))
-    print("the list of tags inside add issues is : "+result_issue_tags)
+def add_issues_to_component(sonar , component,branch , issue_tags=None):
+    
     if issue_tags:
+        result_issue_tags = ",".join(map(str, issue_tags))
         issues = list(sonar.issues.search_issues(fileUuids=component.uuid,tags=result_issue_tags,branch=branch.name))
     else : 
         issues = list(sonar.issues.search_issues(fileUuids=component.uuid,branch=branch.name))
@@ -30,16 +30,19 @@ def add_issues_to_component(sonar , component,issue_tags,branch):
     return issues_objects
 
 
-def add_issues_to_all_components(sonar , components ,issue_containing_tags ,  branch):
+def add_issues_to_all_components(sonar , components ,branch , issue_containing_tags=None ):
 
     result_components = []
 
     for component in components:
-        
-        issues = add_issues_to_component(sonar = sonar , component = component ,issue_tags=issue_containing_tags.tags , branch = branch)
+        if issue_containing_tags: 
+            issues = add_issues_to_component(sonar = sonar , component = component ,issue_tags=issue_containing_tags.tags , branch = branch)
+        else :
+               issues = add_issues_to_component(sonar = sonar , component = component ,issue_tags=None , branch = branch)
+         
         if issues : 
             print("there is issues ")
-            comp = Component(key=component.key ,name = component.name ,  issues = issues)
+            comp = Component(key=component.key ,name = component.name ,  issues = issues, uuid = component.uuid)
             result_components.append(comp)
         else : 
             print("there is no issues !")

@@ -11,8 +11,8 @@
         {   "project-key":"ayoubarouche_linux-autotools-gh-actions-sc",
             "branches":[
             {
-                "branch-name":"main",
-                "issues":["update" , "security"]
+                "branch-name":"main"
+                
             }
 
                     ]

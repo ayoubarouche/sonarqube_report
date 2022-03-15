@@ -14,7 +14,7 @@ def generate_json_for_all_files(files):
 
     for file in files : 
         result_file = {}
-
+        result_file["file_uuid"] = file.uuid
         result_file["file_key"] = file.key
         result_file["file_name"] = file.name
         result_file["issues"] = generate_json_for_file(file)

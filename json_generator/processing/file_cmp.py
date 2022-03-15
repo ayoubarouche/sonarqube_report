@@ -19,7 +19,7 @@ import json
 
 def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
     listofcomponent=[]
-    print("the arg issues : "+str(args_issue.tags))
+   
     comp =None 
     if args_issue:
         comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=args_issue.tags))
