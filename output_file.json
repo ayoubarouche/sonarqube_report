@@ -7,16 +7,16 @@
                     "branch-name": "main",
                     "date-Last-Analysis": "2022-03-11T13:52:06+0100",
                     "unresolved-issues": {
-                        "total": 5,
+                        "total": 2,
                         "issues-details": {
                             "category": {
-                                "code_smell": 4,
-                                "Bug": 1,
+                                "code_smell": 2,
+                                "Bug": 0,
                                 "vulerability": 0,
                                 "security_hostpost": 0
                             },
                             "severity": {
-                                "MAJOR": 3,
+                                "MAJOR": 0,
                                 "MINOR": 1,
                                 "INFO": 0,
                                 "BLOCKER": 0,
@@ -32,9 +32,6 @@
                         "file_name": "main.cpp",
                         "issues": {
                             "unresolved": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjq\", \"rule\": \"cpp:S2259\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Dereference of null pointer (loaded from variable 'argv')\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"BUG\", \"creationDate\": \"2021-06-14T18:15:09+0200\", \"updateDate\": \"2022-03-11T09:35:51+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjl\", \"rule\": \"cpp:S106\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-14T17:10:21+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjm\", \"rule\": \"cpp:S106\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-15T10:31:16+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
                                 "{\"key\": \"AX9vlR8A1T4myP5e-Jjn\", \"rule\": \"cpp:S4962\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Use the \\\"nullptr\\\" literal.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-15T10:31:11+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
                                 "{\"key\": \"AX9vlR8A1T4myP5e-Jjo\", \"rule\": \"cpp:S1116\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Remove this empty statement.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-11T10:14:30+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
                             ],
