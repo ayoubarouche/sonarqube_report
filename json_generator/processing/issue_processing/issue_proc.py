@@ -23,5 +23,5 @@ def get_issues_by_resolution(list_issues , resolution):
 #get unresolved issues : 
 
 def get_unresolved_issues(list_issues ):
-    result=[issue for issue in list_issues if issue.status != "RESOLVED"]
+    result=[issue for issue in list_issues if issue.status == 'OPEN' or not issue.resolution]
     return result

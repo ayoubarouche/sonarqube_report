@@ -1,7 +1,8 @@
 
 import argparse
+from lib2to3.pytree import convert
 from unicodedata import name
-from json_generator.json_generator.generate_per_file import generate_json_for_all_files
+from json_generator.json_generator.generate_per_file import convert_list_issues_json, generate_json_for_all_files
 
 from json_generator.parsing.parse_arguments import entry_point_cli
 from json_generator.parsing.parsing_file import entry_point_file
@@ -48,9 +49,19 @@ def main(sonar , object):
                         #secand part : getting issues in each file (by reverting the issues : )
                         list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
                         files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue)
-                        print("the files are : "+str(len(files_objects_with_issues)))
+                        
+                        for file in list_files_containing_issues_only_keys:
+                            print("the uuid of file is : "+file.uuid)
+                        print("the files are : "+str(len(files_objects_with_issues[0].issues)))
                         result = generate_json_for_all_files(files_objects_with_issues)
+                        #test for the first file for now : 
 
+                        file = files_objects_with_issues[0]
+
+                        result_issues = convert_list_issues_json(file.issues)
+
+                        print("the result issues for now are : ")
+                        print(result_issues)
                         print("the result result is : "+str(result))
                         print("the issues are : ")
                     else : 

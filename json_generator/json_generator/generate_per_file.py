@@ -23,6 +23,7 @@ def generate_json_for_all_files(files):
 
 def generate_json_for_file(file):
     issues = file.issues 
+
     #getting unresolved issues : 
     unresolved = get_unresolved_issues(issues)
     wontfix = get_issues_by_resolution(list_issues= issues , resolution = "WONTFIX")
@@ -37,3 +38,11 @@ def generate_json_for_file(file):
     result["unresolved"] = unresolved_result
     result["wontfix"] = wontfix_result
     return result
+
+
+def convert_list_issues_json(list_issues):
+    issues_result = []
+
+    for issue in list_issues :
+        issues_result.append(parse_obj_to_json(issue))
+    return issues_result
