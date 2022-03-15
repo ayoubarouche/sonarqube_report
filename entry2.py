@@ -1,12 +1,12 @@
 
 import argparse
 from unicodedata import name
-from json_generator.json_generator.summary_information import get_numbers_of_issues
+from json_generator.json_generator.summary_information import get_numbers_of_issues_by_category, get_numbers_of_issues_by_severity, get_numbers_of_unres_issues, get_summary_information
 
 from json_generator.parsing.parse_arguments import entry_point_cli
 from json_generator.parsing.parsing_file import entry_point_file
 from json_generator.processing.file_cmp import get_componentKeys
-from json_generator.processing.issue_processing.issue_proc import get_issues_by_category, get_issues_by_severity
+from json_generator.processing.issue_processing.issue_proc import get_issues_by_category, get_issues_by_resolution, get_issues_by_severity, get_unresolved_issues
 from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
 from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient
 from json_generator.processing.project_processing.project_proc import get_branches_of_project, get_issues_of_project, get_project, get_spec_issues_of_project   
@@ -35,8 +35,22 @@ def main(sonar , object):
                         # getting the issues of branch : 
                         print("**********************************************")
                         detailled_issues  = get_spec_issues_of_project(sonar , project , branch , issue)
-                        ISSUES=get_numbers_of_issues(project,branch,detailled_issues)
-                        print(ISSUES)
+                        unres_ISSUES=get_unresolved_issues(detailled_issues)
+                        print(get_summary_information(project,branch,unres_ISSUES))
+
+                        print("*****************************************")
+                        NB_ISSUES=get_numbers_of_unres_issues(project,branch,unres_ISSUES)
+                        print(NB_ISSUES)
+
+                        print("*******************************************")
+                        NB_By_category=get_numbers_of_issues_by_category(project,branch,unres_ISSUES)
+                        print(NB_By_category)
+                        
+                        print("********************************************")
+                        NB_By_severity=get_numbers_of_issues_by_severity(project,branch,unres_ISSUES)
+                        print(NB_By_severity)
+
+                        print("---------------------------------------------")
                         issues_major = get_issues_by_category(list_issues=detailled_issues,type="BUG")
                         # issues_number=get_numbers_of_issues(project,branch,issues_major)
                         print("the length of issues are : "+(str(len(issues_major))))
