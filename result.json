@@ -3,7 +3,8 @@
         "unresolved-issues": {
             "category" :{
                 "category-name":"helloworld" ,
-                "issues" : [issues]
+                "issues" : [],
+                "number_type" : ""
     }
 
 }

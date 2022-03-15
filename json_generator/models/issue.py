@@ -93,6 +93,7 @@ class Component :
                     qualifier=None, # the type example FIL ( file )
                     name=None, # the name of the component 
                     path=None,
+                    uuid=None,
                     issues = [] # the path of the component 
                 ):
         self.key = key 
@@ -101,6 +102,7 @@ class Component :
         self.name = name 
         self.path = path
         self.issues = issues
+        self.uuid=uuid
         return
         
     #getting the component name : (imporatant for the issue : )\
@@ -119,6 +121,8 @@ class Component :
             self.qualifier=json_str['qualifier']
         if 'name' in json_str:
             self.name=json_str['name']
+        if 'uuid' in json_str:
+            self.uuid=json_str['uuid']
         if 'path' in json_str:
             self.path=json_str['path']
 
