@@ -39,15 +39,15 @@ def main(sonar , object):
                         print(get_summary_information(project,branch,unres_ISSUES))
 
                         print("*****************************************")
-                        NB_ISSUES=get_numbers_of_unres_issues(project,branch,unres_ISSUES)
+                        NB_ISSUES=get_numbers_of_unres_issues(unres_ISSUES)
                         print(NB_ISSUES)
 
                         print("*******************************************")
-                        NB_By_category=get_numbers_of_issues_by_category(project,branch,unres_ISSUES)
+                        NB_By_category=get_numbers_of_issues_by_category(unres_ISSUES)
                         print(NB_By_category)
                         
                         print("********************************************")
-                        NB_By_severity=get_numbers_of_issues_by_severity(project,branch,unres_ISSUES)
+                        NB_By_severity=get_numbers_of_issues_by_severity(unres_ISSUES)
                         print(NB_By_severity)
 
                         print("---------------------------------------------")
