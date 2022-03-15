@@ -12,7 +12,7 @@
             "branches":[
                 {
                     "branch-name":"main",
-                    "issues":["update" , "google" ,"lear"]
+                    "issues":["update","security" ]
                 }
             ]
         }

@@ -27,8 +27,9 @@ def entry_point_cli(args):
         project_list = cli_parse_projects(args.project_branch)
         issues_list = cli_parse_issues(args.issues)
         for project in project_list:
-            for branch in project.branches :
-                branch.issues = issues_list
+            if project.branches :
+                for branch in project.branches :
+                    branch.issues = issues_list
         parsing_results["projects"] = project_list 
         parsing_results["issues"] = issues_list
         parsing_results["sonarqube_url"] = args.sonarqube_url
@@ -52,8 +53,10 @@ def cli_parse_projects(args):
 def cli_parse_project(project):
     
     project_branches = project.split(':')
-    branches = cli_parse_branchs(project_branches[1])
-    
+    branches = None
+    if len(project_branches) >1 : 
+        branches = cli_parse_branchs(project_branches[1])
+        
     project_object = Project(key = project_branches[0],branches = branches)
     return project_object  
     
