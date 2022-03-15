@@ -1,10 +1,9 @@
 
-import argparse
 from lib2to3.pytree import convert
 from unicodedata import name
 from json_generator.json_generator.generate_per_file import convert_list_issues_json, generate_json_for_all_files
 from json_generator.json_generator.summary_information import get_summary_information
-
+import json
 from json_generator.parsing.parse_arguments import entry_point_cli
 from json_generator.parsing.parsing_file import entry_point_file
 from json_generator.processing.file_cmp import get_componentKeys
@@ -76,4 +75,4 @@ def main(sonar , object):
                     information_for_each_project["details"].append({"summary_informations" : summary_informations , "information_per_file":information_per_file})
                 json_result.append(information_for_each_project)
 
-    json_output_file.write(str(json_result))            
+    json_output_file.write(json.dumps(json_result, indent=4))            

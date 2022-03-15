@@ -40,7 +40,7 @@ def get_numbers_of_unres_issues(issue):
 
 def get_summary_information(project,branch,issue=None):
     print("summary information of the project" + str(project.name)+ " and it branch "+str(branch.name))
-    summ_inf= {"summary_information":{"branch-name":branch.name,"date-Last-Analysis":branch.analysisDate,
+    summ_inf= {"summary_information":{"branch-name":branch.name,"date-Last-Analysis":project.lastAnalysisDate,
     "unresolved-issues":{"total":0,"issues-details":{"category":{},"severity":{}}}}}
 
     summ_inf["summary_information"]["unresolved-issues"]["total"]=get_numbers_of_unres_issues(issue)

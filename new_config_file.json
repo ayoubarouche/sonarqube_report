@@ -8,14 +8,8 @@
     },
 
     "projects":[
-        {   "project-key":"ayoubarouche_linux-autotools-gh-actions-sc",
-            "branches":[
-            {
-                "branch-name":"main"
-                
-            }
-
-                    ]
+        {   "project-key":"ayoubarouche_linux-autotools-gh-actions-sc"
+       
         }
 
     ]
