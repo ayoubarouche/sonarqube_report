@@ -1,0 +1,117 @@
+#generating the header file : 
+
+import datetime
+from fpdf import FPDF 
+import json
+
+title='Summary Information'
+
+class PdfFormatter(FPDF):
+    def header(self):
+        self.image('images/lear_logo.png' ,
+        10 ,
+        8,
+        60 )
+        self.set_font('helvetica','B',20)
+        self.ln(20)
+    
+    def body_of_first_page(self):
+        # self.add_page()
+
+        self.set_font('helvetica','B',30)
+
+
+        self.set_auto_page_break(auto=True,margin =15)
+        #W=width
+        #h=height
+        #ln=
+        #border=
+        self.cell(50)
+        self.ln(60)
+        self.cell(40)
+        self.cell(120,20,"Static Analysis Report ",ln=True,border=True,align='C')
+        self.set_font('times','I',20)
+        self.ln(10)
+        self.cell(0,10,"project title:" ,ln=20,align='C')
+        self.set_font('Arial','B',26)
+        self.set_text_color(250,50,50)
+        self.cell(0,20,"linux-prject",ln=True,align='C')
+        self.set_text_color(2,0,0)
+        datee=datetime.datetime.now()
+        self.set_font('times','U',12)
+        self.cell(0,60,str(datee),align='C')
+
+
+    def first_page(self):
+        self.add_page()
+        self.header()
+        self.body_of_first_page()
+        self.ln(50)
+
+    def summaryHeader(self,jsonFile=None):
+
+        self.set_font('helvetica', 'B', 15)
+        title_w = self.get_string_width(title) + 6
+         # Calculate width of title and position
+        title_w = self.get_string_width(title) + 6
+        doc_w = self.w
+        self.set_x((doc_w - title_w) / 2)
+        # colors of frame, background, and text
+        self.set_draw_color(1, 1, 1) # border = blue
+        self.set_fill_color(255, 204, 204) # background = yellow
+        self.set_text_color(0, 0, 0) # text = red
+        # Thickness of frame (border)
+        self.set_line_width(1)
+        # Title
+        self.cell(title_w, 10, title, border=1, ln=1, align='C', fill=1)
+        # Line break
+        self.ln(10)
+
+    def branch_body(self,json_file):
+        with open(json_file,'rb') as f:
+             txt = json.load(f)
+        self.set_font('times', 'B', 12)
+        space1 = self.get_string_width(title) + 10
+        space2 = self.get_string_width("Last Analysis Date") +20
+        # insert text
+        self.cell(30)
+        self.multi_cell(space1, 10, f'The branch name is : {txt[0]["details"][0]["summary_informations"]["branch-name"]}')
+        self.cell(30)
+        self.multi_cell(100, 10, f'Last Analysis Date : {txt[0]["details"][0]["summary_informations"]["date-Last-Analysis"]}')
+        self.cell(30)
+        self.multi_cell(100, 10, f'Total Unresolved Issues : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["total"]}')
+        self.cell(50)
+        self.cell(130,10," ***** Statistics of unresolved issues by Category *****",ln=1)
+        self.cell(81,10)
+        self.set_font('times', '', 12)
+        self.multi_cell(100,5,f' - Code Smell : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["code_smell"]}')
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Bugs : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["Bug"]}')
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Vulnerability : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["vulerability"]}')
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Security Hostpost : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["security_hostpost"]}')
+        self.cell(50)
+        self.set_font('times', 'B', 12)
+        self.cell(130,10," ***** Statistics of unresolved issues by Severity *****",ln=1)
+        self.set_font('times', '', 12)
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Major : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["MAJOR"]}')
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Minor : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["MINOR"]}')
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Critical : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["CRITICAL"]}')
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Info: {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["INFO"]}')
+        self.cell(81,10)
+        self.multi_cell(100,5,f' - Blocker : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["BLOCKER"]}')
+
+    def second_page(self,json_file):
+        self.add_page()
+        self.ln(20)
+        self.summaryHeader()
+        self.branch_body(json_file)
+
+
+
+
