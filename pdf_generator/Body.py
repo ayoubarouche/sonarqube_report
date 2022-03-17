@@ -20,8 +20,6 @@ class PdfFormatter(FPDF):
         with open(jsonfile,'rb') as f:
              txt = json.load(f)
         self.set_font('helvetica','B',30)
-
-
         self.set_auto_page_break(auto=True,margin =15)
         #W=width
         #h=height
@@ -67,6 +65,42 @@ class PdfFormatter(FPDF):
         self.cell(title_w, 10, title, border=1, ln=1, align='C', fill=1)
         # Line break
         self.ln(10)
+
+    def TitlesHeader(self,title=title):
+
+        self.set_font('helvetica', 'B', 15)
+        title_w = self.get_string_width(title) + 6
+         # Calculate width of title and position
+        title_w = self.get_string_width(title) + 6
+        doc_w = self.w
+        self.set_x((doc_w - title_w) / 2)
+        # colors of frame, background, and text
+        self.set_draw_color(1, 1, 1) # border = blue
+        self.set_fill_color(204, 204, 204) # background = yellow
+        self.set_text_color(0, 0, 0) # text = red
+        # Thickness of frame (border)
+        self.set_line_width(1)
+        # Title
+        self.cell(title_w, 10, title, border=False, ln=1, align='C', fill=1)
+        # Line break
+        self.ln(10)   
+
+    def secondaryHeader(self,title=title):
+
+        self.set_font('Arial', 'B', 15)
+         # Calculate width of title and position
+        title_w = self.get_string_width(title) + 6
+        doc_w = self.w
+        self.set_x((doc_w - title_w) / 2)
+        # colors of frame, background, and text
+        self.set_fill_color(255, 255, 255) # background = yellow
+        self.set_text_color(0, 0, 0) # text = red
+        # Thickness of frame (border)
+        # self.set_line_width(1)
+        # Title
+        self.cell(title_w, 10, title, border=0, ln=1, align='C', fill=1)
+        # Line break
+        self.ln(10) 
 
     def branch_body(self,json_file):
         with open(json_file,'rb') as f:
@@ -176,7 +210,7 @@ class PdfFormatter(FPDF):
         self.multi_cell(self.w-name-20 , 10 , str(number_of_issues),border='BRT',align='C')
         self.ln(10)
 
-        self.summaryHeader(title='Details about issues')
+        self.secondaryHeader(title="**Issues details**")
         self.cell(50)
         self.set_x(15)
         i = 1

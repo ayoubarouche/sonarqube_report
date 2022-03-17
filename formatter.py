@@ -24,6 +24,7 @@ pdf.second_page('output_file.json')
 pdf.add_page()
 json_file = open('output_file.json','r')
 data = json.load(json_file)
+i=1
 for f in data[0]["details"][0]["information_per_file"]:
     file = Component(key=None)
     file.parse_jsoncomponent_from_output_file(f)
@@ -45,12 +46,10 @@ for f in data[0]["details"][0]["information_per_file"]:
     fixed_issues = parse_list_json_issues_to_list_json_objects(fixed)
     false_positive_issues = parse_list_json_issues_to_list_json_objects(false_positive)
     removed_issues = parse_list_json_issues_to_list_json_objects(removed)
-
-
-
-    pdf.summaryHeader(title='Informations about the file')
+    pdf.summaryHeader(title='General view of the file')
+    pdf.TitlesHeader(title='File Number : '+str(i))
     pdf.add_file(file , unresolved_issues=unresolved_issues,wontfix_issues=wontfix_issues ,fixed_issues=fixed_issues , false_positive_isssues=false_positive_issues , removed_issues=removed_issues)
-
+    i=i+1
 #swl wach najotiw les tags tahoma ola blach 
 
 pdf.output('report.pdf')
