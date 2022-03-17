@@ -27,7 +27,8 @@ def add_issues_to_component(sonar , component,branch , issue_tags=None):
 def add_issues_to_all_components(sonar , components ,branch , issue_containing_tags=None ):
 
     result_components = []
-
+    if not components :
+        return result_components
     for component in components:
         if issue_containing_tags: 
             issues = add_issues_to_component(sonar = sonar , component = component ,issue_tags=issue_containing_tags.tags , branch = branch)

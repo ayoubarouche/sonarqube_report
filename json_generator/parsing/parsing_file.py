@@ -22,8 +22,8 @@ def parse_file(file):
     result = {}
     if "output-filename" in json_object:
         result["output_filename"] = json_object["output-filename"]
-    else :
-        result["output_filename"] = "output_file"
+    else : 
+        result["output_filename"] = None
     if "organization" in json_object:
         result["organization"] = json_object["organization"]
     else :

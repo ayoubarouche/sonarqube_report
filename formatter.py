@@ -1,10 +1,30 @@
 import json
+from sys import stdin
+import sys
 from json_generator.processing.issue_processing.parsing_component import parse_list_json_issues_to_list_json_objects
 from pdf_generator.Body import PdfFormatter
 from json_generator.models.issue import Component
+import argparse
 
-json_file = open('output_file.json','r')
-data = json.load(json_file)
+parser = argparse.ArgumentParser(description="process some integers")
+
+parser.add_argument("-f","--file",metavar="", required=False , dest="file", help="insert the sonarqube server url ")
+
+args = parser.parse_args()
+json_file = None
+data = None
+if args.file :
+    
+    json_file = open(args.file,'r')
+    data = json.load(json_file)
+else: 
+    try:
+        json_file = sys.stdin.readline()
+        data = json.loads(str(json_file))
+    except:
+        print("error in the command !")
+        exit()
+
 
 for project in data :
     project_name= project["project_name"]

@@ -1,5 +1,6 @@
 
 from lib2to3.pytree import convert
+import sys
 from unicodedata import name
 from json_generator.json_generator.generate_per_file import convert_list_issues_json, generate_json_for_all_files
 from json_generator.json_generator.summary_information import get_summary_information
@@ -15,23 +16,29 @@ from json_generator.processing.project_processing.project_proc import get_branch
 # the entry function for the object : 
 
 def main(sonar , object):
-
+    json_file_name = None
+    json_output_file = None
     # creating the sonar app : 
-    json_file_name = object["output_filename"]+".json"
-    json_output_file = open(json_file_name,"w")
+    if object["output_filename"] :
+        json_file_name = object["output_filename"]+".json"
+        json_output_file = open(json_file_name,"w")
     json_result = []
     information_for_each_project = {}
-    print("the method for auth used is : "+object["auth"])
+    if json_output_file:
+        
+        print("the method for auth used is : "+object["auth"])
             # print all issues : 
-    print("the sonar qube server is : "+object["sonarqube_url"])
-    print("number of project you inserted are : "+str(len(object["projects"])))
+        print("the sonar qube server is : "+object["sonarqube_url"])
+        print("number of project you inserted are : "+str(len(object["projects"])))
     for project in object["projects"]:
                 information_for_each_project = {}
-                print("getting information about the project : "+project.key)
+                if json_output_file:
+                    print("getting information about the project : "+project.key)
                 project.organization=object["organization"]
                 detailled_project = get_project(sonar , project)
                 if not detailled_project:
-                    print("Error getting informations about the project !"+project.key)
+                    if json_output_file:
+                        print("Error getting informations about the project !"+project.key)
                     return 
                 information_for_each_project["project_name"] = detailled_project.name
                 information_for_each_project["details"] = []
@@ -72,9 +79,12 @@ def main(sonar , object):
 
                     information_for_each_project["details"].append({"summary_informations" : summary_informations , "information_per_file":information_per_file})
                 json_result.append(information_for_each_project)
-    print("generating json file......")
-    json_output_file.write(json.dumps(json_result, indent=4)) 
-
-    json_output_file.close()
-
-    print(json_file_name)           
+    
+    
+    if json_output_file:
+        print("generating json file......")
+        json_output_file.write(str(json.dumps(json_result, indent=4))) 
+        json_output_file.close()
+    else : 
+        sys.stdout.write(str(json.dumps(json_result)))
+              

@@ -8,7 +8,7 @@ from json_generator.models.project import Project
 
 
 def entry_point_cli(args):
-    print("you choosed cli : ")
+    
     if(args.project_branch and args.issues and args.sonarqube_url):
         parsing_results ={}
         if(args.token):
@@ -35,7 +35,11 @@ def entry_point_cli(args):
             parsing_results["organization"]=args.organization
         else:
             parsing_results["organization"]="kestar"
-
+        if args.output_filename:
+            print("you choosed cli : ")
+            parsing_results["output_filename"] = args.output_filename
+        else :
+            parsing_results["output_filename"] = None
         return parsing_results
     else :
         
