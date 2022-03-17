@@ -10,12 +10,12 @@ def add_issues_to_component(sonar , component,branch , issue_tags=None):
     
     if issue_tags:
         result_issue_tags = ",".join(map(str, issue_tags))
-        issues = list(sonar.issues.search_issues(fileUuids=component.uuid,tags=result_issue_tags,branch=branch.name))
+        issues = list(sonar.issues.search_issues(componentKeys=component.key,tags=result_issue_tags,branch=branch.name))
     else : 
-        issues = list(sonar.issues.search_issues(fileUuids=component.uuid,branch=branch.name))
+        issues = list(sonar.issues.search_issues(componentKeys=component.key,branch=branch.name))
 
     if not issues :
-        print("there is no issues for the component : "+str(component.key)+" and for tags : "+str(issue_tags) +" and branch : "+branch.name)
+        print("there is no issues for the component : "+str(component.uuid)+" and for tags : "+str(issue_tags) +" and branch : "+branch.name)
         return None
     issues_objects = []
     for issue in issues:

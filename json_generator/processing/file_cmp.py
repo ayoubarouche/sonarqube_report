@@ -35,6 +35,7 @@ def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
                 listofcomponent.append(comp_object)
     for j in range(len(listofcomponent)):
         print("key components are :" + listofcomponent[j].key)
+        print("the component uuid is : "+listofcomponent[j].uuid)
        
     return listofcomponent
 
