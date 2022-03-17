@@ -36,8 +36,11 @@ def get_project(sonar,arg_proj):
     project=list(sonar.projects.search_projects(organization=arg_proj.organization,projects=arg_proj.key))
     # tojson = json.dumps(project)
     # print(str(arg_proj.organization))
-    Pr=arg_proj.parse_jsonProject(project[0])
-    return Pr
+    if project :
+        Pr=arg_proj.parse_jsonProject(project[0])
+        return Pr
+    return None
+    
 
 # def get_details_of_project(sonar,arg_proj,args_branch,args_issue):
 #     for B in args_branch:

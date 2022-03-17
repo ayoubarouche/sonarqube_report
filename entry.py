@@ -29,6 +29,9 @@ def main(sonar , object):
                 print("the project name is : "+project.key)
                 project.organization=object["organization"]
                 detailled_project = get_project(sonar , project)
+                if not detailled_project:
+                    print("Error getting informations about the project !")
+                    return 
                 information_for_each_project["project_name"] = detailled_project.name
                 information_for_each_project["details"] = []
       

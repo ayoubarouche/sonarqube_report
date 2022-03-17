@@ -88,6 +88,7 @@ class PdfFormatter(FPDF):
                 self.add_issue(issue)
         #for fixed issues : 
         if wontfix_issues:
+            self.cell(10 )
             self.cell(130,10,f"{i}) Wontfix Issues",ln=1)
             i +=1
             for issue in wontfix_issues:
@@ -95,6 +96,7 @@ class PdfFormatter(FPDF):
 
         #fixed issues 
         if fixed_issues:
+            self.cell(10 )
             self.cell(130,10,f"{i}) Fixed Issues",ln=1)
             i +=1
             for issue in fixed_issues:
@@ -102,6 +104,7 @@ class PdfFormatter(FPDF):
 
         # false positive issues :
         if false_positive_isssues:
+            self.cell(10 )
             self.cell(130,10,f"{i}) False Positive Issues",ln=1)
             i +=1
             for issue in false_positive_isssues:
@@ -109,6 +112,7 @@ class PdfFormatter(FPDF):
 
         #for removed issues :
         if removed_issues:
+            self.cell(10 )
             self.cell(130,10,f"{i}) Removed Issues",ln=1)
             i +=1
             for issue in removed_issues:
