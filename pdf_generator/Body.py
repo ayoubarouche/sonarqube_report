@@ -17,8 +17,7 @@ class PdfFormatter(FPDF):
     
     def body_of_first_page(self,jsonfile=None):
         # self.add_page()
-        with open(jsonfile,'rb') as f:
-             txt = json.load(f)
+       
         self.set_font('helvetica','B',30)
         self.set_auto_page_break(auto=True,margin =15)
         #W=width
@@ -34,7 +33,7 @@ class PdfFormatter(FPDF):
         self.cell(0,10,f'project title:' ,ln=20,align='C')
         self.set_font('Arial','B',26)
         self.set_text_color(250,50,50)
-        self.cell(0,20,f'{txt[0]["project_name"]}',ln=True,align='C')
+        self.cell(0,20,f'{jsonfile["project_name"]}',ln=True,align='C')
         self.set_text_color(2,0,0)
         datee=datetime.datetime.now()
         self.set_font('times','U',12)
