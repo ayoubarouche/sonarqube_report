@@ -1,50 +1,59 @@
 [
     {
-        "project_name": "linux-autotools-gh-actions-sc",
+        "project_name": "linux-sonar-test",
         "details": [
             {
                 "summary_informations": {
-                    "branch-name": "main",
-                    "date-Last-Analysis": "2022-03-11T13:52:06+0100",
+                    "branch-name": "master",
+                    "date-Last-Analysis": "2022-03-17T11:18:20+0100",
                     "unresolved-issues": {
-                        "total": 2,
+                        "total": 5,
                         "issues-details": {
                             "category": {
-                                "code_smell": 2,
-                                "Bug": 0,
+                                "code_smell": 4,
+                                "Bug": 1,
                                 "vulerability": 0,
                                 "security_hostpost": 0
                             },
                             "severity": {
-                                "MAJOR": 0,
-                                "MINOR": 1,
+                                "MAJOR": 1,
+                                "MINOR": 2,
                                 "INFO": 0,
                                 "BLOCKER": 0,
-                                "CRITICAL": 1
+                                "CRITICAL": 2
                             }
                         }
                     }
                 },
                 "information_per_file": [
                     {
-                        "file_uuid": "AX9vlR2h1T4myP5e-Jjg",
-                        "file_key": "ayoubarouche_linux-autotools-gh-actions-sc:src/main.cpp",
+                        "file_uuid": "AX-XWcWxrNErWKEcIS0z",
+                        "file_key": "linux-sonar-test:src/main.cpp",
                         "file_name": "main.cpp",
                         "issues": {
                             "unresolved": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjn\", \"rule\": \"cpp:S4962\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Use the \\\"nullptr\\\" literal.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-15T10:31:11+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjo\", \"rule\": \"cpp:S1116\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Remove this empty statement.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-11T10:14:30+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
+                                "{\"key\": \"AX-XWccjrNErWKEcIS01\", \"rule\": \"cpp:S6004\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Use the init-statement to declare \\\"num\\\" inside the if statement.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T11:05:51+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-XWccjrNErWKEcIS02\", \"rule\": \"cpp:S1862\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"This branch can not be reached because the condition duplicates a previous condition in the same sequence of \\\"if/else if\\\" statements\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"BUG\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T11:05:51+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-XWccjrNErWKEcIS03\", \"rule\": \"cpp:S4962\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Use the \\\"nullptr\\\" literal.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T11:05:51+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-XWccjrNErWKEcIS04\", \"rule\": \"cpp:S1116\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Remove this empty statement.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T11:05:51+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
                             ],
-                            "wontfix": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjj\", \"rule\": \"cpp:S106\", \"status\": \"RESOLVED\", \"resolution\": \"WONTFIX\", \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-14T11:27:44+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjp\", \"rule\": \"cpp:S106\", \"status\": \"RESOLVED\", \"resolution\": \"WONTFIX\", \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-14T11:25:21+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
+                            "wontfix": [],
+                            "fixed": [],
+                            "false_positive": [],
+                            "removed": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX-XYzyh4htFjYcVApkp",
+                        "file_key": "linux-sonar-test:src/hello.cpp",
+                        "file_name": "hello.cpp",
+                        "issues": {
+                            "unresolved": [
+                                "{\"key\": \"AX-XYz4I4htFjYcVApkq\", \"rule\": \"cpp:S1003\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Remove this using-directive.\", \"author\": \"\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-17T11:18:20+0100\", \"updateDate\": \"2022-03-17T11:18:20+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
                             ],
-                            "fixed": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jji\", \"rule\": \"cpp:S1862\", \"status\": \"CLOSED\", \"resolution\": \"FIXED\", \"severity\": \"MAJOR\", \"message\": \"This branch can not be reached because the condition duplicates a previous condition in the same sequence of \\\"if/else if\\\" statements\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"BUG\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-11T09:46:54+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
-                            ],
-                            "false_positive": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjk\", \"rule\": \"cpp:S106\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-14T17:10:12+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
-                            ],
+                            "wontfix": [],
+                            "fixed": [],
+                            "false_positive": [],
                             "removed": []
                         }
                     }

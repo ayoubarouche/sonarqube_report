@@ -4,11 +4,11 @@
             
             "username" :"aroucheayoub",
             "password":"helloworld",
-            "token":"244c917830120d98db5aa054103721cc632a69bb"
+            "token":"0017f9f76e60edfc1d8e9d9ee970919fe4ac6380"
     },
 
     "projects":[
-        {   "project-key":"simgrid_simgrid"
+        {   "project-key":"linux-sonar-test"
 
         }
 
