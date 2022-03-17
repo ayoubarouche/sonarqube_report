@@ -134,7 +134,8 @@ class PdfFormatter(FPDF):
     def add_issue(self , issue):
             self.set_line_width(0.3)
             self.ln(0.5)
- 
+            self.set_font('times', '', 12)
+
             name = self.get_string_width('Creation Date') + 10
             self.cell(name, 10, f'Author' , border=1)
             self.multi_cell(self.w-name-20 , 10 , issue.author,border='BRT',align='C')
@@ -159,11 +160,12 @@ class PdfFormatter(FPDF):
         file_name = file_info.name
         file_key = file_info.key
         file_uuid = file_info.uuid
-        self.set_font('times', 'B', 12)
+        self.set_font('times', '', 12)
         name = self.get_string_width('number_of_issues') + 10
         # insert text
         self.cell(name, 10, f'File name' , border=1)
         self.multi_cell(self.w-name-20 , 10 , file_name,border='BRT',align='C')
+        self.set_font('times', '', 12)
 
         self.cell(name, 10, f'File key',border=1)
         self.multi_cell(self.w-name-20 , 10 , file_key,border='BRT',align='C')
@@ -180,6 +182,7 @@ class PdfFormatter(FPDF):
         #for unresolved issues : 
         if unresolved_issues:
             self.cell(10 )
+            self.set_font('times', 'B', 12)
             self.cell(130,10,f"{i}) Unresolved Issues",ln=1)
             i +=1
             for issue in unresolved_issues:
@@ -187,6 +190,8 @@ class PdfFormatter(FPDF):
         #for fixed issues : 
         if wontfix_issues:
             self.cell(10 )
+            self.set_font('times', 'B', 12)
+
             self.cell(130,10,f"{i}) Wontfix Issues",ln=1)
             i +=1
             for issue in wontfix_issues:
@@ -195,6 +200,8 @@ class PdfFormatter(FPDF):
         #fixed issues 
         if fixed_issues:
             self.cell(10 )
+            self.set_font('times', 'B', 12)
+
             self.cell(130,10,f"{i}) Fixed Issues",ln=1)
             i +=1
             for issue in fixed_issues:
@@ -203,6 +210,8 @@ class PdfFormatter(FPDF):
         # false positive issues :
         if false_positive_isssues:
             self.cell(10 )
+            self.set_font('times', 'B', 12)
+
             self.cell(130,10,f"{i}) False Positive Issues",ln=1)
             i +=1
             for issue in false_positive_isssues:
