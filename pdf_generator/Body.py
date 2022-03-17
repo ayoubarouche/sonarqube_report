@@ -15,9 +15,10 @@ class PdfFormatter(FPDF):
         self.set_font('helvetica','B',20)
         self.ln(20)
     
-    def body_of_first_page(self):
+    def body_of_first_page(self,jsonfile=None):
         # self.add_page()
-
+        with open(jsonfile,'rb') as f:
+             txt = json.load(f)
         self.set_font('helvetica','B',30)
 
 
@@ -32,20 +33,20 @@ class PdfFormatter(FPDF):
         self.cell(120,20,"Static Analysis Report ",ln=True,border=True,align='C')
         self.set_font('times','I',20)
         self.ln(10)
-        self.cell(0,10,"project title:" ,ln=20,align='C')
+        self.cell(0,10,f'project title:' ,ln=20,align='C')
         self.set_font('Arial','B',26)
         self.set_text_color(250,50,50)
-        self.cell(0,20,"linux-prject",ln=True,align='C')
+        self.cell(0,20,f'{txt[0]["project_name"]}',ln=True,align='C')
         self.set_text_color(2,0,0)
         datee=datetime.datetime.now()
         self.set_font('times','U',12)
         self.cell(0,60,str(datee),align='C')
 
 
-    def first_page(self):
+    def first_page(self,jsonfile):
         self.add_page()
         self.header()
-        self.body_of_first_page()
+        self.body_of_first_page(jsonfile=jsonfile)
         self.ln(50)
 
     def summaryHeader(self,title=title):

@@ -35,11 +35,3 @@ class Branch:
         self.commit=json_str['commit']
         return self
 
-
-#Testing 
-jsn= {'name': 'master', 'isMain': True, 'type': 'LONG', 'status': {'bugs': 0, 'vulnerabilities': 0, 'codeSmells': 0}, 
-'analysisDate': '2022-03-07T14:09:21+0100', 'commit': {'sha': 'fc24e4e8c8f76b2de52c8edf3ff5ef5db855b610'}}
-
-br = Branch()
-br.parse_jsonbranch(jsn)
-print(br.name,br.status)
