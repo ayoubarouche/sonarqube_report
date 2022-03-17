@@ -48,7 +48,7 @@ class PdfFormatter(FPDF):
         self.body_of_first_page()
         self.ln(50)
 
-    def summaryHeader(self,jsonFile=None):
+    def summaryHeader(self,title=title):
 
         self.set_font('helvetica', 'B', 15)
         title_w = self.get_string_width(title) + 6
@@ -73,6 +73,7 @@ class PdfFormatter(FPDF):
         self.set_font('times', 'B', 12)
         space1 = self.get_string_width(title) + 10
         space2 = self.get_string_width("Last Analysis Date") +20
+        self.set_line_width(0.5)
         # insert text
         self.cell(30)
         self.multi_cell(space1, 10, f'The branch name is : {txt[0]["details"][0]["summary_informations"]["branch-name"]}')
@@ -82,29 +83,47 @@ class PdfFormatter(FPDF):
         self.multi_cell(100, 10, f'Total Unresolved Issues : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["total"]}')
         self.cell(50)
         self.cell(130,10," ***** Statistics of unresolved issues by Category *****",ln=1)
-        self.cell(81,10)
         self.set_font('times', '', 12)
-        self.multi_cell(100,5,f' - Code Smell : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["code_smell"]}')
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Bugs : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["Bug"]}')
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Vulnerability : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["vulerability"]}')
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Security Hostpost : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["security_hostpost"]}')
+        self.cell(50)
+        self.cell(space2, 10, f'Code Smell' , border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["code_smell"]}',border='BRT',align='C')
+        self.cell(50)
+        self.cell(space2, 10, f'Bugs' , border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["Bug"]}',border='BRT',align='C')
+        self.cell(50)
+        self.cell(space2, 10, f'Vulnerability' , border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["vulerability"]}',border='BRT',align='C')
+        self.cell(50)
+        self.cell(space2, 10, f'Security Hostpost' , border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["category"]["security_hostpost"]}',border='BRT',align='C')
         self.cell(50)
         self.set_font('times', 'B', 12)
         self.cell(130,10," ***** Statistics of unresolved issues by Severity *****",ln=1)
         self.set_font('times', '', 12)
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Major : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["MAJOR"]}')
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Minor : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["MINOR"]}')
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Critical : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["CRITICAL"]}')
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Info: {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["INFO"]}')
-        self.cell(81,10)
-        self.multi_cell(100,5,f' - Blocker : {txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["BLOCKER"]}')
+        self.cell(50)
+        self.cell(space2, 10, f'Major', border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["MAJOR"]}',border='BRT',align='C')
+        self.cell(50)
+        self.cell(space2, 10, f'Minor', border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["MINOR"]}',border='BRT',align='C')
+        self.cell(50)
+        self.cell(space2, 10, f'Critical', border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["CRITICAL"]}',border='BRT',align='C')
+        self.cell(50)
+        self.cell(space2, 10, f' Info', border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["INFO"]}',border='BRT',align='C')
+        self.cell(50)
+        self.cell(space2, 10, f'Blocker', border=1,align='C')
+        self.set_font('times', '', 12)
+        self.multi_cell(50,10,f'{txt[0]["details"][0]["summary_informations"]["unresolved-issues"]["issues-details"]["severity"]["BLOCKER"]}',border='BRT',align='C')
 
     def second_page(self,json_file):
         self.add_page()
@@ -112,6 +131,88 @@ class PdfFormatter(FPDF):
         self.summaryHeader()
         self.branch_body(json_file)
 
+    def add_issue(self , issue):
+            self.set_line_width(0.3)
+            self.ln(0.5)
+ 
+            name = self.get_string_width('Creation Date') + 10
+            self.cell(name, 10, f'Author' , border=1)
+            self.multi_cell(self.w-name-20 , 10 , issue.author,border='BRT',align='C')
+            self.cell(name, 10, f'Tag' , border=1)
+            self.multi_cell(self.w-name-20 , 10 , str(issue.tags).replace("'","").replace("[","").replace("]",""),border='BRT',align='C')
+            
+            self.cell(name, 10, f'Severity',border=1)
+            self.multi_cell(self.w-name-20 , 10 , issue.severity,border='BRT',align='C')
+            self.cell(name, 10, f'Category',border=1)
+            self.multi_cell(self.w-name-20 , 10 , issue.type,border='BRT',align='C')
+            self.cell(name, 10, f'Creation Date',border=1)
+            self.multi_cell(self.w-name-20 , 10 , issue.creationDate,border='BRT',align='C')
+            self.cell(name, 10, f'Message ',border=1)
+            self.multi_cell(self.w-name-20 , 10 , issue.message,border='BRT',align='C')
+            
+            self.ln(10)
+
+
+    def add_file(self,file_info,unresolved_issues=[] , wontfix_issues=[] , fixed_issues  = [], false_positive_isssues=[] , removed_issues=[]):
+        number_of_issues = len(unresolved_issues) +len(wontfix_issues)+len(fixed_issues)+len(false_positive_isssues)+len(removed_issues)
+        self.set_line_width(0.5)
+        file_name = file_info.name
+        file_key = file_info.key
+        file_uuid = file_info.uuid
+        self.set_font('times', 'B', 12)
+        name = self.get_string_width('number_of_issues') + 10
+        # insert text
+        self.cell(name, 10, f'File name' , border=1)
+        self.multi_cell(self.w-name-20 , 10 , file_name,border='BRT',align='C')
+
+        self.cell(name, 10, f'File key',border=1)
+        self.multi_cell(self.w-name-20 , 10 , file_key,border='BRT',align='C')
+        self.cell(name, 10, f'File Uuid',border=1)
+        self.multi_cell(self.w-name-20 , 10 , file_uuid,border='BRT',align='C')
+        self.cell(name, 10, f'number of issues',border=1)
+        self.multi_cell(self.w-name-20 , 10 , str(number_of_issues),border='BRT',align='C')
+        self.ln(10)
+
+        self.summaryHeader(title='Details about issues')
+        self.cell(50)
+        self.set_x(15)
+        i = 1
+        #for unresolved issues : 
+        if unresolved_issues:
+            self.cell(10 )
+            self.cell(130,10,f"{i}) Unresolved Issues",ln=1)
+            i +=1
+            for issue in unresolved_issues:
+                self.add_issue(issue)
+        #for fixed issues : 
+        if wontfix_issues:
+            self.cell(130,10,f"{i}) Wontfix Issues",ln=1)
+            i +=1
+            for issue in wontfix_issues:
+                self.add_issue(issue)
+
+        #fixed issues 
+        if fixed_issues:
+            self.cell(130,10,f"{i}) Fixed Issues",ln=1)
+            i +=1
+            for issue in fixed_issues:
+                self.add_issue(issue)
+
+        # false positive issues :
+        if false_positive_isssues:
+            self.cell(130,10,f"{i}) False Positive Issues",ln=1)
+            i +=1
+            for issue in false_positive_isssues:
+                self.add_issue(issue)
+
+        #for removed issues :
+        if removed_issues:
+            self.cell(130,10,f"{i}) Removed Issues",ln=1)
+            i +=1
+            for issue in removed_issues:
+                self.add_issue(issue)
+    
+    
 
 
 
