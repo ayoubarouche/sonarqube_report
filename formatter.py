@@ -24,7 +24,7 @@ for project in data :
 
     
     for branch in project["details"]:
-        i=0
+        i=1
         pdf.second_page(branch["summary_informations"])
         pdf.summaryHeader(title='General view of the files')
         for f in branch["information_per_file"]:
