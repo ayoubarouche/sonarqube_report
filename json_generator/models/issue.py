@@ -125,4 +125,14 @@ class Component :
             self.uuid=json_str['uuid']
         if 'path' in json_str:
             self.path=json_str['path']
+        
+    def parse_jsoncomponent_from_output_file(self, json_str):
+        
+        if 'file_uuid' in json_str :
+            self.uuid = json_str["file_uuid"]
+        if 'file_key' in json_str :
+            self.key = json_str["file_key"]
+        if 'file_name' in json_str :
+            self.name = json_str["file_name"]
+ 
 

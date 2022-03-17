@@ -2,6 +2,7 @@
 
 
 
+import json
 from json_generator.models.issue import Component, Issue
 
 
@@ -47,3 +48,11 @@ def add_issues_to_all_components(sonar , components ,branch , issue_containing_t
         else : 
             print("there is no issues !")
     return result_components
+
+def parse_list_json_issues_to_list_json_objects(json_issues_list):
+    issues_objects = []
+    for json_issue in json_issues_list:
+        issue_object = Issue(key=None)
+        issue_object.parse_jsonissues(json_str=json.loads(json_issue))
+        issues_objects.append(issue_object)
+    return issues_objects
