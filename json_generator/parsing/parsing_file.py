@@ -11,7 +11,7 @@ def entry_point_file(file):
     if(exists(file)):
         return parse_file(file)
     else :
-        print("file not exist : ")
+        print("file not exist ! ")
         return None 
 
 def parse_file(file):
@@ -20,6 +20,10 @@ def parse_file(file):
         json_file.close()
     
     result = {}
+    if "output-filename" in json_object:
+        result["output_filename"] = json_object["output-filename"]
+    else :
+        result["output_filename"] = "output_file"
     if "organization" in json_object:
         result["organization"] = json_object["organization"]
     else :

@@ -17,13 +17,14 @@ from json_generator.processing.project_processing.project_proc import get_branch
 def main(sonar , object):
 
     # creating the sonar app : 
-    json_output_file = open("output_file.json","w")
+    json_file_name = object["output_filename"]+".json"
+    json_output_file = open(json_file_name,"w")
     json_result = []
     information_for_each_project = {}
     print("the method for auth used is : "+object["auth"])
             # print all issues : 
     print("the sonar qube server is : "+object["sonarqube_url"])
-    
+    print("number of project you inserted are : "+str(len(object["projects"])))
     for project in object["projects"]:
                 information_for_each_project = {}
                 print("getting information about the project : "+project.key)
@@ -71,5 +72,9 @@ def main(sonar , object):
 
                     information_for_each_project["details"].append({"summary_informations" : summary_informations , "information_per_file":information_per_file})
                 json_result.append(information_for_each_project)
+    print("generating json file......")
+    json_output_file.write(json.dumps(json_result, indent=4)) 
 
-    json_output_file.write(json.dumps(json_result, indent=4))            
+    json_output_file.close()
+
+    print(json_file_name)           
