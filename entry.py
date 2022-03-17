@@ -26,16 +26,14 @@ def main(sonar , object):
     
     for project in object["projects"]:
                 information_for_each_project = {}
-                print("the project name is : "+project.key)
+                print("getting information about the project : "+project.key)
                 project.organization=object["organization"]
                 detailled_project = get_project(sonar , project)
                 if not detailled_project:
-                    print("Error getting informations about the project !")
+                    print("Error getting informations about the project !"+project.key)
                     return 
                 information_for_each_project["project_name"] = detailled_project.name
                 information_for_each_project["details"] = []
-      
-                print("detailled project is : "+detailled_project.lastAnalysisDate)
                 summary_informations = None
                 information_per_file = None
                 branches = project.branches
@@ -57,11 +55,8 @@ def main(sonar , object):
                         detailled_issues  = get_spec_issues_of_project(sonar , project , branch , issue)
                         # getting the unresolved issues : 
                         unresolved_issues = get_unresolved_issues(detailled_issues)
-                        print("the unresolved are : "+str(unresolved_issues))
                         summary_informations = get_summary_information(project,branch , unresolved_issues)
                         list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
-                        for comp in list_files_containing_issues_only_keys:
-                            print("the key is : "+comp.key)
                         files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue) 
                         information_per_file = generate_json_for_all_files(files_objects_with_issues)
 
@@ -69,20 +64,11 @@ def main(sonar , object):
                         #if the user did not specified the issues tag list : 
                         detailled_issues = get_issues_of_project(sonar=sonar , arg_proj=project, args_branch=branch)
                         unresolved_issues = get_unresolved_issues(detailled_issues)
-                        for unis in unresolved_issues:
-
-                        
-                            print("the unresolved are : "+unis.message)
-                        summary_informations = get_summary_information(project,branch , unresolved_issues)
-                       
+                        summary_informations = get_summary_information(project,branch , unresolved_issues)  
                         list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch) 
-                        for comp in list_files_containing_issues_only_keys:
-                            print("the key is : "+comp.key)
                         files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar)
                         information_per_file = generate_json_for_all_files(files_objects_with_issues)
 
-                        result = generate_json_for_all_files(files_objects_with_issues)
-                        print("the result is : "+str(result))
                     information_for_each_project["details"].append({"summary_informations" : summary_informations , "information_per_file":information_per_file})
                 json_result.append(information_for_each_project)
 

@@ -14,7 +14,6 @@ def get_numbers_of_issues_by_category(issue):
     unresolved_issues=get_unresolved_issues(list_issues = issue)
     codesmell_issues=get_issues_by_category(list_issues=unresolved_issues,type="CODE_SMELL")
     Bug_issues=get_issues_by_category(list_issues=unresolved_issues,type="BUG")
-    print(len(Bug_issues))
     vuln_issues=get_issues_by_category(list_issues=unresolved_issues,type="VULNERABILITY")
     sec_issues=get_issues_by_category(list_issues=unresolved_issues,type="SECURITY_HOTSPOT")
     Numbers={"code_smell":len(codesmell_issues),"Bug":len(Bug_issues),"vulerability":len(vuln_issues),"security_hostpost":len(sec_issues)}
@@ -39,7 +38,6 @@ def get_numbers_of_unres_issues(issue):
     return Numbers
 
 def get_summary_information(project,branch,issue=None):
-    print("summary information of the project" + str(project.name)+ " and it branch "+str(branch.name))
     summ_inf= {"summary_information":{"branch-name":branch.name,"date-Last-Analysis":project.lastAnalysisDate,
     "unresolved-issues":{"total":0,"issues-details":{"category":{},"severity":{}}}}}
 

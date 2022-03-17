@@ -34,21 +34,12 @@ def append_to_jsonfile(data_filename,data):
 #get proj 
 def get_project(sonar,arg_proj):
     project=list(sonar.projects.search_projects(organization=arg_proj.organization,projects=arg_proj.key))
-    # tojson = json.dumps(project)
-    # print(str(arg_proj.organization))
     if project :
         Pr=arg_proj.parse_jsonProject(project[0])
         return Pr
     return None
     
 
-# def get_details_of_project(sonar,arg_proj,args_branch,args_issue):
-#     for B in args_branch:
-
-    
-def get_all_project(sonar,args_proj):
-    for P in args_proj:
-        object_format=get_project(P)
         
 
 def get_branches_of_project(sonar,arg_proj):

@@ -12,11 +12,9 @@ def entry_point_cli(args):
     if(args.project_branch and args.issues and args.sonarqube_url):
         parsing_results ={}
         if(args.token):
-            print("you inserted the token and it's value is : "+args.token)
             parsing_results["auth"] = "t"
             parsing_results["token"] = args.token
         elif(args.username and args.password):
-            print("you inserted usename and password and it's value are : "+"username : "+args.username+" and it's password are : "+args.password)
             parsing_results["auth"] = "up"
             parsing_results["username"] = args.username
             parsing_results["password"] = args.password

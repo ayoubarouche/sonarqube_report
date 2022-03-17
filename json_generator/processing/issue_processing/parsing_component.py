@@ -15,18 +15,11 @@ def add_issues_to_component(sonar , component,branch , issue_tags=None):
         issues = list(sonar.issues.search_issues(componentKeys=component.key,branch=branch.name))
 
     if not issues :
-        print("there is no issues for the component : "+str(component.uuid)+" and for tags : "+str(issue_tags) +" and branch : "+branch.name)
-        return None
+       return None
     issues_objects = []
     for issue in issues:
-        print("the issue is : ")
-        print("--------------------")
-        print(issue)
         issue_object = Issue(key=None)
         issue_object.parse_jsonissues(issue)
-        print("the issue key is : ")
-        print("--------------------------")
-        print(issue_object.key)
         issues_objects.append(issue_object)
     return issues_objects
 
@@ -42,11 +35,9 @@ def add_issues_to_all_components(sonar , components ,branch , issue_containing_t
                issues = add_issues_to_component(sonar = sonar , component = component ,issue_tags=None , branch = branch)
          
         if issues : 
-            print("there is issues ")
             comp = Component(key=component.key ,name = component.name ,  issues = issues, uuid = component.uuid)
             result_components.append(comp)
-        else : 
-            print("there is no issues !")
+
     return result_components
 
 def parse_list_json_issues_to_list_json_objects(json_issues_list):

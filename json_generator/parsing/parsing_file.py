@@ -8,8 +8,6 @@ from json_generator.models.project import Project
 
 
 def entry_point_file(file):
-    print("the file path is : "+file)
-    print("hello from the entry point file !")
     if(exists(file)):
         return parse_file(file)
     else :
@@ -46,11 +44,6 @@ def parse_file(file):
     else : 
         print("error parsing the json file please verify it !!")
 
-    
-
-    for project in projects : 
-        print("the branches are : ")
-        print(project['branches'])
 
 
 def auth_parser(auth_dict):
