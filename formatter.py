@@ -55,4 +55,5 @@ for f in data[0]["details"][0]["information_per_file"]:
 
 pdf.output('report.pdf')
 
+
 #
