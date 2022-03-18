@@ -39,7 +39,7 @@ def main(sonar , object):
                 if not detailled_project:
                     if json_output_file:
                         print("Error getting informations about the project !"+project.key)
-                    return 
+                        continue
                 information_for_each_project["project_name"] = detailled_project.name
                 information_for_each_project["details"] = []
                 summary_informations = None
@@ -61,6 +61,8 @@ def main(sonar , object):
                     if issue: 
                         # getting the details of a branch (like issues number and so on )
                         detailled_issues  = get_spec_issues_of_project(sonar , project , branch , issue)
+                        if not detailled_issues:
+                            continue
                         # getting the unresolved issues : 
                         unresolved_issues = get_unresolved_issues(detailled_issues)
                         summary_informations = get_summary_information(project,branch , unresolved_issues)
@@ -71,6 +73,8 @@ def main(sonar , object):
                     else : 
                         #if the user did not specified the issues tag list : 
                         detailled_issues = get_issues_of_project(sonar=sonar , arg_proj=project, args_branch=branch)
+                        if not detailled_issues:
+                            continue
                         unresolved_issues = get_unresolved_issues(detailled_issues)
                         summary_informations = get_summary_information(project,branch , unresolved_issues)  
                         list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch) 

@@ -22,6 +22,7 @@ else:
         json_file = sys.stdin.readline()
         data = json.loads(str(json_file))
     except:
+        print(str(json_file))
         print("error in the command !")
         exit()
 

@@ -49,6 +49,7 @@ def entry_point_cli(args):
 def cli_parse_projects(args):
     projects = args.split(',')
     projects_list = []
+    print("the projects are  "+str(projects))
     for parsed_project in projects :
         projects_list.append(cli_parse_project(parsed_project))
     return projects_list
@@ -56,7 +57,7 @@ def cli_parse_project(project):
     
     project_branches = project.split(':')
     branches = None
-    if len(project_branches) >1 : 
+    if len(project_branches) > 1 : 
         branches = cli_parse_branchs(project_branches[1])
         
     project_object = Project(key = project_branches[0],branches = branches)
