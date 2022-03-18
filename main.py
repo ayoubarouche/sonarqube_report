@@ -41,7 +41,7 @@ if __name__ == "__main__":
     if(args.config_method=='f'):
         result = entry_point_file(args.file_path)
         if not result:
-            print("error parsing the json file :(")
+            print("error parsing the json file arguments are missing !:(")
         else : 
             sonar = None
             if result["auth"] == "t":
