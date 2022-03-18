@@ -32,7 +32,7 @@ def parse_file(file):
         auth_method = auth_parser(json_object["authentication"])
         projects = projects_parser(list(json_object["projects"]))
         sonarqube_url = sonarqube_parser(json_object["sonarqube-url"])
-        if not auth_method and not projects and not sonarqube_parser: 
+        if not auth_method and not projects and not sonarqube_url: 
             return None
         else : 
             result["auth"] = auth_method["auth"]

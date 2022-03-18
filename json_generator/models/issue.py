@@ -113,6 +113,7 @@ class Component :
         return self.path
 
     def parse_jsoncomponent(self,json_str):
+
         if 'key' in json_str:
             self.key=json_str['key']
         if 'enabled' in json_str:
