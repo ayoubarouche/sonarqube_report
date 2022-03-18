@@ -147,5 +147,5 @@ suumarytoPDF.py
 report.pdf
 
 output_file.json
-.pdf
-.json
+*.pdf
+*.json
