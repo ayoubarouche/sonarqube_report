@@ -158,8 +158,9 @@ class PdfFormatter(FPDF):
         self.set_font('times', '', 12)
         self.multi_cell(50,10,f'{json_file["unresolved-issues"]["issues-details"]["severity"]["BLOCKER"]}',border='BRT',align='C')
 
-    def second_page(self,json_file):
-        
+    def second_page(self,json_file,first_page = False):
+        if first_page:
+            self.add_page()
         self.ln(20)
         self.summaryHeader()
         self.branch_body(json_file)
