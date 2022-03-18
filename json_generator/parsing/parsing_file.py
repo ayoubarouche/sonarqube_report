@@ -28,7 +28,7 @@ def parse_file(file):
         result["organization"] = json_object["organization"]
     else :
         result["organization"] = "kestar"
-    if 'sonarqube-url' and "projects" and "authentication" in json_object:
+    if 'sonarqube-url' in json_object and "projects" in json_object and "authentication" in json_object:
         auth_method = auth_parser(json_object["authentication"])
         projects = projects_parser(list(json_object["projects"]))
         sonarqube_url = sonarqube_parser(json_object["sonarqube-url"])
