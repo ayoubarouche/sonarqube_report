@@ -1,4 +1,4 @@
-{   "output-filename":"test1001",
+{   "output-filename":"output_json_testing",
     "sonarqube-url":"https://sonarcloud.io/",
     "authentication" : {
             

@@ -1,4 +1,4 @@
-{   "output-filename":"helloworld",
+{   
     "sonarqube-url":"https://sonarcloud.io/",
     "authentication" : {
             
