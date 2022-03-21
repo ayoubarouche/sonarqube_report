@@ -7,25 +7,42 @@
                     "branch-name": "debug_test",
                     "date-Last-Analysis": "2022-03-17T12:06:21+0100",
                     "unresolved-issues": {
-                        "total": 13,
+                        "total": 25,
                         "issues-details": {
                             "category": {
-                                "code_smell": 12,
-                                "Bug": 1,
+                                "code_smell": 19,
+                                "Bug": 6,
                                 "vulerability": 0,
                                 "security_hostpost": 0
                             },
                             "severity": {
-                                "MAJOR": 4,
-                                "MINOR": 8,
+                                "MAJOR": 12,
+                                "MINOR": 11,
                                 "INFO": 0,
                                 "BLOCKER": 0,
-                                "CRITICAL": 1
+                                "CRITICAL": 2
                             }
                         }
                     }
                 },
                 "information_per_file": [
+                    {
+                        "file_uuid": "AX-XkczW4htFjYcVB7d2",
+                        "file_key": "linux-sonar-test:src/main.cpp",
+                        "file_name": "main.cpp",
+                        "issues": {
+                            "unresolved": [
+                                "{\"key\": \"AX-XlTPZ7GdITTxL2xO2\", \"rule\": \"cpp:S4962\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Use the \\\"nullptr\\\" literal.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-17T12:13:14+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-XlTPZ7GdITTxL2xO3\", \"rule\": \"cpp:S1116\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Remove this empty statement.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-17T12:13:14+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
+                            ],
+                            "wontfix": [
+                                "{\"key\": \"AX-XlTPZ7GdITTxL2xO1\", \"rule\": \"cpp:S1862\", \"status\": \"RESOLVED\", \"resolution\": \"WONTFIX\", \"severity\": \"MAJOR\", \"message\": \"This branch can not be reached because the condition duplicates a previous condition in the same sequence of \\\"if/else if\\\" statements\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-17T12:13:14+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
+                            ],
+                            "fixed": [],
+                            "false_positive": [],
+                            "removed": []
+                        }
+                    },
                     {
                         "file_uuid": "AX-cagafkGDeAMJw-YMT",
                         "file_key": "linux-sonar-test:src/TP_2.cpp",
@@ -36,6 +53,8 @@
                                 "{\"key\": \"AX-caggikGDeAMJw-YMs\", \"rule\": \"cpp:S3230\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Do not use the constructor's initializer list for data member \\\"EF\\\". Use the in-class initializer instead.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:12+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMt\", \"rule\": \"cpp:S3230\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Do not use the constructor's initializer list for data member \\\"TR\\\". Use the in-class initializer instead.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:15+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMu\", \"rule\": \"cpp:S3230\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Do not use the constructor's initializer list for data member \\\"Q\\\". Use the in-class initializer instead.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:19+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMv\", \"rule\": \"cpp:S3230\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Do not use the constructor's initializer list for data member \\\"S\\\". Use the in-class initializer instead.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:22+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMw\", \"rule\": \"cpp:S3230\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Do not use the constructor's initializer list for data member \\\"EI\\\". Use the in-class initializer instead.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:26+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMb\", \"rule\": \"cpp:S3229\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Reorder initializers to match the runtime order.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:48+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMc\", \"rule\": \"cpp:S3490\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Use \\\"=default\\\" instead of the default implementation of this special member functions.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:44+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMd\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:05:51+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
@@ -44,20 +63,34 @@
                                 "{\"key\": \"AX-caggikGDeAMJw-YMg\", \"rule\": \"cpp:S5566\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Change this raw for-loop to a range for-loop or an \\\"std::for_each\\\".\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:06:03+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMh\", \"rule\": \"cpp:S5566\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Change this raw for-loop to a range for-loop or an \\\"std::for_each\\\".\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:06:06+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMi\", \"rule\": \"cpp:S5566\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Change this raw for-loop to a range for-loop or an \\\"std::for_each\\\".\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:06:27+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
-                                "{\"key\": \"AX-caggikGDeAMJw-YMx\", \"rule\": \"cpp:S836\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:06:55+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
+                                "{\"key\": \"AX-caggikGDeAMJw-YMx\", \"rule\": \"cpp:S836\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:06:55+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMy\", \"rule\": \"cpp:S836\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:06:59+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YM1\", \"rule\": \"cpp:S836\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YM2\", \"rule\": \"cpp:S836\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMX\", \"rule\": \"cpp:S5276\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"implicit conversion loses integer precision: 'std::basic_string<char>::size_type' (aka 'unsigned long') to 'int'\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMq\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YM3\", \"rule\": \"cpp:S836\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YM4\", \"rule\": \"cpp:S836\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMr\", \"rule\": \"cpp:S5566\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Change this raw for-loop to a range for-loop or an \\\"std::for_each\\\".\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T10:43:56+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
                             ],
-                            "wontfix": [],
+                            "wontfix": [
+                                "{\"key\": \"AX-caggikGDeAMJw-YMm\", \"rule\": \"cpp:S1238\", \"status\": \"RESOLVED\", \"resolution\": \"WONTFIX\", \"severity\": \"MAJOR\", \"message\": \"Pass expensive to copy object \\\"t\\\" by reference to const.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:07:32+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
+                            ],
                             "fixed": [
                                 "{\"key\": \"AX-caggikGDeAMJw-YMZ\", \"rule\": \"cpp:S4963\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"CRITICAL\", \"message\": \"Remove this class' copy constructor so that the class follows the rule of Zero.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:10:25+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMW\", \"rule\": \"cpp:S1117\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"MAJOR\", \"message\": \"declaration shadows a field of 'AFN'\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:08:26+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMj\", \"rule\": \"cpp:S5817\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"MAJOR\", \"message\": \"This function should be declared \\\"const\\\".\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:08:24+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMk\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:08:21+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
-                                "{\"key\": \"AX-caggikGDeAMJw-YMn\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:11:56+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}"
+                                "{\"key\": \"AX-caggikGDeAMJw-YMn\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:11:56+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMz\", \"rule\": \"cpp:S836\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:09:39+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMo\", \"rule\": \"cpp:S1238\", \"status\": \"RESOLVED\", \"resolution\": \"FIXED\", \"severity\": \"MAJOR\", \"message\": \"Pass expensive to copy object \\\"supp\\\" by reference to const.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:09:41+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
                             ],
                             "false_positive": [
                                 "{\"key\": \"AX-caggikGDeAMJw-YMY\", \"rule\": \"cpp:S3624\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"CRITICAL\", \"message\": \"Explicitly define or delete the missing destructor and copy assignment operator so that they will not be implicitly provided.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:10:35+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
                                 "{\"key\": \"AX-caggikGDeAMJw-YMV\", \"rule\": \"cpp:S1117\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"MAJOR\", \"message\": \"declaration shadows a field of 'AFN'\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:08:34+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
-                                "{\"key\": \"AX-caggikGDeAMJw-YMl\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:08:17+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}"
+                                "{\"key\": \"AX-caggikGDeAMJw-YMl\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:08:17+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YM0\", \"rule\": \"cpp:S836\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"MAJOR\", \"message\": \"1st function call argument is an uninitialized value\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"BUG\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:09:35+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-caggikGDeAMJw-YMp\", \"rule\": \"cpp:SingleDeclarationPerStatement\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"MINOR\", \"message\": \"Define each identifier in a dedicated statement.\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-18T10:43:27+0100\", \"updateDate\": \"2022-03-18T11:09:51+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
                             ],
                             "removed": []
                         }
@@ -69,10 +102,10 @@
                     "branch-name": "master",
                     "date-Last-Analysis": "2022-03-17T12:06:21+0100",
                     "unresolved-issues": {
-                        "total": 2,
+                        "total": 3,
                         "issues-details": {
                             "category": {
-                                "code_smell": 2,
+                                "code_smell": 3,
                                 "Bug": 0,
                                 "vulerability": 0,
                                 "security_hostpost": 0
@@ -82,7 +115,7 @@
                                 "MINOR": 0,
                                 "INFO": 0,
                                 "BLOCKER": 0,
-                                "CRITICAL": 1
+                                "CRITICAL": 2
                             }
                         }
                     }
@@ -95,6 +128,25 @@
                         "issues": {
                             "unresolved": [
                                 "{\"key\": \"AX-XjvCA8MRnigXEWhoy\", \"rule\": \"cpp:S1854\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Value stored to 'num' during its initialization is never read\", \"author\": \"aarouche2016@gmail.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-17T12:06:21+0100\", \"updateDate\": \"2022-03-17T18:05:17+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}"
+                            ],
+                            "wontfix": [],
+                            "fixed": [
+                                "{\"key\": \"AX-XWccjrNErWKEcIS01\", \"rule\": \"cpp:S6004\", \"status\": \"CLOSED\", \"resolution\": \"FIXED\", \"severity\": \"MINOR\", \"message\": \"Use the init-statement to declare \\\"num\\\" inside the if statement.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T11:57:59+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-XWccjrNErWKEcIS02\", \"rule\": \"cpp:S1862\", \"status\": \"CLOSED\", \"resolution\": \"FIXED\", \"severity\": \"MAJOR\", \"message\": \"This branch can not be reached because the condition duplicates a previous condition in the same sequence of \\\"if/else if\\\" statements\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"BUG\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T12:06:21+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-XWccjrNErWKEcIS03\", \"rule\": \"cpp:S4962\", \"status\": \"CLOSED\", \"resolution\": \"FIXED\", \"severity\": \"CRITICAL\", \"message\": \"Use the \\\"nullptr\\\" literal.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T12:06:21+0100\", \"components\": [], \"tags\": [], \"comments\": []}",
+                                "{\"key\": \"AX-XWccjrNErWKEcIS04\", \"rule\": \"cpp:S1116\", \"status\": \"CLOSED\", \"resolution\": \"FIXED\", \"severity\": \"MINOR\", \"message\": \"Remove this empty statement.\", \"author\": \"geoffray.adde@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2020-02-03T18:08:43+0100\", \"updateDate\": \"2022-03-17T12:06:21+0100\", \"components\": [], \"tags\": [], \"comments\": []}"
+                            ],
+                            "false_positive": [],
+                            "removed": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX-XYzyh4htFjYcVApkp",
+                        "file_key": "linux-sonar-test:src/hello.cpp",
+                        "file_name": "hello.cpp",
+                        "issues": {
+                            "unresolved": [
+                                "{\"key\": \"AX-XYz4I4htFjYcVApkq\", \"rule\": \"cpp:S1003\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Remove this using-directive.\", \"author\": \"\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2022-03-17T11:18:20+0100\", \"updateDate\": \"2022-03-17T18:05:14+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
                             ],
                             "wontfix": [],
                             "fixed": [],
@@ -113,61 +165,6 @@
                             "wontfix": [],
                             "fixed": [],
                             "false_positive": [],
-                            "removed": []
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "project_name": "linux-autotools-gh-actions-sc",
-        "details": [
-            {
-                "summary_informations": {
-                    "branch-name": "main",
-                    "date-Last-Analysis": "2022-03-11T13:52:06+0100",
-                    "unresolved-issues": {
-                        "total": 4,
-                        "issues-details": {
-                            "category": {
-                                "code_smell": 3,
-                                "Bug": 1,
-                                "vulerability": 0,
-                                "security_hostpost": 0
-                            },
-                            "severity": {
-                                "MAJOR": 2,
-                                "MINOR": 1,
-                                "INFO": 0,
-                                "BLOCKER": 0,
-                                "CRITICAL": 1
-                            }
-                        }
-                    }
-                },
-                "information_per_file": [
-                    {
-                        "file_uuid": "AX9vlR2h1T4myP5e-Jjg",
-                        "file_key": "ayoubarouche_linux-autotools-gh-actions-sc:src/main.cpp",
-                        "file_name": "main.cpp",
-                        "issues": {
-                            "unresolved": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjq\", \"rule\": \"cpp:S2259\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Dereference of null pointer (loaded from variable 'argv')\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"BUG\", \"creationDate\": \"2021-06-14T18:15:09+0200\", \"updateDate\": \"2022-03-11T09:35:51+0100\", \"components\": [], \"tags\": [\"update\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjm\", \"rule\": \"cpp:S106\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-15T10:31:16+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjn\", \"rule\": \"cpp:S4962\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"CRITICAL\", \"message\": \"Use the \\\"nullptr\\\" literal.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-15T10:31:11+0100\", \"components\": [], \"tags\": [\"security\", \"update\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjo\", \"rule\": \"cpp:S1116\", \"status\": \"OPEN\", \"resolution\": null, \"severity\": \"MINOR\", \"message\": \"Remove this empty statement.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-11T10:14:30+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
-                            ],
-                            "wontfix": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjj\", \"rule\": \"cpp:S106\", \"status\": \"RESOLVED\", \"resolution\": \"WONTFIX\", \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-14T11:27:44+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}",
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjp\", \"rule\": \"cpp:S106\", \"status\": \"RESOLVED\", \"resolution\": \"WONTFIX\", \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-14T11:25:21+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
-                            ],
-                            "fixed": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jji\", \"rule\": \"cpp:S1862\", \"status\": \"CLOSED\", \"resolution\": \"FIXED\", \"severity\": \"MAJOR\", \"message\": \"This branch can not be reached because the condition duplicates a previous condition in the same sequence of \\\"if/else if\\\" statements\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"BUG\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-11T09:46:54+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
-                            ],
-                            "false_positive": [
-                                "{\"key\": \"AX9vlR8A1T4myP5e-Jjk\", \"rule\": \"cpp:S106\", \"status\": \"RESOLVED\", \"resolution\": \"FALSE-POSITIVE\", \"severity\": \"MAJOR\", \"message\": \"Replace this usage of \\\"std::cout\\\" by a logger.\", \"author\": \"arseniy.zaostrovnykh@sonarsource.com\", \"type\": \"CODE_SMELL\", \"creationDate\": \"2021-06-14T17:38:44+0200\", \"updateDate\": \"2022-03-14T17:10:12+0100\", \"components\": [], \"tags\": [\"security\"], \"comments\": []}"
-                            ],
                             "removed": []
                         }
                     }

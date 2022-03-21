@@ -1,5 +1,6 @@
 {   
     "sonarqube-url":"https://sonarcloud.io/",
+    "output-filename":"lear_corporation",
     "authentication" : {
             
             "username" :"aroucheayoub",
@@ -8,13 +9,8 @@
     },
 
     "projects":[
-        {   "project-key":"ayoubarouche_linux-autotools-gh-actions-sc",
-            "branches":[
-                {
-                    "branch-name":"main",
-                    "issues":["update","security" ]
-                }
-            ]
+        {   "project-key":"linux-sonar-test"
+
         }
 
     ]
