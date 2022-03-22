@@ -1,6 +1,7 @@
 import json
 from sys import stdin
 import sys
+import os
 from unittest import expectedFailure
 from csvgenerator.generatetoexcel import ExcelFormatter
 from json_generator.processing.issue_processing.parsing_component import parse_list_json_issues_to_list_json_objects
@@ -11,6 +12,14 @@ import argparse
 parser = argparse.ArgumentParser(description="process some integers")
 
 parser.add_argument("-f","--file",metavar="", required=False , dest="file", help="insert the sonarqube server url ")
+#get the output files direcotry 
+relative_path = "sonarqube-reports/"
+
+
+# get the script file : 
+
+script_dir = os.path.dirname(__file__)
+
 
 args = parser.parse_args()
 json_file = None
@@ -31,10 +40,15 @@ else:
 
 for project in data :
     project_name= project["project_name"]
+    output = relative_path+project_name+'/'
+    abs_file_path = os.path.join(script_dir ,output)
+    is_exist = os.path.exists(abs_file_path)
+    if not is_exist:
+        os.makedirs(abs_file_path)
     # for the pdf : 
     pdf = PdfFormatter('P', 'mm' , 'Letter')
     # for excel :
-    excel = ExcelFormatter(project_name,None,3,0)
+    excel = ExcelFormatter(abs_file_path+project_name,None,3,0)
     pdf.set_auto_page_break(
         auto=True , margin=15
     )
@@ -88,7 +102,9 @@ for project in data :
             pdf.ln(20)
         #swl wach najotiw les tags tahoma ola blach 
     excel.save_excel()
-    pdf.output(project_name+'.pdf')
 
+
+    pdf.output(abs_file_path+project_name+'.pdf')
+    pdf.close()
 
 #
