@@ -25,6 +25,16 @@ class ExcelFormatter:
 
     def generate_default_format(self):
 
+        #for the branch title format : 
+        branch_title_format = self.book.add_format()
+        branch_title_format.set_border(1)
+        branch_title_format.set_bg_color("#F5DEB3") 
+        branch_title_format.set_size(16)
+        branch_title_format.set_align("center")
+        branch_title_format.set_text_wrap()
+        branch_title_format.set_align('center')
+        branch_title_format.set_align('vcenter')
+        branch_title_format.set_bold(True)
         #for the file title format : 
         file_title_format = self.book.add_format()
         file_title_format.set_border(1)
@@ -56,7 +66,18 @@ class ExcelFormatter:
         issue_details_format = self.book.add_format()
         issue_details_format.set_bg_color("#bcf2a5")
         issue_details_format.set_border(1)
-        issue_details_format.set_text_wrap(True)
+        issue_details_format.set_text_wrap()
+        issue_details_format.set_align('center')
+        issue_details_format.set_align('vcenter')
+
+        #for the summary details format 
+
+        summary_details_format = self.book.add_format()
+        summary_details_format.set_bg_color("#bcf2a5")
+        summary_details_format.set_border(1)
+        summary_details_format.set_text_wrap()
+        summary_details_format.set_align('center')
+        summary_details_format.set_align('vcenter')
 
         # for the issue infos format : 
 
@@ -82,7 +103,9 @@ class ExcelFormatter:
                     "file_details_format" : file_details_format,
                     "issue_details_format" : issue_details_format,
                     "issue_infos_format" :issue_infos_format , 
-                    "issue_title_format" :issue_title_format
+                    "issue_title_format" :issue_title_format,
+                    "branch_title_format":branch_title_format,
+                    "summary_details_format":summary_details_format
                     }
 
     def add_sheet(self,branch_name = None):
@@ -193,6 +216,49 @@ class ExcelFormatter:
                 new_current_row +=8
         self.current_column+=4
         self.current_row-=1
+
+    
+    def branch_body(self,json_file):
+        if self.sheet:
+    #add branch column
+            branch_name=json_file["branch-name"]
+            # self.current_row+=2
+            self.sheet.merge_range(self.current_row,self.current_column,self.current_row+8,self.current_column,branch_name,self.formats["branch_title_format"])
+
+            self.sheet.write(self.current_row+8,self.current_column+1,"Total",self.formats["file_header_format"])
+            self.sheet.merge_range(self.current_row+8 , self.current_column+2 , self.current_row+8 , self.current_column+4 , json_file["unresolved-issues"]["total"],self.formats["file_header_format"])
+            
+            #add last-anaysis-date
+            self.sheet.merge_range(self.current_row,self.current_column+1,self.current_row,self.current_column+2,"LastAnalysisDate",self.formats["issue_infos_format"])
+            self.sheet.merge_range(self.current_row,self.current_column+3,self.current_row,self.current_column+4,json_file["date-Last-Analysis"],self.formats["issue_infos_format"])
+            self.sheet.set_column(self.current_column , self.current_column+5 , len("date-Last-Analysis"))
+            # self.sheet.set_column(self.current_column-2 , self.current_column+7 , len(json_file["date-Last-Analysis"]))
+
+            #Add category table
+            dict_key1=json_file["unresolved-issues"]["issues-details"]["category"]
+            dict_key2=json_file["unresolved-issues"]["issues-details"]["severity"]
+            self.sheet.merge_range(self.current_row+1 , self.current_column+1 , self.current_row+1 , self.current_column+4 , "Summary Information",self.formats["file_title_format"])
+            i=3
+            for k in dict_key1.keys():
+
+                self.sheet.write(self.current_row+i,self.current_column+1,k,self.formats["summary_details_format"])
+                self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
+                i=i+1
+            
+            self.sheet.merge_range(self.current_row+6 , self.current_column+1 , self.current_row+7 , self.current_column+1 ,"security_hostpost",self.formats["summary_details_format"])
+            self.sheet.merge_range(self.current_row+6 , self.current_column+2 , self.current_row+7 , self.current_column+2 ,dict_key1["security_hostpost"],self.formats["summary_details_format"])
+            
+            self.sheet.merge_range(self.current_row+2 , self.current_column+1 , self.current_row+2 , self.current_column+2 , "Category",self.formats["issue_title_format"])
+            self.sheet.merge_range(self.current_row+2 , self.current_column+3 , self.current_row+2, self.current_column+4 , "Severity",self.formats["issue_title_format"])
+
+            j=3
+            for k in dict_key2.keys():
+                self.sheet.write(self.current_row+j,self.current_column+3,k,self.formats["summary_details_format"])
+                self.sheet.write(self.current_row+j,self.current_column+4,dict_key2[k],self.formats["summary_details_format"])
+                j=j+1
+
+            self.current_row+=1
+            self.current_column+=6
     def save_excel(self):
         self.book.close()
 

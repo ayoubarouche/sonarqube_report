@@ -34,7 +34,7 @@ for project in data :
     # for the pdf : 
     pdf = PdfFormatter('P', 'mm' , 'Letter')
     # for excel :
-    excel = ExcelFormatter(project_name)
+    excel = ExcelFormatter(project_name,None,3,0)
     pdf.set_auto_page_break(
         auto=True , margin=15
     )
@@ -57,6 +57,7 @@ for project in data :
         else :
             pdf.second_page(branch["summary_informations"])
         pdf.summaryHeader(title='General view of the files')
+        excel.branch_body(branch["summary_informations"])
         for f in branch["information_per_file"]:
             file = Component(key=None)
             file.parse_jsoncomponent_from_output_file(f)

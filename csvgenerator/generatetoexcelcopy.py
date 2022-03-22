@@ -62,7 +62,9 @@ class ExcelFormatter:
         issue_details_format = self.book.add_format()
         issue_details_format.set_bg_color("#bcf2a5")
         issue_details_format.set_border(1)
-        issue_details_format.set_text_wrap(True)
+        issue_details_format.set_text_wrap()
+        issue_details_format.set_align('center')
+        issue_details_format.set_align('vcenter')
 
         # for the issue infos format : 
 
@@ -88,7 +90,8 @@ class ExcelFormatter:
                     "file_details_format" : file_details_format,
                     "issue_details_format" : issue_details_format,
                     "issue_infos_format" :issue_infos_format , 
-                    "issue_title_format" :issue_title_format
+                    "issue_title_format" :issue_title_format,
+                    "branch_title_format":branch_title_format
                     }
 
     def add_sheet(self,branch_name = None):
@@ -197,37 +200,43 @@ class ExcelFormatter:
                 new_current_row +=8
         self.current_column+=4
 
-    def branch_body(self,sheet,current_row,current_column,json_file,formats = None):
+    def branch_body(self,json_file):
+        if self.sheet:
     #add branch column
-        branch_name=json_file["branch-name"]
-        self.sheet.merge_range(current_row-2,current_column,current_row+6,current_column,branch_name,formats["branch_title_format"])
+            branch_name=json_file["branch-name"]
+            self.sheet.merge_range(self.current_row-2,self.current_column,self.current_row+6,self.current_column,branch_name,self.formats["branch_title_format"])
 
-        self.sheet.write(current_row+6,current_column+1,"Total",formats["file_header_format"])
-        self.sheet.merge_range(current_row+6 , current_column+2 , current_row+6 , current_column+4 , json_file["unresolved-issues"]["total"],formats["file_header_format"])
-        
-        #add last-anaysis-date
-        self.sheet.merge_range(current_row-2,current_column+1,current_row-2,current_column+2,"LastAnalysisDate",formats["issue_infos_format"])
-        self.sheet.merge_range(current_row-2,current_column+3,current_row-2,current_column+4,json_file["date-Last-Analysis"],formats["issue_infos_format"])
-        self.sheet.set_column(current_column-2 , current_column+2 , len(json_file["date-Last-Analysis"]))
-        #Add category table
-        dict_key1=json_file["unresolved-issues"]["issues-details"]["category"]
-        dict_key2=json_file["unresolved-issues"]["issues-details"]["severity"]
-        self.sheet.merge_range(current_row-1 , current_column+1 , current_row-1 , current_column+4 , "Summary Information",formats["file_title_format"])
-        i=1
-        for k in dict_key1.keys():
+            self.sheet.write(self.current_row+6,self.current_column+1,"Total",self.formats["file_header_format"])
+            self.sheet.merge_range(self.current_row+6 , self.current_column+2 , self.current_row+6 , self.current_column+4 , json_file["unresolved-issues"]["total"],self.formats["file_header_format"])
+            
+            #add last-anaysis-date
+            self.sheet.merge_range(self.current_row-2,self.current_column+1,self.current_row-2,self.current_column+2,"LastAnalysisDate",self.formats["issue_infos_format"])
+            self.sheet.merge_range(self.current_row-2,self.current_column+3,self.current_row-2,self.current_column+4,json_file["date-Last-Analysis"],self.formats["issue_infos_format"])
+            self.sheet.set_column(self.current_column , self.current_column , len("date-Last-Analysis"))
+            self.sheet.set_column(self.current_column-2 , self.current_column+4 , len("date-Last-Analysis"))
 
-            self.sheet.write(current_row+i,current_column+1,k,formats["issue_details_format"])
-            self.sheet.write(current_row+i,current_column+2,dict_key1[k],formats["issue_details_format"])
-            i=i+1
-    
-        self.sheet.merge_range(current_row , current_column+1 , current_row , current_column+2 , "Category",formats["issue_title_format"])
-        self.sheet.merge_range(current_row , current_column+3 , current_row , current_column+4 , "Severity",formats["issue_title_format"])
+            #Add category table
+            dict_key1=json_file["unresolved-issues"]["issues-details"]["category"]
+            dict_key2=json_file["unresolved-issues"]["issues-details"]["severity"]
+            self.sheet.merge_range(self.current_row-1 , self.current_column+1 , self.current_row-1 , self.current_column+4 , "Summary Information",self.formats["file_title_format"])
+            i=1
+            for k in dict_key1.keys():
 
-        j=1
-        for k in dict_key2.keys():
-            self.sheet.write(current_row+j,current_column+3,k,formats["issue_details_format"])
-            self.sheet.write(current_row+j,current_column+4,dict_key2[k],formats["issue_details_format"])
-            j=j+1
+                self.sheet.write(self.current_row+i,self.current_column+1,k,self.formats["issue_details_format"])
+                self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["issue_details_format"])
+                i=i+1
+            
+            self.sheet.merge_range(self.current_row+4 , self.current_column+1 , self.current_row+5 , self.current_column+1 ,"security_hostpost",self.formats["issue_details_format"])
+            self.sheet.merge_range(self.current_row+4 , self.current_column+2 , self.current_row+5 , self.current_column+2 ,dict_key1["security_hostpost"],self.formats["issue_details_format"])
+            
+            self.sheet.merge_range(self.current_row , self.current_column+1 , self.current_row , self.current_column+2 , "Category",self.formats["issue_title_format"])
+            self.sheet.merge_range(self.current_row , self.current_column+3 , self.current_row , self.current_column+4 , "Severity",self.formats["issue_title_format"])
+
+            j=1
+            for k in dict_key2.keys():
+                self.sheet.write(self.current_row+j,self.current_column+3,k,self.formats["issue_details_format"])
+                self.sheet.write(self.current_row+j,self.current_column+4,dict_key2[k],self.formats["issue_details_format"])
+                j=j+1
 
 
     def save_excel(self):
