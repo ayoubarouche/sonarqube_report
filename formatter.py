@@ -38,7 +38,7 @@ for project in data :
     pdf.set_auto_page_break(
         auto=True , margin=15
     )
-    print('the pdf is : '+str(pdf.w))
+    print('generating pdf and excel files for the project : '+project_name)
 
 
     #print data for each file : 
