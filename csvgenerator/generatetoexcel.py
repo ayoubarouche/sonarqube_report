@@ -5,13 +5,16 @@ import xlsxwriter
 class ExcelFormatter:
     sheet = None
     book = None
+    default_row = 0
+    default_column = 0
     def __init__(self,project_name,workbook=None,current_row = 0 , current_column = 0 , formats = None  ) :
         self.workbook = workbook
         if not self.book:
             self.book = xlsxwriter.Workbook(project_name+".xlsx")
         self.current_row = current_row 
         self.current_column = current_column
-
+        self.default_row = self.current_row 
+        self.default_column = self.current_column
         # check if the user inserted the formats or not : 
 
         #if the user inserted the formats 
@@ -84,6 +87,8 @@ class ExcelFormatter:
 
     def add_sheet(self,branch_name = None):
         self.sheet = self.book.add_worksheet(branch_name)
+        self.current_column = self.default_column
+        self.current_row = self.default_row
     def add_issue(self , current_row , current_column , issue ):
 
     #add an author : 
@@ -171,7 +176,7 @@ class ExcelFormatter:
 
         # false positive issues :
         if false_positive_isssues:
-            self.sheet.merge_range(new_current_row , self.current_column , new_current_row , self.current_column+1 , "False Positive issues")
+            self.sheet.merge_range(new_current_row , self.current_column , new_current_row , self.current_column+1 , "False Positive issues",self.formats["issue_title_format"])
             self.sheet.set_row(new_current_row ,height = 25)
             new_current_row+=1
             for issue in false_positive_isssues:
@@ -180,13 +185,14 @@ class ExcelFormatter:
 
         #for removed issues :
         if removed_issues:
-            self.sheet.merge_range(new_current_row , self.current_column , new_current_row , self.current_column+1 , "Removed issues")
+            self.sheet.merge_range(new_current_row , self.current_column , new_current_row , self.current_column+1 , "Removed issues",self.formats["issue_title_format"])
            
             new_current_row+=1
             for issue in removed_issues:
                 self.add_issue( current_row=new_current_row , current_column=self.current_column , issue = issue)
                 new_current_row +=8
         self.current_column+=4
+        self.current_row-=1
     def save_excel(self):
         self.book.close()
 

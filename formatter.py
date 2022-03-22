@@ -1,6 +1,8 @@
 import json
 from sys import stdin
 import sys
+from unittest import expectedFailure
+from csvgenerator.generatetoexcel import ExcelFormatter
 from json_generator.processing.issue_processing.parsing_component import parse_list_json_issues_to_list_json_objects
 from pdf_generator.Body import PdfFormatter
 from json_generator.models.issue import Component
@@ -29,8 +31,10 @@ else:
 
 for project in data :
     project_name= project["project_name"]
+    # for the pdf : 
     pdf = PdfFormatter('P', 'mm' , 'Letter')
-
+    # for excel :
+    excel = ExcelFormatter(project_name)
     pdf.set_auto_page_break(
         auto=True , margin=15
     )
@@ -45,6 +49,8 @@ for project in data :
 
     
     for branch in project["details"]:
+        #create a new sheet in the excel project name : 
+        excel.add_sheet(branch_name=branch["summary_informations"]["branch-name"])
         i=1
         if i==1:
             pdf.second_page(branch["summary_informations"],True)
@@ -72,13 +78,15 @@ for project in data :
             fixed_issues = parse_list_json_issues_to_list_json_objects(fixed)
             false_positive_issues = parse_list_json_issues_to_list_json_objects(false_positive)
             removed_issues = parse_list_json_issues_to_list_json_objects(removed)
-            
+            #add to the pdf : 
             pdf.TitlesHeader(title='File Number : '+str(i))
             pdf.add_file(file , unresolved_issues=unresolved_issues,wontfix_issues=wontfix_issues ,fixed_issues=fixed_issues , false_positive_isssues=false_positive_issues , removed_issues=removed_issues)
+            # add to excel : 
+            excel.add_file(file , unresolved_issues=unresolved_issues,wontfix_issues=wontfix_issues ,fixed_issues=fixed_issues , false_positive_isssues=false_positive_issues , removed_issues=removed_issues)
             i=i+1
             pdf.ln(20)
         #swl wach najotiw les tags tahoma ola blach 
-
+    excel.save_excel()
     pdf.output(project_name+'.pdf')
 
 
