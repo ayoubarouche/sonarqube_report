@@ -83,6 +83,8 @@ class Issue:
             self.tags=json_str['tags']
         if 'comments' in json_str:
             self.comments=json_str['comments']
+        if 'line' in json_str:
+            self.line = json_str['line']
 
 
 

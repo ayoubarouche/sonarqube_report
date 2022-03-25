@@ -47,7 +47,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 14
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMs",
@@ -64,7 +65,8 @@
                                     "tags": [
                                         "security"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 14
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMt",
@@ -81,7 +83,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 14
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMu",
@@ -99,7 +102,8 @@
                                         "security",
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 14
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMb",
@@ -116,7 +120,8 @@
                                     "tags": [
                                         "security"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 17
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMc",
@@ -133,7 +138,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 17
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMd",
@@ -150,7 +156,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 22
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMe",
@@ -168,7 +175,8 @@
                                         "security",
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 30
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMf",
@@ -185,7 +193,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 39
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMg",
@@ -202,7 +211,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 49
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMh",
@@ -219,7 +229,8 @@
                                     "tags": [
                                         "security"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 58
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMi",
@@ -236,7 +247,8 @@
                                     "tags": [
                                         "security"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 77
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMx",
@@ -253,7 +265,8 @@
                                     "tags": [
                                         "security"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 111
                                 }
                             ],
                             "wontfix": [],
@@ -274,7 +287,8 @@
                                         "security",
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 6
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMW",
@@ -291,7 +305,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 90
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMj",
@@ -308,7 +323,8 @@
                                     "tags": [
                                         "security"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 90
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMk",
@@ -326,7 +342,8 @@
                                         "security",
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 91
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMn",
@@ -343,7 +360,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 115
                                 }
                             ],
                             "false_positive": [
@@ -362,7 +380,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 6
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMV",
@@ -379,7 +398,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 90
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMl",
@@ -396,7 +416,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 92
                                 }
                             ],
                             "removed": []
@@ -449,7 +470,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 7
                                 }
                             ],
                             "wontfix": [],
@@ -479,7 +501,8 @@
                                     "tags": [
                                         "update"
                                     ],
-                                    "comments": []
+                                    "comments": [],
+                                    "line": 2
                                 }
                             ],
                             "wontfix": [],
