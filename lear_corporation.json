@@ -7,25 +7,84 @@
                     "branch-name": "debug_test",
                     "date-Last-Analysis": "2022-03-17T12:06:21+0100",
                     "unresolved-issues": {
-                        "total": 13,
+                        "total": 24,
                         "issues-details": {
                             "category": {
-                                "code_smell": 12,
-                                "Bug": 1,
+                                "code_smell": 18,
+                                "Bug": 6,
                                 "vulerability": 0,
                                 "security_hostpost": 0
                             },
                             "severity": {
-                                "MAJOR": 4,
-                                "MINOR": 8,
+                                "MAJOR": 11,
+                                "MINOR": 11,
                                 "INFO": 0,
                                 "BLOCKER": 0,
-                                "CRITICAL": 1
+                                "CRITICAL": 2
                             }
                         }
                     }
                 },
                 "information_per_file": [
+                    {
+                        "file_uuid": "AX-XkczW4htFjYcVB7d2",
+                        "file_key": "linux-sonar-test:src/main.cpp",
+                        "file_name": "main.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX-XlTPZ7GdITTxL2xO2",
+                                    "rule": "cpp:S4962",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "CRITICAL",
+                                    "message": "Use the \"nullptr\" literal.",
+                                    "author": "geoffray.adde@sonarsource.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-17T12:13:14+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 21
+                                },
+                                {
+                                    "key": "AX-XlTPZ7GdITTxL2xO3",
+                                    "rule": "cpp:S1116",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MINOR",
+                                    "message": "Remove this empty statement.",
+                                    "author": "geoffray.adde@sonarsource.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-17T12:13:14+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 22
+                                }
+                            ],
+                            "wontfix": [
+                                {
+                                    "key": "AX-XlTPZ7GdITTxL2xO1",
+                                    "rule": "cpp:S1862",
+                                    "status": "RESOLVED",
+                                    "resolution": "WONTFIX",
+                                    "severity": "MAJOR",
+                                    "message": "This branch can not be reached because the condition duplicates a previous condition in the same sequence of \"if/else if\" statements",
+                                    "author": "geoffray.adde@sonarsource.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-17T12:13:14+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 14
+                                }
+                            ]
+                        }
+                    },
                     {
                         "file_uuid": "AX-cagafkGDeAMJw-YMT",
                         "file_key": "linux-sonar-test:src/TP_2.cpp",
@@ -46,24 +105,6 @@
                                     "components": [],
                                     "tags": [
                                         "update"
-                                    ],
-                                    "comments": [],
-                                    "line": 14
-                                },
-                                {
-                                    "key": "AX-caggikGDeAMJw-YMs",
-                                    "rule": "cpp:S3230",
-                                    "status": "OPEN",
-                                    "resolution": null,
-                                    "severity": "MAJOR",
-                                    "message": "Do not use the constructor's initializer list for data member \"EF\". Use the in-class initializer instead.",
-                                    "author": "aarouche2016@gmail.com",
-                                    "type": "CODE_SMELL",
-                                    "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:05:12+0100",
-                                    "components": [],
-                                    "tags": [
-                                        "security"
                                     ],
                                     "comments": [],
                                     "line": 14
@@ -100,6 +141,42 @@
                                     "components": [],
                                     "tags": [
                                         "security",
+                                        "update"
+                                    ],
+                                    "comments": [],
+                                    "line": 14
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMv",
+                                    "rule": "cpp:S3230",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "Do not use the constructor's initializer list for data member \"S\". Use the in-class initializer instead.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T11:05:22+0100",
+                                    "components": [],
+                                    "tags": [
+                                        "update"
+                                    ],
+                                    "comments": [],
+                                    "line": 14
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMw",
+                                    "rule": "cpp:S3230",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "Do not use the constructor's initializer list for data member \"EI\". Use the in-class initializer instead.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T11:05:26+0100",
+                                    "components": [],
+                                    "tags": [
                                         "update"
                                     ],
                                     "comments": [],
@@ -267,160 +344,174 @@
                                     ],
                                     "comments": [],
                                     "line": 111
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMy",
+                                    "rule": "cpp:S836",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1st function call argument is an uninitialized value",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T11:06:59+0100",
+                                    "components": [],
+                                    "tags": [
+                                        "update"
+                                    ],
+                                    "comments": [],
+                                    "line": 111
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YM1",
+                                    "rule": "cpp:S836",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1st function call argument is an uninitialized value",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 146
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YM2",
+                                    "rule": "cpp:S836",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1st function call argument is an uninitialized value",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 146
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMX",
+                                    "rule": "cpp:S5276",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "implicit conversion loses integer precision: 'std::basic_string<char>::size_type' (aka 'unsigned long') to 'int'",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 146
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMq",
+                                    "rule": "cpp:S1659",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MINOR",
+                                    "message": "Define each identifier in a dedicated statement.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 152
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YM3",
+                                    "rule": "cpp:S836",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1st function call argument is an uninitialized value",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 167
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YM4",
+                                    "rule": "cpp:S836",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1st function call argument is an uninitialized value",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 167
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMr",
+                                    "rule": "cpp:S5566",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MINOR",
+                                    "message": "Change this raw for-loop to a range for-loop or an \"std::for_each\".",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-18T10:43:56+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 185
                                 }
                             ],
-                            "wontfix": [],
-                            "fixed": [
+                            "wontfix": [
                                 {
-                                    "key": "AX-caggikGDeAMJw-YMZ",
-                                    "rule": "cpp:S4963",
+                                    "key": "AX-caggikGDeAMJw-YMs",
+                                    "rule": "cpp:S3230",
                                     "status": "RESOLVED",
-                                    "resolution": "FIXED",
-                                    "severity": "CRITICAL",
-                                    "message": "Remove this class' copy constructor so that the class follows the rule of Zero.",
-                                    "author": "aarouche2016@gmail.com",
-                                    "type": "CODE_SMELL",
-                                    "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:10:25+0100",
-                                    "components": [],
-                                    "tags": [
-                                        "security",
-                                        "update"
-                                    ],
-                                    "comments": [],
-                                    "line": 6
-                                },
-                                {
-                                    "key": "AX-caggikGDeAMJw-YMW",
-                                    "rule": "cpp:S1117",
-                                    "status": "RESOLVED",
-                                    "resolution": "FIXED",
+                                    "resolution": "WONTFIX",
                                     "severity": "MAJOR",
-                                    "message": "declaration shadows a field of 'AFN'",
+                                    "message": "Do not use the constructor's initializer list for data member \"EF\". Use the in-class initializer instead.",
                                     "author": "aarouche2016@gmail.com",
                                     "type": "CODE_SMELL",
                                     "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:08:26+0100",
-                                    "components": [],
-                                    "tags": [
-                                        "update"
-                                    ],
-                                    "comments": [],
-                                    "line": 90
-                                },
-                                {
-                                    "key": "AX-caggikGDeAMJw-YMj",
-                                    "rule": "cpp:S5817",
-                                    "status": "RESOLVED",
-                                    "resolution": "FIXED",
-                                    "severity": "MAJOR",
-                                    "message": "This function should be declared \"const\".",
-                                    "author": "aarouche2016@gmail.com",
-                                    "type": "CODE_SMELL",
-                                    "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:08:24+0100",
+                                    "updateDate": "2022-03-25T21:06:21+0100",
                                     "components": [],
                                     "tags": [
                                         "security"
                                     ],
                                     "comments": [],
-                                    "line": 90
+                                    "line": 14
                                 },
                                 {
-                                    "key": "AX-caggikGDeAMJw-YMk",
-                                    "rule": "cpp:S1659",
+                                    "key": "AX-caggikGDeAMJw-YMm",
+                                    "rule": "cpp:S1238",
                                     "status": "RESOLVED",
-                                    "resolution": "FIXED",
-                                    "severity": "MINOR",
-                                    "message": "Define each identifier in a dedicated statement.",
-                                    "author": "aarouche2016@gmail.com",
-                                    "type": "CODE_SMELL",
-                                    "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:08:21+0100",
-                                    "components": [],
-                                    "tags": [
-                                        "security",
-                                        "update"
-                                    ],
-                                    "comments": [],
-                                    "line": 91
-                                },
-                                {
-                                    "key": "AX-caggikGDeAMJw-YMn",
-                                    "rule": "cpp:S1659",
-                                    "status": "RESOLVED",
-                                    "resolution": "FIXED",
-                                    "severity": "MINOR",
-                                    "message": "Define each identifier in a dedicated statement.",
-                                    "author": "aarouche2016@gmail.com",
-                                    "type": "CODE_SMELL",
-                                    "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:11:56+0100",
-                                    "components": [],
-                                    "tags": [
-                                        "update"
-                                    ],
-                                    "comments": [],
-                                    "line": 115
-                                }
-                            ],
-                            "false_positive": [
-                                {
-                                    "key": "AX-caggikGDeAMJw-YMY",
-                                    "rule": "cpp:S3624",
-                                    "status": "RESOLVED",
-                                    "resolution": "FALSE-POSITIVE",
-                                    "severity": "CRITICAL",
-                                    "message": "Explicitly define or delete the missing destructor and copy assignment operator so that they will not be implicitly provided.",
-                                    "author": "aarouche2016@gmail.com",
-                                    "type": "CODE_SMELL",
-                                    "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:10:35+0100",
-                                    "components": [],
-                                    "tags": [
-                                        "update"
-                                    ],
-                                    "comments": [],
-                                    "line": 6
-                                },
-                                {
-                                    "key": "AX-caggikGDeAMJw-YMV",
-                                    "rule": "cpp:S1117",
-                                    "status": "RESOLVED",
-                                    "resolution": "FALSE-POSITIVE",
+                                    "resolution": "WONTFIX",
                                     "severity": "MAJOR",
-                                    "message": "declaration shadows a field of 'AFN'",
+                                    "message": "Pass expensive to copy object \"t\" by reference to const.",
                                     "author": "aarouche2016@gmail.com",
                                     "type": "CODE_SMELL",
                                     "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:08:34+0100",
+                                    "updateDate": "2022-03-18T11:07:32+0100",
                                     "components": [],
-                                    "tags": [
-                                        "update"
-                                    ],
+                                    "tags": [],
                                     "comments": [],
-                                    "line": 90
-                                },
-                                {
-                                    "key": "AX-caggikGDeAMJw-YMl",
-                                    "rule": "cpp:S1659",
-                                    "status": "RESOLVED",
-                                    "resolution": "FALSE-POSITIVE",
-                                    "severity": "MINOR",
-                                    "message": "Define each identifier in a dedicated statement.",
-                                    "author": "aarouche2016@gmail.com",
-                                    "type": "CODE_SMELL",
-                                    "creationDate": "2022-03-18T10:43:27+0100",
-                                    "updateDate": "2022-03-18T11:08:17+0100",
-                                    "components": [],
-                                    "tags": [
-                                        "update"
-                                    ],
-                                    "comments": [],
-                                    "line": 92
+                                    "line": 114
                                 }
-                            ],
-                            "removed": []
+                            ]
                         }
                     }
                 ]
@@ -430,10 +521,10 @@
                     "branch-name": "master",
                     "date-Last-Analysis": "2022-03-17T12:06:21+0100",
                     "unresolved-issues": {
-                        "total": 2,
+                        "total": 3,
                         "issues-details": {
                             "category": {
-                                "code_smell": 2,
+                                "code_smell": 3,
                                 "Bug": 0,
                                 "vulerability": 0,
                                 "security_hostpost": 0
@@ -443,7 +534,7 @@
                                 "MINOR": 0,
                                 "INFO": 0,
                                 "BLOCKER": 0,
-                                "CRITICAL": 1
+                                "CRITICAL": 2
                             }
                         }
                     }
@@ -474,10 +565,35 @@
                                     "line": 7
                                 }
                             ],
-                            "wontfix": [],
-                            "fixed": [],
-                            "false_positive": [],
-                            "removed": []
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX-XYzyh4htFjYcVApkp",
+                        "file_key": "linux-sonar-test:src/hello.cpp",
+                        "file_name": "hello.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX-XYz4I4htFjYcVApkq",
+                                    "rule": "cpp:S1003",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "CRITICAL",
+                                    "message": "Remove this using-directive.",
+                                    "author": "",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-17T11:18:20+0100",
+                                    "updateDate": "2022-03-25T18:21:16+0100",
+                                    "components": [],
+                                    "tags": [
+                                        "security"
+                                    ],
+                                    "comments": [],
+                                    "line": 3
+                                }
+                            ],
+                            "wontfix": []
                         }
                     },
                     {
@@ -505,10 +621,7 @@
                                     "line": 2
                                 }
                             ],
-                            "wontfix": [],
-                            "fixed": [],
-                            "false_positive": [],
-                            "removed": []
+                            "wontfix": []
                         }
                     }
                 ]

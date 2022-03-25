@@ -9,13 +9,8 @@
     },
 
     "projects":[
-        {   "project-key":"linux-sonar-test",
-            "branches" : [
-                {
-                    "branch-name":"master",
-                    "issues":["update"]
-                }
-            ]
+        {   "project-key":"linux-sonar-test"
+
         }
 
     ]

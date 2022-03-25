@@ -27,33 +27,34 @@ def generate_json_for_file(file):
     #getting unresolved issues : 
     unresolved = get_unresolved_issues(issues)
     wontfix = get_issues_by_resolution(list_issues= issues , resolution = "WONTFIX")
-    fixed = get_issues_by_resolution(list_issues= issues , resolution = "FIXED")
-    false_positive = get_issues_by_resolution(list_issues= issues , resolution = "FALSE-POSITIVE")
-    removed = get_issues_by_resolution(list_issues= issues , resolution = "REMOVED")
+    #to add other type of issues  : 
+    # fixed = get_issues_by_resolution(list_issues= issues , resolution = "FIXED")
+    # false_positive = get_issues_by_resolution(list_issues= issues , resolution = "FALSE-POSITIVE")
+    # removed = get_issues_by_resolution(list_issues= issues , resolution = "REMOVED")
     unresolved_result = []
     wontfix_result = []
-    fixed_result = []
-    false_positive_result = []
-    removed_result = []
+
 
     for issue in unresolved:
 
         unresolved_result.append(parse_obj_to_json(issue))
     for issue in wontfix:
         wontfix_result.append(parse_obj_to_json(issue))
-    for issue in fixed:
-        fixed_result.append(parse_obj_to_json(issue))
-    for issue in false_positive:
-        false_positive_result.append(parse_obj_to_json(issue))
-    for issue in removed:
-        removed_result.append(parse_obj_to_json(issue))
+    #to add a new type of issues : 
+    # for issue in fixed:
+    #     fixed_result.append(parse_obj_to_json(issue))
+    # for issue in false_positive:
+    #     false_positive_result.append(parse_obj_to_json(issue))
+    # for issue in removed:
+    #     removed_result.append(parse_obj_to_json(issue))
     result = {}
 
     result["unresolved"] = unresolved_result
     result["wontfix"] = wontfix_result
-    result["fixed"] = fixed_result
-    result["false_positive"] = false_positive_result
-    result["removed"] = removed_result
+    #if you want to add a type of issues
+    # result["fixed"] = fixed_result
+    # result["false_positive"] = false_positive_result
+    # result["removed"] = removed_result
 
     return result
 

@@ -73,32 +73,32 @@ if __name__ == "__main__":
                 pdf.second_page(branch["summary_informations"])
             pdf.summaryHeader(title='General view of the files')
             excel.branch_body(branch["summary_informations"])
+            #check if title of the files already added : 
+            is_title_already_added = False
             for f in branch["information_per_file"]:
                 file = Component(key=None)
                 file.parse_jsoncomponent_from_output_file(f)
                 issues_json = f["issues"]
-
-                unresolved = list(issues_json["unresolved"])
+                unresolved,wontfix = None,None
+                if 'unresolved' in issues_json :
+                    unresolved = list(issues_json["unresolved"])
                 # print("the unresolved are : "+json.loads(str(unresolved[0]))["key"])
-
-                wontfix = list(issues_json["wontfix"])
-
-                fixed = list(issues_json["fixed"])
-
-                false_positive = list(issues_json["false_positive"])
-
-                removed = list(issues_json["removed"])
+                if 'wontfix' in issues_json:
+                    wontfix = list(issues_json["wontfix"])
 
                 unresolved_issues = parse_list_json_issues_to_list_json_objects(unresolved)
                 wontfix_issues = parse_list_json_issues_to_list_json_objects(wontfix)
-                fixed_issues = parse_list_json_issues_to_list_json_objects(fixed)
-                false_positive_issues = parse_list_json_issues_to_list_json_objects(false_positive)
-                removed_issues = parse_list_json_issues_to_list_json_objects(removed)
+                
                 #add to the pdf : 
                 pdf.TitlesHeader(title='File Number : '+str(i))
-                pdf.add_file(file , unresolved_issues=unresolved_issues,wontfix_issues=wontfix_issues ,fixed_issues=fixed_issues , false_positive_isssues=false_positive_issues , removed_issues=removed_issues)
+                pdf.add_file(file , unresolved_issues=unresolved_issues,wontfix_issues=wontfix_issues )
                 # add to excel : 
-                excel.add_file(file , unresolved_issues=unresolved_issues,wontfix_issues=wontfix_issues ,fixed_issues=fixed_issues , false_positive_isssues=false_positive_issues , removed_issues=removed_issues)
+                #choose the title to add : 
+                issue_titles = ['line','rule','status','resolution','severity','author','tags','comments']
+                if not is_title_already_added:
+                    excel.add_titles(issue_titles)
+                    is_title_already_added = True
+                excel.add_file(file ,issue_titles ,  unresolved_issues=unresolved,wontfix_issues=wontfix )
                 i=i+1
                 pdf.ln(20)
             #swl wach najotiw les tags tahoma ola blach 
