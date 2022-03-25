@@ -37,6 +37,7 @@ def generate_json_for_file(file):
     removed_result = []
 
     for issue in unresolved:
+
         unresolved_result.append(parse_obj_to_json(issue))
     for issue in wontfix:
         wontfix_result.append(parse_obj_to_json(issue))

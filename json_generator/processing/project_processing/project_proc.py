@@ -16,8 +16,8 @@ def show_error():
 
 #parse class object to json String 
 def parse_obj_to_json(class_obj):
-    jsonStr = json.dumps(class_obj.__dict__)
-    return jsonStr
+    return vars(class_obj)
+
 
 
 def append_to_jsonfile(data_filename,data):
