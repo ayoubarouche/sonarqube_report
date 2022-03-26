@@ -36,7 +36,8 @@ class Issue:
                  updateDate=None,
                  components=[], # the components that had the issue
                  tags=[],
-                 comments = []
+                 comments = [],
+                 line = None
                  ) : # tags of the componenet
         self.key = key 
         self.rule = rule 
@@ -51,6 +52,7 @@ class Issue:
         self.components = components 
         self.tags = tags
         self.comments = comments
+        self.line = line
         return
 
     def get_status(self):

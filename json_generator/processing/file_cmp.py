@@ -28,11 +28,18 @@ def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
     if not comp:
         return None
     for i in comp:
-        if i["qualifier"]=="FIL":
+        if i["qualifier"]=="FIL" :
                 
                 comp_object=Component(key=None)
                 comp_object.parse_jsoncomponent(i)
-                listofcomponent.append(comp_object)
+                already_exist = False
+                for comp in listofcomponent :
+                    if comp.key == comp_object.key:
+                        already_exist = True
+                        break
+                if not already_exist :     
+                    listofcomponent.append(comp_object)
+
        
     return listofcomponent
 

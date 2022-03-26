@@ -7,25 +7,2719 @@
                     "branch-name": "debug_test",
                     "date-Last-Analysis": "2022-03-17T12:06:21+0100",
                     "unresolved-issues": {
-                        "total": 24,
+                        "total": 142,
                         "issues-details": {
                             "category": {
-                                "code_smell": 18,
-                                "Bug": 6,
+                                "code_smell": 133,
+                                "Bug": 9,
                                 "vulerability": 0,
                                 "security_hostpost": 0
                             },
                             "severity": {
-                                "MAJOR": 11,
-                                "MINOR": 11,
+                                "MAJOR": 123,
+                                "MINOR": 13,
                                 "INFO": 0,
                                 "BLOCKER": 0,
-                                "CRITICAL": 2
+                                "CRITICAL": 6
                             }
                         }
                     }
                 },
                 "information_per_file": [
+                    {
+                        "file_uuid": "AX_DtEtU9zgb_uT7CfPC",
+                        "file_key": "linux-sonar-test:src/icalls/mscorlib/System.Globalization/Generated/CultureInfoTablesNet_4_0.h",
+                        "file_name": "CultureInfoTablesNet_4_0.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFTX9zgb_uT7CfV7",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "6 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtQ9zgb_uT7CfGS",
+                        "file_key": "linux-sonar-test:src/os/Win32/SocketImpl.h",
+                        "file_name": "SocketImpl.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtE5o9zgb_uT7CfVw",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "9 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC74",
+                        "file_key": "linux-sonar-test:src/host/ut_host/TextBufferTests.cpp",
+                        "file_name": "TextBufferTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVUwO77PmF6lBDOZ",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "28 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC76",
+                        "file_key": "linux-sonar-test:src/host/ut_host/ConsoleArgumentsTests.cpp",
+                        "file_name": "ConsoleArgumentsTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVU8O77PmF6lBDOa",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "76 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDIU",
+                        "file_key": "linux-sonar-test:src/renderer/gdi/precomp.h",
+                        "file_name": "precomp.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWHtO77PmF6lBDPC",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7B",
+                        "file_key": "linux-sonar-test:src/interactivity/onecore/BgfxEngine.hpp",
+                        "file_name": "BgfxEngine.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVQbO77PmF6lBDOH",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "3 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtQ9zgb_uT7CfGa",
+                        "file_key": "linux-sonar-test:src/os/Win32/SocketImpl.cpp",
+                        "file_name": "SocketImpl.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtE8Z9zgb_uT7CfVx",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "18 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC6e",
+                        "file_key": "linux-sonar-test:src/interactivity/win32/screenInfoUiaProvider.hpp",
+                        "file_name": "screenInfoUiaProvider.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVOPO77PmF6lBDOG",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC82",
+                        "file_key": "linux-sonar-test:src/host/ft_host/API_RgbColorTests.cpp",
+                        "file_name": "API_RgbColorTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVY4O77PmF6lBDOe",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDIN",
+                        "file_key": "linux-sonar-test:src/renderer/wddmcon/WddmConRenderer.hpp",
+                        "file_name": "WddmConRenderer.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWHPO77PmF6lBDPB",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "3 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDHk",
+                        "file_key": "linux-sonar-test:src/inc/consoletaeftemplates.hpp",
+                        "file_name": "consoletaeftemplates.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWEoO77PmF6lBDPA",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDI5",
+                        "file_key": "linux-sonar-test:src/renderer/dx/DxRenderer.hpp",
+                        "file_name": "DxRenderer.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWKJO77PmF6lBDPE",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAMO77PmF6lBC-T",
+                        "file_key": "linux-sonar-test:src/host/cmdline.cpp",
+                        "file_name": "cmdline.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVfJO77PmF6lBDOg",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "13 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDGt",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_TerminalApp/FilteredCommandTests.cpp",
+                        "file_name": "FilteredCommandTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWBWO77PmF6lBDO7",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "8 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDGu",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_TerminalApp/TabTests.cpp",
+                        "file_name": "TabTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWBdO77PmF6lBDO8",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "14 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDI2",
+                        "file_key": "linux-sonar-test:src/renderer/dx/CustomTextRenderer.cpp",
+                        "file_name": "CustomTextRenderer.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWJ6O77PmF6lBDPD",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDGs",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_TerminalApp/CommandlineTest.cpp",
+                        "file_name": "CommandlineTest.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWBPO77PmF6lBDO6",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "230 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAMO77PmF6lBC-H",
+                        "file_key": "linux-sonar-test:src/host/srvinit.cpp",
+                        "file_name": "srvinit.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVePO77PmF6lBDOf",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDGv",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_TerminalApp/SettingsTests.cpp",
+                        "file_name": "SettingsTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWBmO77PmF6lBDO9",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "68 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAKO77PmF6lBC6B",
+                        "file_key": "linux-sonar-test:src/interactivity/win32/windowUiaProvider.cpp",
+                        "file_name": "windowUiaProvider.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVJqO77PmF6lBDOE",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDA8",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalSettingsModel/VsDevShellGenerator.cpp",
+                        "file_name": "VsDevShellGenerator.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVomO77PmF6lBDOo",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC70",
+                        "file_key": "linux-sonar-test:src/host/ut_host/ViewportTests.cpp",
+                        "file_name": "ViewportTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVUYO77PmF6lBDOX",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC72",
+                        "file_key": "linux-sonar-test:src/host/ut_host/ConptyOutputTests.cpp",
+                        "file_name": "ConptyOutputTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVUjO77PmF6lBDOY",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "3 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDHG",
+                        "file_key": "linux-sonar-test:src/cascadia/CascadiaPackage/NOTICE.html",
+                        "file_name": "NOTICE.html",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWCuO77PmF6lBDO-",
+                                    "rule": "Web:DoctypePresenceCheck",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "Insert a <!DOCTYPE> declaration to before this <html> tag.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 1
+                                },
+                                {
+                                    "key": "AX_DjWCuO77PmF6lBDO_",
+                                    "rule": "Web:S5254",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "Add \"lang\" and/or \"xml:lang\" attributes to this \"<html>\" element",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 1
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAKO77PmF6lBC6Q",
+                        "file_key": "linux-sonar-test:src/interactivity/win32/ut_interactivity_win32/UiaTextRangeTests.cpp",
+                        "file_name": "UiaTextRangeTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVNQO77PmF6lBDOF",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtV9zgb_uT7CfQg",
+                        "file_key": "linux-sonar-test:src/icalls/System/System.Net/Dns.cpp",
+                        "file_name": "Dns.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFVO9zgb_uT7CfV-",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAPO77PmF6lBDFy",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalCore/TerminalDispatchGraphics.cpp",
+                        "file_name": "TerminalDispatchGraphics.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjV90O77PmF6lBDO5",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtR9zgb_uT7CfJC",
+                        "file_key": "linux-sonar-test:src/os/Posix/File.cpp",
+                        "file_name": "File.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFAn9zgb_uT7CfV0",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "3 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtV9zgb_uT7CfQQ",
+                        "file_key": "linux-sonar-test:src/icalls/System/System.Net.Sockets/Socket.h",
+                        "file_name": "Socket.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFU89zgb_uT7CfV9",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtV9zgb_uT7CfQP",
+                        "file_key": "linux-sonar-test:src/icalls/System/System.Net.Sockets/Socket.cpp",
+                        "file_name": "Socket.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFU59zgb_uT7CfV8",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "6 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDNV",
+                        "file_key": "linux-sonar-test:src/propsheet/OptionsPage.cpp",
+                        "file_name": "OptionsPage.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWfoO77PmF6lBDPY",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDMk",
+                        "file_key": "linux-sonar-test:src/terminal/parser/ut_parser/InputEngineTest.cpp",
+                        "file_name": "InputEngineTest.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWbiO77PmF6lBDPR",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "15 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDMm",
+                        "file_key": "linux-sonar-test:src/terminal/parser/ut_parser/StateMachineTest.cpp",
+                        "file_name": "StateMachineTest.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWbtO77PmF6lBDPS",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDNN",
+                        "file_key": "linux-sonar-test:src/propsheet/TerminalPropsheetPage.cpp",
+                        "file_name": "TerminalPropsheetPage.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWe_O77PmF6lBDPW",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEta9zgb_uT7CfVs",
+                        "file_key": "linux-sonar-test:src/char-conversions.cpp",
+                        "file_name": "char-conversions.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtF5e9zgb_uT7CfWI",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "6 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDMn",
+                        "file_key": "linux-sonar-test:src/terminal/parser/ut_parser/OutputEngineTest.cpp",
+                        "file_name": "OutputEngineTest.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWb3O77PmF6lBDPT",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "22 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDNP",
+                        "file_key": "linux-sonar-test:src/propsheet/misc.cpp",
+                        "file_name": "misc.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWfLO77PmF6lBDPX",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDNC",
+                        "file_key": "linux-sonar-test:src/propsheet/console.cpp",
+                        "file_name": "console.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWeLO77PmF6lBDPV",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtR9zgb_uT7CfI6",
+                        "file_key": "linux-sonar-test:src/os/Posix/SocketImpl.h",
+                        "file_name": "SocketImpl.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFAY9zgb_uT7CfVz",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "8 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtR9zgb_uT7CfJv",
+                        "file_key": "linux-sonar-test:src/os/Generic/SocketImpl.h",
+                        "file_name": "SocketImpl.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFBu9zgb_uT7CfV1",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "7 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDDe",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalControl/TermControl.cpp",
+                        "file_name": "TermControl.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVz1O77PmF6lBDO1",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDDb",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_SettingsModel/DeserializationTests.cpp",
+                        "file_name": "DeserializationTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVznO77PmF6lBDO0",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "18 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDMV",
+                        "file_key": "linux-sonar-test:src/terminal/parser/ft_fuzzer/VTCommandFuzzer.cpp",
+                        "file_name": "VTCommandFuzzer.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWZDO77PmF6lBDPQ",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtY9zgb_uT7CfTS",
+                        "file_key": "linux-sonar-test:src/vm/Thread.cpp",
+                        "file_name": "Thread.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFsO9zgb_uT7CfWD",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtS9zgb_uT7CfKd",
+                        "file_key": "linux-sonar-test:src/os/Lumin/TimeZoneInfo.cpp",
+                        "file_name": "TimeZoneInfo.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFCz9zgb_uT7CfV3",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDDz",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalControl/InteractivityAutomationPeer.h",
+                        "file_name": "InteractivityAutomationPeer.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjV1QO77PmF6lBDO2",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDEY",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalApp/TerminalPage.cpp",
+                        "file_name": "TerminalPage.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjV3rO77PmF6lBDO4",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDMF",
+                        "file_key": "linux-sonar-test:src/terminal/adapter/adaptDispatchGraphics.cpp",
+                        "file_name": "adaptDispatchGraphics.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWX_O77PmF6lBDPP",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDCh",
+                        "file_key": "linux-sonar-test:src/cascadia/UnitTests_TerminalCore/TerminalBufferTests.cpp",
+                        "file_name": "TerminalBufferTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVvgO77PmF6lBDOt",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC8z",
+                        "file_key": "linux-sonar-test:src/host/ft_host/API_OutputTests.cpp",
+                        "file_name": "API_OutputTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVYpO77PmF6lBDOd",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "46 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDCk",
+                        "file_key": "linux-sonar-test:src/cascadia/UnitTests_TerminalCore/SelectionTest.cpp",
+                        "file_name": "SelectionTest.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVvvO77PmF6lBDOu",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC8t",
+                        "file_key": "linux-sonar-test:src/host/ft_host/CJK_DbcsTests.cpp",
+                        "file_name": "CJK_DbcsTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVYLO77PmF6lBDOc",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "7 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtZ9zgb_uT7CfUL",
+                        "file_key": "linux-sonar-test:src/huatuo/interpreter/Interpreter_Execute.cpp",
+                        "file_name": "Interpreter_Execute.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtF019zgb_uT7CfWG",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDMA",
+                        "file_key": "linux-sonar-test:src/terminal/adapter/charsets.hpp",
+                        "file_name": "charsets.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWXnO77PmF6lBDPO",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDM2",
+                        "file_key": "linux-sonar-test:src/terminal/input/terminalInput.cpp",
+                        "file_name": "terminalInput.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWdXO77PmF6lBDPU",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "3 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtS9zgb_uT7CfKE",
+                        "file_key": "linux-sonar-test:src/os/Android/TimeZoneInfo.cpp",
+                        "file_name": "TimeZoneInfo.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFCO9zgb_uT7CfV2",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtZ9zgb_uT7CfUU",
+                        "file_key": "linux-sonar-test:src/huatuo/transform/Transform.cpp",
+                        "file_name": "Transform.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtF1J9zgb_uT7CfWH",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "6 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtV9zgb_uT7CfQt",
+                        "file_key": "linux-sonar-test:src/utils/utf8-cpp/source/utf8/unchecked.h",
+                        "file_name": "unchecked.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFXL9zgb_uT7CfWA",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDDY",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_SettingsModel/KeyBindingsTests.cpp",
+                        "file_name": "KeyBindingsTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVzWO77PmF6lBDOz",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtV9zgb_uT7CfQs",
+                        "file_key": "linux-sonar-test:src/utils/utf8-cpp/source/utf8/checked.h",
+                        "file_name": "checked.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFXI9zgb_uT7CfV_",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDDW",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_SettingsModel/CommandTests.cpp",
+                        "file_name": "CommandTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVzKO77PmF6lBDOy",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "17 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDDT",
+                        "file_key": "linux-sonar-test:src/cascadia/LocalTests_SettingsModel/TerminalSettingsTests.cpp",
+                        "file_name": "TerminalSettingsTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVy6O77PmF6lBDOx",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "9 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDCq",
+                        "file_key": "linux-sonar-test:src/cascadia/UnitTests_TerminalCore/ConptyRoundtripTests.cpp",
+                        "file_name": "ConptyRoundtripTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVwSO77PmF6lBDOw",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "31 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDCl",
+                        "file_key": "linux-sonar-test:src/cascadia/UnitTests_TerminalCore/TerminalApiTest.cpp",
+                        "file_name": "TerminalApiTest.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVv2O77PmF6lBDOv",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "7 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtR9zgb_uT7CfIy",
+                        "file_key": "linux-sonar-test:src/os/Posix/SocketImpl.cpp",
+                        "file_name": "SocketImpl.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFAJ9zgb_uT7CfVy",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "18 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtS9zgb_uT7CfK4",
+                        "file_key": "linux-sonar-test:src/os/Socket.h",
+                        "file_name": "Socket.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFDb9zgb_uT7CfV5",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "7 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7x",
+                        "file_key": "linux-sonar-test:src/host/ut_host/CopyFromCharPopupTests.cpp",
+                        "file_name": "CopyFromCharPopupTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVUEO77PmF6lBDOU",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "5 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDJt",
+                        "file_key": "linux-sonar-test:src/buffer/out/textBuffer.cpp",
+                        "file_name": "textBuffer.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWNjO77PmF6lBDPI",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7z",
+                        "file_key": "linux-sonar-test:src/host/ut_host/CommandLineTests.cpp",
+                        "file_name": "CommandLineTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVURO77PmF6lBDOW",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7y",
+                        "file_key": "linux-sonar-test:src/host/ut_host/AliasTests.cpp",
+                        "file_name": "AliasTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVUKO77PmF6lBDOV",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "5 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7s",
+                        "file_key": "linux-sonar-test:src/host/ut_host/CopyToCharPopupTests.cpp",
+                        "file_name": "CopyToCharPopupTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVTqO77PmF6lBDOS",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "14 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7v",
+                        "file_key": "linux-sonar-test:src/host/ut_host/CommandListPopupTests.cpp",
+                        "file_name": "CommandListPopupTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVT5O77PmF6lBDOT",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "22 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDL4",
+                        "file_key": "linux-sonar-test:src/terminal/adapter/ut_adapter/WexHelpers.hpp",
+                        "file_name": "WexHelpers.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWXAO77PmF6lBDPM",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDL6",
+                        "file_key": "linux-sonar-test:src/terminal/adapter/ut_adapter/MouseInputTest.cpp",
+                        "file_name": "MouseInputTest.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWXPO77PmF6lBDPN",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "22 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDBw",
+                        "file_key": "linux-sonar-test:src/cascadia/UnitTests_Remoting/RemotingTests.cpp",
+                        "file_name": "RemotingTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVsPO77PmF6lBDOr",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "103 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtU9zgb_uT7CfN1",
+                        "file_key": "linux-sonar-test:src/icalls/mscorlib/System.Threading/Thread.cpp",
+                        "file_name": "Thread.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFRm9zgb_uT7CfV6",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDJm",
+                        "file_key": "linux-sonar-test:src/buffer/out/ut_textbuffer/TextColorTests.cpp",
+                        "file_name": "TextColorTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWNFO77PmF6lBDPH",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAOO77PmF6lBDD2",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalControl/TermControlAutomationPeer.h",
+                        "file_name": "TermControlAutomationPeer.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjV1gO77PmF6lBDO3",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDCR",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalSettingsEditor/Utils.h",
+                        "file_name": "Utils.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVucO77PmF6lBDOs",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDBr",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalSettingsModel/VsDevCmdGenerator.cpp",
+                        "file_name": "VsDevCmdGenerator.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVr5O77PmF6lBDOq",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDJi",
+                        "file_key": "linux-sonar-test:src/buffer/out/ut_textbuffer/ReflowTests.cpp",
+                        "file_name": "ReflowTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWMxO77PmF6lBDPG",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC8l",
+                        "file_key": "linux-sonar-test:src/host/ft_host/API_FileTests.cpp",
+                        "file_name": "API_FileTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVXkO77PmF6lBDOb",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "6 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtY9zgb_uT7CfSP",
+                        "file_key": "linux-sonar-test:src/vm/COM.cpp",
+                        "file_name": "COM.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFqN9zgb_uT7CfWC",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtZ9zgb_uT7CfT-",
+                        "file_key": "linux-sonar-test:src/huatuo/metadata/Image.cpp",
+                        "file_name": "Image.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFyT9zgb_uT7CfWF",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtY9zgb_uT7CfSI",
+                        "file_key": "linux-sonar-test:src/vm/Method.cpp",
+                        "file_name": "Method.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFqB9zgb_uT7CfWB",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtS9zgb_uT7CfKi",
+                        "file_key": "linux-sonar-test:src/os/Lumin/File.cpp",
+                        "file_name": "File.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFC89zgb_uT7CfV4",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7g",
+                        "file_key": "linux-sonar-test:src/host/ut_host/VtRendererTests.cpp",
+                        "file_name": "VtRendererTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVSdO77PmF6lBDOL",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "14 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7i",
+                        "file_key": "linux-sonar-test:src/host/ut_host/CommandNumberPopupTests.cpp",
+                        "file_name": "CommandNumberPopupTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVSpO77PmF6lBDOM",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "6 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7d",
+                        "file_key": "linux-sonar-test:src/host/ut_host/SelectionTests.cpp",
+                        "file_name": "SelectionTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVSMO77PmF6lBDOK",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDJB",
+                        "file_key": "linux-sonar-test:src/renderer/vt/precomp.h",
+                        "file_name": "precomp.h",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWKsO77PmF6lBDPF",
+                                    "rule": "common-c:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DtEtZ9zgb_uT7CfT9",
+                        "file_key": "linux-sonar-test:src/huatuo/metadata/MetadataUtil.cpp",
+                        "file_name": "MetadataUtil.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DtFyP9zgb_uT7CfWE",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:49:23+0100",
+                                    "updateDate": "2022-03-26T01:49:43+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDBO",
+                        "file_key": "linux-sonar-test:src/cascadia/TerminalSettingsModel/ActionArgs.cpp",
+                        "file_name": "ActionArgs.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVp3O77PmF6lBDOp",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7o",
+                        "file_key": "linux-sonar-test:src/host/ut_host/ScreenBufferTests.cpp",
+                        "file_name": "ScreenBufferTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVTRO77PmF6lBDOP",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "98 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7r",
+                        "file_key": "linux-sonar-test:src/host/ut_host/InputBufferTests.cpp",
+                        "file_name": "InputBufferTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVTkO77PmF6lBDOR",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "8 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7q",
+                        "file_key": "linux-sonar-test:src/host/ut_host/SearchTests.cpp",
+                        "file_name": "SearchTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVTdO77PmF6lBDOQ",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7l",
+                        "file_key": "linux-sonar-test:src/host/ut_host/VtIoTests.cpp",
+                        "file_name": "VtIoTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVS7O77PmF6lBDOO",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDAj",
+                        "file_key": "linux-sonar-test:src/cascadia/UnitTests_Control/ControlInteractivityTests.cpp",
+                        "file_name": "ControlInteractivityTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVm6O77PmF6lBDOm",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "6 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7k",
+                        "file_key": "linux-sonar-test:src/host/ut_host/ApiRoutinesTests.cpp",
+                        "file_name": "ApiRoutinesTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVS0O77PmF6lBDON",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDAm",
+                        "file_key": "linux-sonar-test:src/cascadia/UnitTests_Control/ControlCoreTests.cpp",
+                        "file_name": "ControlCoreTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVnJO77PmF6lBDOn",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "3 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAMO77PmF6lBC_C",
+                        "file_key": "linux-sonar-test:src/tools/vttests/template.py",
+                        "file_name": "template.py",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjViLO77PmF6lBDOi",
+                                    "rule": "python:S2208",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "CRITICAL",
+                                    "message": "Import only needed names or import the module and then use its members.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 10
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAMO77PmF6lBC_B",
+                        "file_key": "linux-sonar-test:src/tools/vttests/burrito.py",
+                        "file_name": "burrito.py",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjViFO77PmF6lBDOh",
+                                    "rule": "python:S2208",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "CRITICAL",
+                                    "message": "Import only needed names or import the module and then use its members.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 17
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAMO77PmF6lBC_E",
+                        "file_key": "linux-sonar-test:src/tools/vttests/test-unicode.py",
+                        "file_name": "test-unicode.py",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjViVO77PmF6lBDOj",
+                                    "rule": "python:S2208",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "CRITICAL",
+                                    "message": "Import only needed names or import the module and then use its members.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 18
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDAb",
+                        "file_key": "linux-sonar-test:src/winconpty/ft_pty/ConPtyTests.cpp",
+                        "file_name": "ConPtyTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVmeO77PmF6lBDOl",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "15 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
                     {
                         "file_uuid": "AX-XkczW4htFjYcVB7d2",
                         "file_key": "linux-sonar-test:src/main.cpp",
@@ -91,6 +2785,22 @@
                         "file_name": "TP_2.cpp",
                         "issues": {
                             "unresolved": [
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMZ",
+                                    "rule": "cpp:S4963",
+                                    "status": "REOPENED",
+                                    "resolution": null,
+                                    "severity": "CRITICAL",
+                                    "message": "Remove this class' copy constructor so that the class follows the rule of Zero.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 6
+                                },
                                 {
                                     "key": "AX-caggikGDeAMJw-YMa",
                                     "rule": "cpp:S3229",
@@ -328,6 +3038,54 @@
                                     "line": 77
                                 },
                                 {
+                                    "key": "AX-caggikGDeAMJw-YMW",
+                                    "rule": "cpp:S1117",
+                                    "status": "REOPENED",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "declaration shadows a field of 'AFN'",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 90
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMj",
+                                    "rule": "cpp:S5817",
+                                    "status": "REOPENED",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "This function should be declared \"const\".",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 90
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMk",
+                                    "rule": "cpp:S1659",
+                                    "status": "REOPENED",
+                                    "resolution": null,
+                                    "severity": "MINOR",
+                                    "message": "Define each identifier in a dedicated statement.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 91
+                                },
+                                {
                                     "key": "AX-caggikGDeAMJw-YMx",
                                     "rule": "cpp:S836",
                                     "status": "OPEN",
@@ -339,9 +3097,7 @@
                                     "creationDate": "2022-03-18T10:43:27+0100",
                                     "updateDate": "2022-03-18T11:06:55+0100",
                                     "components": [],
-                                    "tags": [
-                                        "security"
-                                    ],
+                                    "tags": [],
                                     "comments": [],
                                     "line": 111
                                 },
@@ -357,11 +3113,57 @@
                                     "creationDate": "2022-03-18T10:43:27+0100",
                                     "updateDate": "2022-03-18T11:06:59+0100",
                                     "components": [],
-                                    "tags": [
-                                        "update"
-                                    ],
+                                    "tags": [],
                                     "comments": [],
                                     "line": 111
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMn",
+                                    "rule": "cpp:S1659",
+                                    "status": "REOPENED",
+                                    "resolution": null,
+                                    "severity": "MINOR",
+                                    "message": "Define each identifier in a dedicated statement.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 115
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMz",
+                                    "rule": "cpp:S836",
+                                    "status": "REOPENED",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1st function call argument is an uninitialized value",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "BUG",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 128
+                                },
+                                {
+                                    "key": "AX-caggikGDeAMJw-YMo",
+                                    "rule": "cpp:S1238",
+                                    "status": "REOPENED",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "Pass expensive to copy object \"supp\" by reference to const.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-18T10:43:27+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": 131
                                 },
                                 {
                                     "key": "AX-caggikGDeAMJw-YM1",
@@ -512,6 +3314,188 @@
                                     "line": 114
                                 }
                             ]
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7F",
+                        "file_key": "linux-sonar-test:src/til/ut_til/string.cpp",
+                        "file_name": "string.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVQmO77PmF6lBDOI",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVARO77PmF6lBDN2",
+                        "file_key": "linux-sonar-test:src/tsf/TfEditSession.cpp",
+                        "file_name": "TfEditSession.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWh4O77PmF6lBDPZ",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDKn",
+                        "file_key": "linux-sonar-test:src/types/ScreenInfoUiaProviderBase.cpp",
+                        "file_name": "ScreenInfoUiaProviderBase.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWRgO77PmF6lBDPJ",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVALO77PmF6lBC7O",
+                        "file_key": "linux-sonar-test:src/til/ut_til/BitmapTests.cpp",
+                        "file_name": "BitmapTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVRQO77PmF6lBDOJ",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "2 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDK0",
+                        "file_key": "linux-sonar-test:src/types/TermControlUiaProvider.hpp",
+                        "file_name": "TermControlUiaProvider.hpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWSYO77PmF6lBDPL",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "1 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVAQO77PmF6lBDKp",
+                        "file_key": "linux-sonar-test:src/types/ut_types/UtilsTests.cpp",
+                        "file_name": "UtilsTests.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjWRrO77PmF6lBDPK",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
+                        }
+                    },
+                    {
+                        "file_uuid": "AX_DjVANO77PmF6lBDAJ",
+                        "file_key": "linux-sonar-test:src/tools/U8U16Test/U8U16Test.cpp",
+                        "file_name": "U8U16Test.cpp",
+                        "issues": {
+                            "unresolved": [
+                                {
+                                    "key": "AX_DjVlmO77PmF6lBDOk",
+                                    "rule": "common-cpp:DuplicatedBlocks",
+                                    "status": "OPEN",
+                                    "resolution": null,
+                                    "severity": "MAJOR",
+                                    "message": "4 duplicated blocks of code must be removed.",
+                                    "author": "aarouche2016@gmail.com",
+                                    "type": "CODE_SMELL",
+                                    "creationDate": "2022-03-26T01:04:15+0100",
+                                    "updateDate": "2022-03-26T01:06:57+0100",
+                                    "components": [],
+                                    "tags": [],
+                                    "comments": [],
+                                    "line": null
+                                }
+                            ],
+                            "wontfix": []
                         }
                     }
                 ]
