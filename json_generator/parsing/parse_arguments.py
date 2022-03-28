@@ -9,7 +9,7 @@ from json_generator.models.project import Project
 
 def entry_point_cli(args):
     
-    if(args.project_branch and args.issues and args.sonarqube_url):
+    if(args.project_branch and args.sonarqube_url):
         parsing_results ={}
         if(args.token):
             parsing_results["auth"] = "t"
@@ -23,11 +23,13 @@ def entry_point_cli(args):
             return None
 
         project_list = cli_parse_projects(args.project_branch)
-        issues_list = cli_parse_issues(args.issues)
-        for project in project_list:
-            if project.branches :
-                for branch in project.branches :
-                    branch.issues = issues_list
+        issues_list = None
+        if args.issues : 
+            issues_list = cli_parse_issues(args.issues)
+            for project in project_list:
+                if project.branches :
+                    for branch in project.branches :
+                        branch.issues = issues_list
         parsing_results["projects"] = project_list 
         parsing_results["issues"] = issues_list
         parsing_results["sonarqube_url"] = args.sonarqube_url
@@ -72,7 +74,8 @@ def cli_parse_branchs(branches):
     return branches_objects
 
 def cli_parse_issues(args):
-    issue = Issue(key=None , tags=args)
+
+    issue = Issue(key=None )
     splitted_tags = args.split(',')
     issue.tags = splitted_tags
     return [issue]
