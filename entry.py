@@ -64,10 +64,17 @@ def main(sonar , object):
                         if not detailled_issues:
                             continue
                         # getting the unresolved issues : 
+                        sys.stderr.write("getting unresolved issues : ")
+
                         unresolved_issues = get_unresolved_issues(detailled_issues)
+                        sys.stderr.write(" unresolved issues are getted\n")
+                        sys.stderr.write("get summary information of the branch ..... \n")
                         summary_informations = get_summary_information(project,branch , unresolved_issues)
+                        sys.stderr.write("getting all files containing issues ...... \n")
                         list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
+                        sys.stderr.write("getting issues of each file   \n")
                         files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue) 
+                        sys.stderr.write("generate json for all files \n")
                         information_per_file = generate_json_for_all_files(files_objects_with_issues)
 
                     else : 

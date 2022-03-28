@@ -16,7 +16,10 @@ def show_error():
 
 #parse class object to json String 
 def parse_obj_to_json(class_obj):
-    return vars(class_obj)
+    json_obj = vars(class_obj)
+    if isinstance(json_obj , Issue):
+        json_obj["comments"] = class_obj.comments
+    return json_obj
 
 
 
@@ -59,7 +62,7 @@ def get_branches_of_all_projects(sonar,args_proj):
     return branchesList
 
 def get_issues_of_project(sonar,arg_proj,args_branch):
-    issues =list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=args_branch.name))
+    issues =list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=args_branch.name,additionalFields="comments"))
     obj_issues=[]
     for i in issues:
         Issuee=Issue(key=None)
@@ -78,7 +81,7 @@ def get_issues_of_all_projects(sonar,args_proj,args_branch):
 def get_spec_issues_of_project(sonar,arg_proj,args_branch,args_issue):
     listofissues=[]
     result_issue_tags = ",".join(map(str, args_issue.tags))
-    issues=list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=args_branch.name,tags=result_issue_tags))
+    issues=list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=args_branch.name,tags=result_issue_tags,additionalFields="comments"))
     for i in issues:
         iss=Issue(key=None)
         iss.parse_jsonissues(i)

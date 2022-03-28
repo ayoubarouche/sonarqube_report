@@ -18,8 +18,7 @@ import json
 
 
 def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
-    listofcomponent=[]
-   
+    set_of_components = set()
     comp =None 
     if args_issue:
         comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=args_issue.tags))
@@ -29,19 +28,11 @@ def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
         return None
     for i in comp:
         if i["qualifier"]=="FIL" :
-                
-                comp_object=Component(key=None)
-                comp_object.parse_jsoncomponent(i)
-                already_exist = False
-                for comp in listofcomponent :
-                    if comp.key == comp_object.key:
-                        already_exist = True
-                        break
-                if not already_exist :     
-                    listofcomponent.append(comp_object)
+            comp_object=Component(key=None)
+            comp_object.parse_jsoncomponent(i)
+            set_of_components.add(comp_object)
 
-       
-    return listofcomponent
+    return list(set_of_components)
 
 
 

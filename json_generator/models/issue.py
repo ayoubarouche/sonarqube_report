@@ -2,25 +2,6 @@
 a model to handle an issue it will generate informations like the component infos (componenet contains the file name etc) .
 """
 
-import json
-from sonarqube.utils.rest_client import RestClient
-from sonarqube.utils.config import (
-    API_ISSUES_SEARCH_ENDPOINT,
-    API_ISSUES_ASSIGN_ENDPOINT,
-    API_ISSUES_DO_TRANSITION_ENDPOINT,
-    API_ISSUES_ADD_COMMENT_ENDPOINT,
-    API_ISSUES_EDIT_COMMENT_ENDPOINT,
-    API_ISSUES_DELETE_COMMENT_ENDPOINT,
-    API_ISSUES_SET_SEVERITY_ENDPOINT,
-    API_ISSUES_SET_TYPE_ENDPOINT,
-    API_ISSUES_AUTHORS_ENDPOINT,
-    API_ISSUES_BULK_CHANGE_ENDPOINT,
-    API_ISSUES_CHANGELOG_ENDPOINT,
-    API_ISSUES_SET_TAGS_ENDPOINT,
-    API_ISSUES_TAGS_ENDPOINT,
-)
-from sonarqube.utils.common import GET, POST, PAGE_GET
-
 class Issue:
 
     def __init__(self,
@@ -36,7 +17,7 @@ class Issue:
                  updateDate=None,
                  components=[], # the components that had the issue
                  tags=[],
-                 comments = [],
+                 comments = None,
                  line = None
                  ) : # tags of the componenet
         self.key = key 
@@ -84,7 +65,7 @@ class Issue:
         if 'tags' in json_str:
             self.tags=json_str['tags']
         if 'comments' in json_str:
-            self.comments=json_str['comments']
+            self.comments= json_str['comments']
         if 'line' in json_str:
             self.line = json_str['line']
 
@@ -139,5 +120,12 @@ class Component :
             self.key = json_str["file_key"]
         if 'file_name' in json_str :
             self.name = json_str["file_name"]
+    
+    def __hash__(self):
+        return hash((self.key, self.uuid, self.name))
+
+    def __eq__(self, other):
+        if not isinstance(other, type(self)): return NotImplemented
+        return self.key == other.key 
  
 
