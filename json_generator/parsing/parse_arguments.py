@@ -58,7 +58,7 @@ def cli_parse_projects(args):
 def cli_parse_project(project):
     
     project_branches = project.split(':')
-    branches = None
+    branches = [Branch(name="master")]
     if len(project_branches) > 1 : 
         branches = cli_parse_branchs(project_branches[1])
         
