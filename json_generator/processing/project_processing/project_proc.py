@@ -17,8 +17,7 @@ def show_error():
 #parse class object to json String 
 def parse_obj_to_json(class_obj):
     json_obj = vars(class_obj)
-    if isinstance(json_obj , Issue):
-        json_obj["comments"] = class_obj.comments
+    
     return json_obj
 
 
