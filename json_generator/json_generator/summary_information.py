@@ -1,9 +1,5 @@
-from ast import Num
-from distutils.log import INFO
-from logging import CRITICAL, critical
-from re import L
-from tarfile import BLOCKSIZE
-from json_generator.processing.issue_processing.issue_proc import get_issues_by_category, get_issues_by_resolution, get_issues_by_severity, get_unresolved_issues
+
+from json_generator.processing.issue_processing.issue_proc import get_issues_by_category, get_issues_by_severity, get_unresolved_issues
 
 
 # Number of unresolved issues :

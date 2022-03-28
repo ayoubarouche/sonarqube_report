@@ -1,5 +1,5 @@
 """
-a model to handle an issue it will generate informations like the component infos (componenet contains the file name etc) .
+a model to handle an issue if you want to add any other field in the generated json file please add it to the parse_jsonissues and in the constructor
 """
 
 class Issue:
@@ -70,7 +70,9 @@ class Issue:
             self.line = json_str['line']
 
 
-
+"""
+a model to handle the file component if you want to add any other field you can do that by changing the parse_jsoncomponent
+"""
 class Component :
     def __init__(self , 
                     key , # the key of the component 

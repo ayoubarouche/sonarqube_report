@@ -1,6 +1,4 @@
-import json
-from collections import namedtuple
-from json import JSONEncoder
+
 
 from json_generator.models.branch import Branch
 

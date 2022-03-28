@@ -1,15 +1,9 @@
 import argparse
-from email.policy import default
-from unicodedata import name
 from entry import main
 
 from json_generator.parsing.parse_arguments import entry_point_cli
 from json_generator.parsing.parsing_file import entry_point_file
-from json_generator.processing.file_cmp import get_componentKeys
-from json_generator.processing.issue_processing.issue_proc import get_issues_by_severity
-from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
-from json_generator.processing.modified_api.Component import ModifiedSonarCloudClient
-from json_generator.processing.project_processing.project_proc import get_branches_of_project, get_project, get_spec_issues_of_project   
+from json_generator.processing.modified_api.modified_sonar_api import ModifiedSonarCloudClient
 
 
 if __name__ == "__main__":
@@ -38,19 +32,40 @@ if __name__ == "__main__":
     
     result = None
     args = parser.parse_args()
+
+    #if the user want to use the config file method : 
     if(args.config_method=='f'):
+
+        #parse the config file : 
         result = entry_point_file(args.file_path)
+
+        #if parsing generate error : 
         if not result:
             print("error parsing the json file arguments are missing !:(")
         else : 
+
+            #create the sonarqube connection : 
             sonar = None
             if result["auth"] == "t":
+                #in our case we used the sonarcloud solution : 
+                #if you want to use any other sonar type like sonarcommunity please visit the ModifiedSonarCloudClient class 
+                #and change the class that he inheret  : 
+                
+                #in case the user used token method : 
                 sonar=ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token=result["token"])
             else :
+
+                #if the user want to use the login and password method
+                # this method not working for sonarcloud  :
                 sonar = ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token = None).auth.authenticate_user(result["username"],result["password"])
+            
+            #the main function : 
             main(object=result , sonar = sonar)
     if(args.config_method=='c'):
+        #if the user want to use cli method : 
         #for now the command we tested is : python3 main.py c -s www.sonarqube.io -pb kestar:master#main -i bug,vur -t helloworld 
+        
+        #parse the command line args : 
         result = entry_point_cli(args)
         if not result:
             cli_parser.print_help()
