@@ -259,17 +259,17 @@ class ExcelFormatter:
     def branch_body(self,json_file):
         if self.sheet:
     #add branch column
-            branch_name=json_file["branch-name"]
-            # self.current_row+=2
-            self.sheet.merge_range(self.current_row,self.current_column,self.current_row+8,self.current_column,branch_name,self.formats["branch_title_format"])
+            # branch_name=json_file["branch-name"]
+            # # self.current_row+=2
+            # self.sheet.merge_range(self.current_row,self.current_column,self.current_row+8,self.current_column,branch_name,self.formats["branch_title_format"])
 
             self.sheet.write(self.current_row+8,self.current_column+1,"Total",self.formats["file_header_format"])
             self.sheet.merge_range(self.current_row+8 , self.current_column+2 , self.current_row+8 , self.current_column+4 , json_file["unresolved-issues"]["total"],self.formats["file_header_format"])
             
-            #add last-anaysis-date
-            self.sheet.merge_range(self.current_row,self.current_column+1,self.current_row,self.current_column+2,"LastAnalysisDate",self.formats["issue_infos_format"])
-            self.sheet.merge_range(self.current_row,self.current_column+3,self.current_row,self.current_column+4,json_file["date-Last-Analysis"],self.formats["issue_infos_format"])
-            self.sheet.set_column(self.current_column , self.current_column+5 , len("date-Last-Analysis"))
+            # #add last-anaysis-date
+            # self.sheet.merge_range(self.current_row,self.current_column+1,self.current_row,self.current_column+2,"LastAnalysisDate",self.formats["issue_infos_format"])
+            # self.sheet.merge_range(self.current_row,self.current_column+3,self.current_row,self.current_column+4,json_file["date-Last-Analysis"],self.formats["issue_infos_format"])
+            # self.sheet.set_column(self.current_column , self.current_column+5 , len("date-Last-Analysis"))
             # self.sheet.set_column(self.current_column-2 , self.current_column+7 , len(json_file["date-Last-Analysis"]))
 
             #Add category table

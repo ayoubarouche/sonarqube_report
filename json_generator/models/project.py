@@ -9,7 +9,7 @@ class Project :
                 key=None,                #Key of the project
                 name=None ,               #name of the project 
                 lastAnalysisDate=None,    #date of last analyse 
-                branches =[]
+                branches =["master"]
                 ):
         self.organization = organization
         self.key = key

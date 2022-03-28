@@ -49,7 +49,7 @@ if __name__ == "__main__":
         # for the pdf : 
         pdf = PdfFormatter('P', 'mm' , 'Letter')
         # for excel :
-        excel = ExcelFormatter(abs_file_path+project_name,None,3,0)
+        excel = ExcelFormatter(abs_file_path+project_name,None,0,-1)
         pdf.set_auto_page_break(
             auto=True , margin=15
         )

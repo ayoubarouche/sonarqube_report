@@ -35,11 +35,6 @@ class ModifiedSonarCloudIssues(RestClient):
         """
         super(ModifiedSonarCloudIssues, self).__init__(**kwargs)
 
-    def get(self, key):
-        result = list(self.search_issues(issues=key))
-        for issue in result:
-            if issue["key"] == key:
-                return issue
 
     @PAGE_GET(API_ISSUES_SEARCH_ENDPOINT, item="components")
     def search_components(
