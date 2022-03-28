@@ -1,6 +1,6 @@
 {   
-    "output-filename":"lear_corporation",
-    "sonarqube-url":"https://sonarclocud.io/",
+    "output-filename":"lear",
+    "sonarqube-url":"https://sonarcloud.io/",
     "authentication" : {
             
             "username" :"aroucheayoub",
@@ -12,8 +12,8 @@
         {   "project-key":"linux-sonar-test",
             "branches" : [
                 {
-                    "branch-name":"master",
-                    "issues":["update","security"]
+                    "branch-name":"debug_test"
+                    
                 }
             ]
         }
