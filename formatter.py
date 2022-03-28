@@ -2,10 +2,10 @@ import json
 from sys import stdin
 import sys
 import os
-from csv_generator.generatetoexcel import ExcelFormatter
+from excel_generator.generatetoexcel import ExcelFormatter
 from json_generator.processing.issue_processing.parsing_component import parse_list_json_issues_to_list_json_objects
 from pdf_generator.generatetopdf import PdfFormatter
-from json_generator.models.issue import Component
+from json_generator.models.component import Component
 import argparse
 
 if __name__ == "__main__":

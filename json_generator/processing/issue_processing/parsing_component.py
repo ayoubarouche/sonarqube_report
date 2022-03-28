@@ -9,7 +9,10 @@ functions :
 """
 
 
-from json_generator.models.issue import Component, Issue
+from json_generator.models.component import Component
+from json_generator.models.issue import  Issue
+
+
 
 
 def add_issues_to_component(sonar , component,branch , issue_tags=None):

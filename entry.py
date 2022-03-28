@@ -7,7 +7,7 @@ import json
 from json_generator.processing.issue_processing.file_cmp import get_componentKeys
 from json_generator.processing.issue_processing.issue_proc import get_unresolved_issues
 from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
-from json_generator.processing.project_processing.project_proc import get_branches_of_project, get_issues_of_project, get_project, get_spec_issues_of_project
+from json_generator.processing.project_processing.project_proc import get_issues_of_project, get_project, get_spec_issues_of_project
 
 # the entry function for the object : 
 
