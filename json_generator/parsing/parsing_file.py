@@ -87,7 +87,7 @@ def sonarqube_parser(sonarqube_dict):
 
 def branches_parser(branches_dict):
     if not isinstance(branches_dict , list):
-        return None
+        return [Branch(name="master")]
     else :
 
         branches_list = []

@@ -9,13 +9,9 @@
     },
 
     "projects":[
-        {   "project-key":"linux-sonar-test",
-            "branches" : [
-                {
-                    "branch-name":"debug_test"
-                    
-                }
-            ]
+        {   "project-key":"linux-sonar-test"
+            
+            
         }
 
     ]
