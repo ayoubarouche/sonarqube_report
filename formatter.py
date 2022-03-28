@@ -72,6 +72,7 @@ if __name__ == "__main__":
                 pdf.second_page(branch["summary_informations"])
             pdf.summaryHeader(title='General view of the files')
             excel.branch_body(branch["summary_informations"])
+            
             #check if title of the files already added : 
             is_title_already_added = False
             for f in branch["information_per_file"]:

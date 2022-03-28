@@ -84,8 +84,6 @@ def cli_parse_projects(args):
     #split the projects by , 
     projects = args.split(',')
     projects_list = []
-    print("the projects are  "+str(projects))
-
     #for each project key 
     for parsed_project in projects :
 

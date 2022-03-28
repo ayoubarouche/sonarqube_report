@@ -5,7 +5,7 @@ functions :
     * get_componentKeys : function to get all the files contians issues :
 """
 
-from json_generator.models.issue import Component
+from json_generator.models.component import Component
 
 
 def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):

@@ -125,8 +125,7 @@ class ExcelFormatter:
                     else : 
                         issue[issue_header] = ""
                     
-            print("the issue header is "+str(issue_header))
-            print("the value is : "+str(issue[issue_header]))
+
             self.sheet.write(current_row,current_column+i,str(issue[issue_header]),self.formats["issue_infos_format"])
             # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
             i=i+1
@@ -178,8 +177,7 @@ class ExcelFormatter:
             self.current_column+=1
 
             for issue in unresolved_issues:
-                print("issue is : ")
-                print(type(issue))
+
                 self.add_issue( current_row=self.current_row , current_column=self.current_column , issue = issue , issue_headers = issue_headers)
                 self.current_row +=1
             self.current_column-=2
@@ -194,8 +192,7 @@ class ExcelFormatter:
             self.current_column+=1
             # new_current_row+=1
             for issue in wontfix_issues:
-                print("issue is : ")
-                print(type(issue))
+
                 self.add_issue( current_row=self.current_row , current_column=self.current_column , issue = issue , issue_headers = issue_headers)
                 self.current_row +=1
             self.current_column-=2
