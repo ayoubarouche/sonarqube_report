@@ -116,7 +116,18 @@ class ExcelFormatter:
             #check if the value of the issue header is an array : 
 
             if isinstance(issue[issue_header] , list):
-                issue[issue_header] = str(issue[issue_header]).replace("'","").replace("[","").replace("]","")
+                #to manipulate a field : 
+                    #manipulate the tags field 
+                if issue_header == 'tags':
+                    issue[issue_header] = str(issue[issue_header]).replace("'","").replace("[","").replace("]","")
+                    
+                    #manipulate the comments field :
+                if issue_header == 'comments':
+                    if issue[issue_header]: 
+                        issue[issue_header] = issue[issue_header][-1]['htmlText']
+                    else : 
+                        issue[issue_header] = ""
+                    
             print("the issue header is "+str(issue_header))
             print("the value is : "+str(issue[issue_header]))
             self.sheet.write(current_row,current_column+i,str(issue[issue_header]),self.formats["issue_infos_format"])
