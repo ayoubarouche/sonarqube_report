@@ -1,15 +1,22 @@
-from sonarqube import SonarCloudClient
+"""
+contains functions for project processing and json manipulating files : 
+
+functions : 
+    * show_error : function that print a general error message 
+    * parse_obj_to_json : function to convert a model to dict in case we want to generate the json format from a model object.
+    * get_project : function to get a project details : 
+    * get_branches_of_project : function to get all the branches of a project.
+    * get_branches_of_all_project : function to get all the branches of all the projects
+    * get_issues_of_project : function to get all issues in a project 
+    * get_issues_of_all_project : function to get all issues of all projects
+    * get_spec_issues_of_project : function to get issues of a specific tag list of a project.
+    * 
+"""
+
 from json_generator.models.branch import Branch
 from json_generator.models.issue import Issue
-from json_generator.models.project import Project
-from json_generator.parsing.parse_arguments import cli_parse_projects, cli_parse_branchs,cli_parse_issues,cli_parse_project
 
-import json 
 
-# args_proj = cli_parse_projects(arg1)
-# arg_proj=cli_parse_project(arg2)
-# args_branch=cli_parse_branchs(arg3)
-# args_issue=cli_parse_issues(arg4)
 
 def show_error():
     print("Please enter a specific project ")
@@ -20,18 +27,6 @@ def parse_obj_to_json(class_obj):
     
     return json_obj
 
-
-
-def append_to_jsonfile(data_filename,data):
-    with open(data_filename, mode='w') as f:
-        datafile=json.load(f)
-    
-    datafile.append(data)
-
-    with open(data_filename, 'w') as json_file:
-        json.dump(datafile, json_file, 
-                        indent=4,  
-                        separators=(',',': '))
 
 #get proj 
 def get_project(sonar,arg_proj):

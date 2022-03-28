@@ -1,4 +1,8 @@
-# branch class :
+"""
+branch class model : 
+
+if you want to add any other field please feel free to add it in the parse_jsonbranch and the constructor method : 
+"""
 
 class Branch:
     
