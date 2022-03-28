@@ -1,4 +1,11 @@
+"""
+contains functions to genearte json format for each file 
 
+functions : 
+    * generate_json_for_all_files : function to generate json for all files 
+    * genrate_json_for_files : function to generate json format of issues in a file
+    * convert_list_issues_json : function to convert list of issues to a file
+"""
 
 # generating json result for each file : 
 

@@ -1,4 +1,7 @@
+"""
+contains functions to generate summary infrmation of a branch  :
 
+"""
 from json_generator.processing.issue_processing.issue_proc import get_issues_by_category, get_issues_by_severity, get_unresolved_issues
 
 

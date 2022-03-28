@@ -130,29 +130,7 @@ class ExcelFormatter:
             self.sheet.write(current_row,current_column+i,str(issue[issue_header]),self.formats["issue_infos_format"])
             # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
             i=i+1
-    #add an author : 
-        # self.sheet.write(current_row , current_column , "Author",self.formats["issue_infos_format"])
-        # self.sheet.write(current_row , current_column+1 , issue.author, self.formats["issue_details_format"])
-        #     #add a Tag : 
-        # self.sheet.write(current_row+1 , current_column , "Tag",self.formats["issue_infos_format"])
-        # self.sheet.write(current_row+1 , current_column+1 , str(issue.tags).replace("'","").replace("[","").replace("]",""), self.formats["issue_details_format"])
-        
-        #     #add an severity : 
-        # self.sheet.write(current_row+2, current_column , "Severity",self.formats["issue_infos_format"])
-        # self.sheet.write(current_row+2 , current_column+1 , issue.severity, self.formats["issue_details_format"])
-        
-        #     #add an category : 
-        # self.sheet.write(current_row+3, current_column , "Category",self.formats["issue_infos_format"])
-        # self.sheet.write(current_row+3 , current_column+1 , issue.type, self.formats["issue_details_format"])
-        
-        #         #add a creation date : 
-        # self.sheet.write(current_row+4, current_column , "Creation Date",self.formats["issue_infos_format"])
-        # self.sheet.write(current_row+4 , current_column+1, issue.creationDate, self.formats["issue_details_format"])
-        
-        #         #add a message : 
-        # self.sheet.write(current_row+5, current_column , "Message",self.formats["issue_infos_format"])
-        # self.sheet.write(current_row+5 , current_column+1 , issue.message , self.formats["issue_details_format"])
-
+   
     def add_titles(self , issue_headers):
         self.current_column = self.default_column
 
@@ -183,40 +161,12 @@ class ExcelFormatter:
         
 
         file_name = file_info.name
-        file_key = file_info.key
-        file_uuid = file_info.uuid
-
        # return to the default column : 
         self.current_column = self.default_column
 
- 
-        # self.sheet.merge_range(self.current_row , self.current_column , self.current_row+number_of_issues-1 , self.current_column , file_name,self.formats["file_title_format"])
-
-        # if number_of_issues>1:
-        #     self.sheet.merge_range(self.current_row , self.current_column , self.current_row+number_of_issues-1 , self.current_column , file_name,self.formats["file_title_format"])
-        # else :
-        #     self.sheet.write(self.current_row ,self.current_column , file_name, self.formats["file_title_format"])
-
         for i in range(number_of_issues) :
             self.sheet.write(self.current_row+i ,self.current_column , file_name, self.formats["file_title_format"])
-        #set the width of the column to the key length : 
-        # self.sheet.set_column(self.current_column , self.current_column , len(file_key))
-        
-        # #for the file key : 
 
-        # self.sheet.write(self.current_row+1 , self.current_column , "file key",self.formats["file_header_format"] )
-        # self.sheet.write(self.current_row+1 , self.current_column+1 , file_key , self.formats["file_details_format"])
-        
-        # # for the file uuid : 
-
-        # self.sheet.write(self.current_row+2 , self.current_column , "file uuid",self.formats["file_header_format"] )
-        # self.sheet.write(self.current_row+2 , self.current_column+1 , file_uuid, self.formats["file_details_format"])
-        
-        # self.sheet.write(self.current_row+3 , self.current_column  , "number of issues : ",self.formats["file_header_format"] )
-        # self.sheet.write(self.current_row+3 , self.current_column+1 , number_of_issues, self.formats["file_details_format"])
-        # #adding header of issues : 
-
-        
        
         #adding issues : 
         
@@ -263,12 +213,6 @@ class ExcelFormatter:
             self.sheet.write(self.current_row+8,self.current_column+1,"Total",self.formats["file_header_format"])
             self.sheet.merge_range(self.current_row+8 , self.current_column+2 , self.current_row+8 , self.current_column+4 , json_file["unresolved-issues"]["total"],self.formats["file_header_format"])
             
-            # #add last-anaysis-date
-            # self.sheet.merge_range(self.current_row,self.current_column+1,self.current_row,self.current_column+2,"LastAnalysisDate",self.formats["issue_infos_format"])
-            # self.sheet.merge_range(self.current_row,self.current_column+3,self.current_row,self.current_column+4,json_file["date-Last-Analysis"],self.formats["issue_infos_format"])
-            # self.sheet.set_column(self.current_column , self.current_column+5 , len("date-Last-Analysis"))
-            # self.sheet.set_column(self.current_column-2 , self.current_column+7 , len(json_file["date-Last-Analysis"]))
-
             #Add category table
             dict_key1=json_file["unresolved-issues"]["issues-details"]["category"]
             dict_key2=json_file["unresolved-issues"]["issues-details"]["severity"]
