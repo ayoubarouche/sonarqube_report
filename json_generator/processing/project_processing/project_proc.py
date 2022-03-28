@@ -80,11 +80,16 @@ def get_issues_of_all_projects(sonar,args_proj,args_branch):
 def get_spec_issues_of_project(sonar,arg_proj,args_branch,args_issue):
     listofissues=[]
     result_issue_tags = ",".join(map(str, args_issue.tags))
+    print("the issue sare : ")
+    print(result_issue_tags)
     issues=list(sonar.issues.search_issues(componentKeys=arg_proj.key, branch=args_branch.name,tags=result_issue_tags,additionalFields="comments"))
     for i in issues:
         iss=Issue(key=None)
         iss.parse_jsonissues(i)
         listofissues.append(iss)
+        print("the issue is : ")
+        print(iss.key)
+        print(iss.tags)
 
     return listofissues     
     
