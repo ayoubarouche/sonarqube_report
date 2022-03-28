@@ -21,7 +21,8 @@ def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
     set_of_components = set()
     comp =None 
     if args_issue:
-        comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=args_issue.tags))
+        result_issue_tags = ",".join(map(str, args_issue.tags))
+        comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name,tags=result_issue_tags))
     else :
         comp=list(sonar.components_issues.search_components(componentKeys=arg_proj.key,branch=args_branch.name))
     if not comp:

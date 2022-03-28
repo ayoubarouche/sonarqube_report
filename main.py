@@ -32,7 +32,7 @@ if __name__ == "__main__":
     cli_parser.add_argument("-u","--username",metavar='',dest="username",help="insert username")
     cli_parser.add_argument("-p","--password",metavar='',dest="password",help="insert password")
     cli_parser.add_argument("-t","--token",metavar='',dest="token",help="insert token")
-    cli_parser.add_argument("-i","--issues",dest="issues",metavar="" , required="True" , help = "insert the issue tag list")
+    cli_parser.add_argument("-i","--issues-tag-list",dest="issues",metavar="" , help = "insert the issue tag list")
     cli_parser.add_argument("-o","--org",dest="organization",metavar="" , help = "insert the org tag ")
     cli_parser.add_argument("-out","--output-filename",dest="output_filename",metavar="" , help = "insert the json output file name ", default=None)
     
