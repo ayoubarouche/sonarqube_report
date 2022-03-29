@@ -18,11 +18,11 @@ the Main Functionalities of the project is :
 
 the general idea of how the script works is : 
 
-<img src="doc/diagrams/sequence_diagram/requesting_json_format_sequence_diagram.jpg">
+<img src="doc/diagrams/sequence_diagram/generate_json_sequence_diagram.jpg">
 
 The sequence diagram of Data processing part is : 
 
-<img src="doc/diagrams/sequence_diagram/Data_processing_sequence_diagram.jpg">
+<img src="doc/diagrams/sequence_diagram/data_processing_sequence_diagram.jpg">
 
 ### general architecture 
 The project has 4 main folders 
