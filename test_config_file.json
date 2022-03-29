@@ -1,0 +1,23 @@
+{   "output-filename":"output_json_testing",
+    "sonarqube-url":"https://sonarcloud.io/",
+    "authentication" : {
+            
+            "username" :"aroucheayoub",
+            "password":"helloworld",
+            "token":"0017f9f76e60edfc1d8e9d9ee970919fe4ac6380"
+    },
+
+    "projects":[
+        {   "project-key":"linux-sonar-test",
+            "branches" : [
+                {
+                    "branch-name":"master",
+                    "issues":["update","security"]
+                }
+            ]
+
+        }
+
+    ]
+
+}
