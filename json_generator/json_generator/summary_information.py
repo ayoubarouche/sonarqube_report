@@ -3,7 +3,8 @@ contains functions to generate summary infrmation of a branch  :
 
 """
 from json_generator.processing.issue_processing.issue_proc import get_issues_by_category, get_issues_by_severity, get_unresolved_issues
-
+from json_generator.processing.project_processing.project_proc import parse_obj_to_json
+from processing.project_processing import get_json_of_measures
 
 # Number of unresolved issues :
 
@@ -36,15 +37,20 @@ def get_numbers_of_unres_issues(issue):
     Numbers= (len(unresolved_issues))
     return Numbers
 
+
+
+
 def get_summary_information(project,branch,issue=None):
     summ_inf= {"summary_information":{"branch-name":branch.name,"date-Last-Analysis":project.lastAnalysisDate,
     "unresolved-issues":{"total":0,"issues-details":{"category":{},"severity":{}}}}}
-
+    summ_inf["summary_information"]["measures"] = get_json_of_measures(project.measures)
     summ_inf["summary_information"]["unresolved-issues"]["total"]=get_numbers_of_unres_issues(issue)
     summ_inf["summary_information"]["unresolved-issues"]["issues-details"]["category"]=get_numbers_of_issues_by_category(issue)
     summ_inf["summary_information"]["unresolved-issues"]["issues-details"]["severity"]=get_numbers_of_issues_by_severity(issue)
 
     return summ_inf["summary_information"]
+
+
 
 
 
