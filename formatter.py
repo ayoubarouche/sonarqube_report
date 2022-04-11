@@ -46,31 +46,14 @@ if __name__ == "__main__":
         if not is_exist:
             os.makedirs(abs_file_path)
         # for the pdf : 
-        pdf = PdfFormatter('P', 'mm' , 'Letter')
         # for excel :
+        print("generating excel file for the project : "+project_name)
         excel = ExcelFormatter(abs_file_path+project_name,None,0,0)
-        pdf.set_auto_page_break(
-            auto=True , margin=15
-        )
-        print('generating pdf and excel files for the project : '+project_name)
-
-
-        #print data for each file : 
-        pdf.first_page(project)
-        pdf.ln(20)
-        # pdf.add_page()
-        pdf.set_auto_page_break(auto=True,margin =15)
 
         
         for branch in project["details"]:
             #create a new sheet in the excel project name : 
             excel.add_sheet(branch_name=branch["summary_informations"]["branch-name"])
-            i=1
-            if i==1:
-                pdf.second_page(branch["summary_informations"],True)
-            else :
-                pdf.second_page(branch["summary_informations"])
-            pdf.summaryHeader(title='General view of the files')
             excel.branch_body(branch["summary_informations"])
             
             #check if title of the files already added : 
@@ -89,9 +72,6 @@ if __name__ == "__main__":
                 unresolved_issues = parse_list_json_issues_to_list_json_objects(unresolved)
                 wontfix_issues = parse_list_json_issues_to_list_json_objects(wontfix)
                 
-                #add to the pdf : 
-                pdf.TitlesHeader(title='File Number : '+str(i))
-                pdf.add_file(file , unresolved_issues=unresolved_issues,wontfix_issues=wontfix_issues )
                 # add to excel : 
                 #choose the title to add : 
                 issue_titles = ['line','rule','status','resolution','severity','author','tags','comments']
@@ -99,13 +79,9 @@ if __name__ == "__main__":
                     excel.add_titles(issue_titles)
                     is_title_already_added = True
                 excel.add_file(file ,issue_titles ,  unresolved_issues=unresolved,wontfix_issues=wontfix )
-                i=i+1
-                pdf.ln(20)
+             
             #swl wach najotiw les tags tahoma ola blach 
         excel.save_excel()
 
-
-        pdf.output(abs_file_path+project_name+'.pdf')
-        pdf.close()
 
     #
