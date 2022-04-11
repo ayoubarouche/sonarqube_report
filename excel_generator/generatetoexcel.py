@@ -129,30 +129,43 @@ class ExcelFormatter:
             self.sheet.write(current_row,current_column+i,str(issue[issue_header]),self.formats["issue_infos_format"])
             # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
             i=i+1
-    def add_header_title(self,title,number_of_rows_to_merge=1 , number_of_column_to_merge=1):
+    def add_header_title(self,title,number_of_rows_to_merge=0 , number_of_column_to_merge=1):
         self.sheet.merge_range(self.current_row , self.current_column , self.current_row+number_of_rows_to_merge-1 , self.current_column+number_of_column_to_merge-1 , title,self.formats["summary_details_format"])
             
         self.sheet.write(self.current_row,self.current_column,title,self.formats["summary_details_format"])
         self.current_row+=(number_of_rows_to_merge-1)
         self.current_column+=(number_of_column_to_merge-1)
-    def add_titles(self , issue_headers):
-        self.current_column = self.default_column
+    def add_titles(self , issue_headers,add_issue_type=True , add_by_columns = True):
+        if add_by_columns:
+            self.current_column = self.default_column
 
-        
-        self.sheet.write(self.current_row , self.current_column , "file name" , self.formats["issue_details_format"])
-        
-        self.sheet.write(self.current_row , self.current_column+1 , "issue type",self.formats["issue_details_format"])
-
-        self.current_column+=1
-        self.sheet.set_column(self.current_column , self.current_column+len(issue_headers),25)
-
-        i=1
-        for issue_header in issue_headers:
             
-            self.sheet.write(self.current_row,self.current_column+i,issue_header,self.formats["summary_details_format"])
-            # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
-            i=i+1
-        self.current_row+=1
+            self.sheet.write(self.current_row , self.current_column , "file name" , self.formats["issue_details_format"])
+            if add_issue_type:
+                self.sheet.write(self.current_row , self.current_column+1 , "issue type",self.formats["issue_details_format"])
+
+                self.current_column+=1
+            self.sheet.set_column(self.current_column , self.current_column+len(issue_headers),25)
+
+            i=1
+            for issue_header in issue_headers:
+                
+                self.sheet.write(self.current_row,self.current_column+i,issue_header,self.formats["summary_details_format"])
+                # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
+                i=i+1
+            self.current_row+=1
+        if not add_by_columns:
+            self.current_column = self.default_column
+
+            self.sheet.set_column(self.current_column , self.current_column+2,25)
+            i=1
+            for issue_header in issue_headers:
+                
+                self.sheet.merge_range(self.current_row,self.current_column,self.current_row , self.current_column+1,issue_header,self.formats["summary_details_format"])
+                # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
+                self.current_row+=1
+            self.current_row+=1
+            
 
     def add_file(self, file_info,issue_headers,unresolved_issues=[] , wontfix_issues=[] , fixed_issues  = [], false_positive_isssues=[] , removed_issues=[]):
         if not self.sheet:
@@ -205,7 +218,7 @@ class ExcelFormatter:
 
 
     
-    def branch_body(self,json_file):
+    def branch_body(self,json_file , measures_titles = None):
         if self.sheet:
     #add branch column
             # branch_name=json_file["branch-name"]
@@ -239,7 +252,18 @@ class ExcelFormatter:
                 j=j+1
 
             self.current_row+=12
-            self.current_column+=6
+
+            # adding measures of project : 
+            
+            self.add_measures_for_project(measures_titles = measures_titles , measures = json_file["measures"])
+    def add_measures_for_project(self,measures_titles=None ,  measures=None):
+        self.move_by()
+        self.add_header_title("project measures" , 0 , 5)
+        self.move_by(2)
+        self.add_titles(measures_titles,add_issue_type=False,add_by_columns=False)
+
+
+
     def move_by(self , number_of_rows_to_add=0 , number_of_columns_to_add=0):
         
         self.current_row += number_of_rows_to_add 
