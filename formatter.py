@@ -53,15 +53,33 @@ if __name__ == "__main__":
         for branch in project["details"]:
             excel = ExcelFormatter(abs_file_path+project_name+"_"+branch["summary_informations"]["branch-name"],None,0,0)
             #create measures titles :
-            measures_titles = ["ncloc","comment_lines_density","complexity","cognitive_complexity"]
 
+
+            measures_titles = ["complexity","cognitive_complexity","ncloc","comment_lines_density"]
+            
             #create a new sheet in the excel project name : 
             excel.add_sheet(sheet_name="summary informations")
 
             excel.branch_body(branch["summary_informations"])
             excel.add_sheet("measures")
-            excel.add_header_title("measures",2,5)
-            
+            is_title_already_added = False
+            if not is_title_already_added:
+                excel.add_titles(issue_headers=measures_titles,add_issue_type=False)
+                is_title_already_added = True
+            for f in branch["information_per_file"]:
+                file = Component(key=None)
+                file.parse_jsoncomponent_from_output_file(f)
+                print("*********************")
+                print(f)
+                measures_json = f["measures"]
+                excel.add_measures_per_file(file,measures_json )
+                
+
+
+  
+           
+             
+
             excel.add_sheet("issues")
             excel.move_by(1,2)
             #check if title of the files already added : 

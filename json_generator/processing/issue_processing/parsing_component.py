@@ -11,6 +11,8 @@ functions :
 
 from json_generator.models.component import Component
 from json_generator.models.issue import  Issue
+from json_generator.processing.issue_processing.file_cmp import get_filemetrics
+from json_generator.processing.project_processing.project_proc import get_measures_of_project
 
 
 
@@ -37,7 +39,7 @@ def add_issues_to_component(sonar , component,branch , issue_tags=None):
     return issues_objects
 
 
-def add_issues_to_all_components(sonar , components ,branch , issue_containing_tags=None ):
+def add_issues_to_all_components(sonar , components ,branch , issue_containing_tags=None,measures=None ):
 
     result_components = []
     if not components :
@@ -50,7 +52,8 @@ def add_issues_to_all_components(sonar , components ,branch , issue_containing_t
                issues = add_issues_to_component(sonar = sonar , component = component ,issue_tags=None , branch = branch)
          
         if issues : 
-            comp = Component(key=component.key ,name = component.name ,  issues = issues, uuid = component.uuid)
+            Measures=get_measures_of_project(sonar=sonar, args_proj=component,args_branch=branch,metric_keys=measures)
+            comp = Component(key=component.key ,name = component.name ,  issues = issues, uuid = component.uuid,measures=Measures)
             result_components.append(comp)
 
     return result_components

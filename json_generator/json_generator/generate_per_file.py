@@ -11,7 +11,7 @@ functions :
 
 
 from json_generator.processing.issue_processing.issue_proc import get_issues_by_resolution, get_unresolved_issues
-from json_generator.processing.project_processing.project_proc import parse_obj_to_json
+from json_generator.processing.project_processing.project_proc import get_json_of_measures, parse_obj_to_json
 
 
 
@@ -24,7 +24,9 @@ def generate_json_for_all_files(files):
         result_file["file_uuid"] = file.uuid
         result_file["file_key"] = file.key
         result_file["file_name"] = file.name
+        result_file["measures"] = get_json_of_measures(file.measures)
         result_file["issues"] = generate_json_for_file(file)
+
         result.append(result_file)
     return result
 
