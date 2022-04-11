@@ -54,11 +54,11 @@ if __name__ == "__main__":
             excel = ExcelFormatter(abs_file_path+project_name+"_"+branch["summary_informations"]["branch-name"],None,0,0)
             #create measures titles :
             measures_titles = ["ncloc","comment_lines_density","complexity","cognitive_complexity"]
-            
+
             #create a new sheet in the excel project name : 
             excel.add_sheet(sheet_name="summary informations")
 
-            excel.branch_body(branch["summary_informations"],measures_titles=measures_titles)
+            excel.branch_body(branch["summary_informations"])
             excel.add_sheet("measures")
             excel.add_header_title("measures",2,5)
             
