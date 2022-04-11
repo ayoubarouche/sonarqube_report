@@ -48,14 +48,19 @@ if __name__ == "__main__":
         # for the pdf : 
         # for excel :
         print("generating excel file for the project : "+project_name)
-        excel = ExcelFormatter(abs_file_path+project_name,None,0,0)
 
         
         for branch in project["details"]:
+            excel = ExcelFormatter(abs_file_path+project_name+"_"+branch["summary_informations"]["branch-name"],None,0,0)
+
             #create a new sheet in the excel project name : 
-            excel.add_sheet(branch_name=branch["summary_informations"]["branch-name"])
+            excel.add_sheet(sheet_name="summary informations")
             excel.branch_body(branch["summary_informations"])
+            excel.add_sheet("measures")
+            excel.add_header_title("measures",2,5)
             
+            excel.add_sheet("issues")
+            excel.move_by(1,2)
             #check if title of the files already added : 
             is_title_already_added = False
             for f in branch["information_per_file"]:
@@ -81,7 +86,7 @@ if __name__ == "__main__":
                 excel.add_file(file ,issue_titles ,  unresolved_issues=unresolved,wontfix_issues=wontfix )
              
             #swl wach najotiw les tags tahoma ola blach 
-        excel.save_excel()
+            excel.save_excel()
 
 
     #

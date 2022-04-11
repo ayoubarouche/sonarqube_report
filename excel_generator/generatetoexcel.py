@@ -103,8 +103,8 @@ class ExcelFormatter:
                     "summary_details_format":summary_details_format
                     }
 
-    def add_sheet(self,branch_name = None):
-        self.sheet = self.book.add_worksheet(branch_name)
+    def add_sheet(self,sheet_name = None):
+        self.sheet = self.book.add_worksheet(sheet_name)
         self.current_column = self.default_column
         self.current_row = self.default_row
     def add_issue(self , issue_headers,current_row , current_column , issue ):
@@ -129,7 +129,12 @@ class ExcelFormatter:
             self.sheet.write(current_row,current_column+i,str(issue[issue_header]),self.formats["issue_infos_format"])
             # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
             i=i+1
-   
+    def add_header_title(self,title,number_of_rows_to_merge=1 , number_of_column_to_merge=1):
+        self.sheet.merge_range(self.current_row , self.current_column , self.current_row+number_of_rows_to_merge-1 , self.current_column+number_of_column_to_merge-1 , title,self.formats["summary_details_format"])
+            
+        self.sheet.write(self.current_row,self.current_column,title,self.formats["summary_details_format"])
+        self.current_row+=(number_of_rows_to_merge-1)
+        self.current_column+=(number_of_column_to_merge-1)
     def add_titles(self , issue_headers):
         self.current_column = self.default_column
 
@@ -235,6 +240,11 @@ class ExcelFormatter:
 
             self.current_row+=12
             self.current_column+=6
+    def move_by(self , number_of_rows_to_add=0 , number_of_columns_to_add=0):
+        
+        self.current_row += number_of_rows_to_add 
+        self.current_column += number_of_columns_to_add
+        
     def save_excel(self):
         self.book.close()
 
