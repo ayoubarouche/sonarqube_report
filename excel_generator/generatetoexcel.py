@@ -140,6 +140,7 @@ class ExcelFormatter:
             
         self.current_row+=(number_of_rows_to_merge-1)
         self.current_column+=(number_of_column_to_merge-1)
+
     def add_titles(self , issue_headers,add_issue_type=True , add_by_columns = True):
         if add_by_columns:
             self.current_column = self.default_column
@@ -220,10 +221,28 @@ class ExcelFormatter:
                 self.current_row +=1
             self.current_column-=2
     
+    def add_measures_per_file(self,file_info,keymetrics=[]):
+        if not self.sheet:
+            print("error please create a sheet using create new sheet method ! ")
+        self.current_column = self.default_column
+        number_of_metrics = len(keymetrics) 
+        self.current_column = self.default_column
+        file_name = file_info.name
 
+        # for i in range(number_files) :
+        #     self.sheet.write(self.current_row+i ,self.current_column , file_name, self.formats["file_title_format"])
 
+        if keymetrics:
+            
+            self.sheet.write(self.current_row ,self.current_column, file_name, self.formats["issue_title_format"])
+            self.current_column+=1
+            for i in range(len(keymetrics)):
+                self.sheet.write(self.current_row ,self.current_column+i , keymetrics[i]["value"], self.formats["issue_title_format"])
+            self.move_by(1)
+            # j=j+1
     
     def branch_body(self,json_file , measures_titles = None):
+
         if self.sheet:
     #add branch column
             # branch_name=json_file["branch-name"]

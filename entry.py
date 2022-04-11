@@ -106,7 +106,7 @@ def main(sonar , object):
                         list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch,args_issue=issue) 
 
                         # fill the files models with it's issues ( component of type file )
-                        files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue) 
+                        files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue,measures=metrics_keys) 
 
                         # generate the information of each file in a json format 
                         information_per_file = generate_json_for_all_files(files_objects_with_issues)
@@ -128,7 +128,7 @@ def main(sonar , object):
                         list_files_containing_issues_only_keys= get_componentKeys(sonar=sonar,arg_proj=project,args_branch=branch) 
                         
                         # fill the files with issues related to each file  :
-                        files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar)
+                        files_objects_with_issues = add_issues_to_all_components(branch=branch , components=list_files_containing_issues_only_keys , sonar=sonar , issue_containing_tags=issue,measures=metrics_keys) 
                         
                         #generate the information of each file in a json format
                         information_per_file = generate_json_for_all_files(files_objects_with_issues)

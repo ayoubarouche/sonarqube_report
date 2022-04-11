@@ -55,6 +55,11 @@ class Component :
             self.key = json_str["file_key"]
         if 'file_name' in json_str :
             self.name = json_str["file_name"]
+        if 'measures' in json_str:
+            self.measures=json_str["measures"]
+
+        print("________________________________________________________________")
+        print (self.measures)
     
     def __hash__(self):
         return hash((self.key, self.uuid, self.name))
