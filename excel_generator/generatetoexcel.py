@@ -107,6 +107,12 @@ class ExcelFormatter:
         self.sheet = self.book.add_worksheet(sheet_name)
         self.current_column = self.default_column
         self.current_row = self.default_row
+
+    def reset_default_row_and_column(self,row=True , column = True):
+        if column :
+            self.current_column = self.default_column 
+        if row : 
+            self.current_row = self.default_row
     def add_issue(self , issue_headers,current_row , current_column , issue ):
         i = 0 
         for issue_header in issue_headers :
@@ -130,9 +136,8 @@ class ExcelFormatter:
             # self.sheet.write(self.current_row+i,self.current_column+2,dict_key1[k],self.formats["summary_details_format"])
             i=i+1
     def add_header_title(self,title,number_of_rows_to_merge=0 , number_of_column_to_merge=1):
-        self.sheet.merge_range(self.current_row , self.current_column , self.current_row+number_of_rows_to_merge-1 , self.current_column+number_of_column_to_merge-1 , title,self.formats["summary_details_format"])
+        self.sheet.merge_range(self.current_row , self.current_column , self.current_row+number_of_rows_to_merge-1 , self.current_column+number_of_column_to_merge-1 , title,self.formats["file_title_format"])
             
-        self.sheet.write(self.current_row,self.current_column,title,self.formats["summary_details_format"])
         self.current_row+=(number_of_rows_to_merge-1)
         self.current_column+=(number_of_column_to_merge-1)
     def add_titles(self , issue_headers,add_issue_type=True , add_by_columns = True):
@@ -166,7 +171,7 @@ class ExcelFormatter:
                 self.current_row+=1
             self.current_row+=1
             
-
+    
     def add_file(self, file_info,issue_headers,unresolved_issues=[] , wontfix_issues=[] , fixed_issues  = [], false_positive_isssues=[] , removed_issues=[]):
         if not self.sheet:
             print("error please create a sheet using create new sheet method ! ")
@@ -255,14 +260,22 @@ class ExcelFormatter:
 
             # adding measures of project : 
             
-            self.add_measures_for_project(measures_titles = measures_titles , measures = json_file["measures"])
-    def add_measures_for_project(self,measures_titles=None ,  measures=None):
-        self.move_by()
-        self.add_header_title("project measures" , 0 , 5)
+            self.add_measures_for_project(measures = json_file["measures"])
+    
+    
+    def add_measures_for_project(self,  measures=None):
+        self.add_header_title("project measures" , 0 , 4)
+        self.reset_default_row_and_column(row=False)
         self.move_by(2)
-        self.add_titles(measures_titles,add_issue_type=False,add_by_columns=False)
+        for measure in measures : 
+            self.add_measure_for_project(measure)
 
+    def add_measure_for_project(self , measure):
 
+        self.sheet.merge_range(self.current_row,self.current_column,self.current_row , self.current_column+1,measure["metric"],self.formats["summary_details_format"])
+        self.move_by(0 , 2)
+        self.sheet.merge_range(self.current_row,self.current_column,self.current_row , self.current_column+1,measure["value"],self.formats["summary_details_format"])
+        self.move_by(1 , -2)
 
     def move_by(self , number_of_rows_to_add=0 , number_of_columns_to_add=0):
         
