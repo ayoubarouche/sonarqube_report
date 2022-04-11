@@ -13,8 +13,10 @@ functions :
     * 
 """
 
+from msilib.schema import Component
 from json_generator.models.branch import Branch
 from json_generator.models.issue import Issue
+from json_generator.models.measure import Measure
 
 
 
@@ -27,6 +29,15 @@ def parse_obj_to_json(class_obj):
     
     return json_obj
 
+def get_json_of_measures(measures):
+    result = []
+
+    for measure in measures : 
+        result_measure = {}
+        result_measure["metric"] = measure.metric
+        result_measure["value"] = measure.value
+        result.append(result_measure)
+    return result
 
 #get proj 
 def get_project(sonar,arg_proj):
@@ -83,7 +94,19 @@ def get_spec_issues_of_project(sonar,arg_proj,args_branch,args_issue):
         listofissues.append(iss)
 
 
-    return listofissues     
+    return listofissues   
+
+
+def get_measures_of_project(sonar , args_proj , args_branch , metric_keys):
+    measures_json = list(sonar.measures.get_component_with_specified_measures(component = args_proj.key , metricKeys = metric_keys , branch = args_branch.name))
+    measures_objects = []
+    for measure_json in measures_json:
+        measure_object = Measure()
+        measure_object.parse_jsonMetric(measure_json)
+        measures_objects.append(measure_object)
+    return measures_objects
+
+
     
 
 

@@ -7,12 +7,15 @@ import json
 from json_generator.processing.issue_processing.file_cmp import get_componentKeys
 from json_generator.processing.issue_processing.issue_proc import get_unresolved_issues
 from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
-from json_generator.processing.project_processing.project_proc import get_issues_of_project, get_project, get_spec_issues_of_project
+from json_generator.processing.project_processing.project_proc import get_issues_of_project, get_measures_of_project, get_project, get_spec_issues_of_project
 
 # the entry function for the object : 
 
 def main(sonar , object):
-
+    # list of metrics keys
+    metrics_keys_list = ["ncloc" , "comment_lines_density","complexity","cognitive_complexity"]
+    #we need to convert the list of metrics to one string : 
+    metrics_keys  = ",".join(map(str, metrics_keys_list))
     # in case the user specified the output file name else the value will be NULL
     json_file_name = None
 
@@ -90,7 +93,9 @@ def main(sonar , object):
                         
                         # filter the unresolved issues 
                         unresolved_issues = get_unresolved_issues(detailled_issues)
-
+                        # get the measures 
+                        measures = get_measures_of_project(sonar , args_proj=project ,args_branch=branch , metric_keys=metrics_keys)
+                        project.measures = measures
                         # calculate the summary information about the unresolved issues 
                         summary_informations = get_summary_information(project,branch , unresolved_issues)
                         
