@@ -74,6 +74,11 @@ def main(sonar , object):
                 branches = project.branches
 
                 for branch in branches : 
+                    # get the measures 
+                    measures = get_measures_of_project(sonar , args_proj=project ,args_branch=branch , metric_keys=metrics_keys)
+                    print("measures are : ")
+                    print(measures)
+                    project.measures = measures
                     # for handling the issues that user had inserted :
                     #if the user inserted the issue by file for each branch :
                     issue = None 
@@ -93,9 +98,7 @@ def main(sonar , object):
                         
                         # filter the unresolved issues 
                         unresolved_issues = get_unresolved_issues(detailled_issues)
-                        # get the measures 
-                        measures = get_measures_of_project(sonar , args_proj=project ,args_branch=branch , metric_keys=metrics_keys)
-                        project.measures = measures
+
                         # calculate the summary information about the unresolved issues 
                         summary_informations = get_summary_information(project,branch , unresolved_issues)
                         
