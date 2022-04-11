@@ -4,7 +4,7 @@ contains functions to generate summary infrmation of a branch  :
 """
 from json_generator.processing.issue_processing.issue_proc import get_issues_by_category, get_issues_by_severity, get_unresolved_issues
 from json_generator.processing.project_processing.project_proc import parse_obj_to_json
-from processing.project_processing import get_json_of_measures
+from json_generator.processing.project_processing.project_proc import get_json_of_measures
 
 # Number of unresolved issues :
 
