@@ -9,13 +9,15 @@ class Project :
                 key=None,                #Key of the project
                 name=None ,               #name of the project 
                 lastAnalysisDate=None,    #date of last analyse 
-                branches =[Branch(name="master")]
+                branches =[Branch(name="master")],
+                measures = None
                 ):
         self.organization = organization
         self.key = key
         self.name = name
         self.lastAnalysisDate=lastAnalysisDate
         self.branches=branches
+        self.measures = measures
 
  # Method to update the last Date
     def update_analysis_date(self,analysis_date):

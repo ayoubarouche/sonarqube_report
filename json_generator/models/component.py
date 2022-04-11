@@ -11,7 +11,8 @@ class Component :
                     name=None, # the name of the component 
                     path=None,
                     uuid=None,
-                    issues = [] # the path of the component 
+                    issues = [],
+                    measures = None # the path of the component 
                 ):
         self.key = key 
         self.enabled = enabled 
@@ -20,7 +21,7 @@ class Component :
         self.path = path
         self.issues = issues
         self.uuid=uuid
-        return
+        self.measures = measures
         
     #getting the component name : (imporatant for the issue : )\
 
