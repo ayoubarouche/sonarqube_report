@@ -15,7 +15,7 @@ from json_generator.models.project import Project
 def entry_point_cli(args):
     
     #if the user specified the project names and the sonarqube server url.
-    if(args.project_branch and args.sonarqube_url):
+    if(args.sonarqube_url):
         parsing_results ={}
 
         #if the user passed -t argument : 
@@ -35,7 +35,7 @@ def entry_point_cli(args):
             return None
 
         # parse the project object list : 
-        project_list = cli_parse_projects(args.project_branch)
+        project_list = None
         issues_list = None
 
         #if the user inserted the issues tag list 
@@ -43,6 +43,8 @@ def entry_point_cli(args):
             issues_list = cli_parse_issues(args.issues)
 
         #add the same issue tag list to all the branches in all the projects inserted by the user : 
+        if args.project_branch :
+            project_list  = cli_parse_projects(args.project_branch)
             for project in project_list:
                 if project.branches :
                     for branch in project.branches :
