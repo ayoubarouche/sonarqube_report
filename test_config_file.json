@@ -7,6 +7,7 @@
             "token":"0017f9f76e60edfc1d8e9d9ee970919fe4ac6380"
     },
 
+    
     "projects":[
         {   "project-key":"linux-sonar-test",
             "branches" : [
