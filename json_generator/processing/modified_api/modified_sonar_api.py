@@ -4,12 +4,12 @@ from sonarqube.utils.config import (
 )
 from sonarqube.utils.common import PAGE_GET
 from sonarqube.utils.rest_client import RestClient
-from sonarqube import SonarCloudClient
+from sonarqube import SonarEnterpriseClient
 
 
 #in case you want to use an other version of sonar : like sonarcommunity : 
 #just change the SonarCloudClient by the name of the class you want : 
-class ModifiedSonarCloudClient(SonarCloudClient):
+class ModifiedSonarCloudClient(SonarEnterpriseClient):
     """
     A Python Client for SonarQube Server APIs.
     """

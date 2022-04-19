@@ -7,7 +7,7 @@ import json
 from json_generator.processing.issue_processing.file_cmp import get_componentKeys
 from json_generator.processing.issue_processing.issue_proc import get_unresolved_issues
 from json_generator.processing.issue_processing.parsing_component import add_issues_to_all_components
-from json_generator.processing.project_processing.project_proc import get_issues_of_project, get_measures_of_project, get_project, get_spec_issues_of_project
+from json_generator.processing.project_processing.project_proc import get_all_projects, get_issues_of_project, get_measures_of_project, get_project, get_spec_issues_of_project
 
 # the entry function for the object : 
 
@@ -37,6 +37,10 @@ def main(sonar , object):
     #handle the output details of a project 
     information_for_each_project = {}
 
+    #run throw each project specified by the user : 
+    if not object["projects"]:
+        object["projects"] = get_all_projects(sonar)
+
     if json_output_file:
         
         print("the method for auth used is : "+object["auth"])
@@ -46,6 +50,10 @@ def main(sonar , object):
 
     #run throw each project specified by the user : 
     for project in object["projects"]:
+                value = ["V2X"]
+                if project.key in value:
+                    continue
+
                 information_for_each_project = {}
                 if json_output_file:
                     print("getting information about the project : "+project.key)
@@ -76,8 +84,6 @@ def main(sonar , object):
                 for branch in branches : 
                     # get the measures 
                     measures = get_measures_of_project(sonar , args_proj=project ,args_branch=branch , metric_keys=metrics_keys)
-                    print("measures are : ")
-                    print(measures)
                     project.measures = measures
                     # for handling the issues that user had inserted :
                     #if the user inserted the issue by file for each branch :

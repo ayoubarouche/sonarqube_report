@@ -22,7 +22,7 @@ if __name__ == "__main__":
     cli_parser = subparsers.add_parser('c',help="use command line")
 
     cli_parser.add_argument("-s","--sonarqube-server",metavar="",required = "True", dest="sonarqube_url", help="insert the sonarqube server url ")
-    cli_parser.add_argument("-pb","--project-branch",metavar='',required="True" , dest="project_branch",help="insert the projects and branch of each project project_key:branch1#branch2,project... for example httpreq:master#debug,kestar:master#develop")
+    cli_parser.add_argument("-pb","--project-branch",metavar='', dest="project_branch",help="insert the projects and branch of each project project_key:branch1#branch2,project... for example httpreq:master#debug,kestar:master#develop")
     cli_parser.add_argument("-u","--username",metavar='',dest="username",help="insert username")
     cli_parser.add_argument("-p","--password",metavar='',dest="password",help="insert password")
     cli_parser.add_argument("-t","--token",metavar='',dest="token",help="insert token")
@@ -52,12 +52,12 @@ if __name__ == "__main__":
                 #and change the class that he inheret  : 
                 
                 #in case the user used token method : 
-                sonar=ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token=result["token"])
+                sonar=ModifiedSonarCloudClient(sonarqube_url=result["sonarqube_url"],token=result["token"])
             else :
 
                 #if the user want to use the login and password method
                 # this method not working for sonarcloud  :
-                sonar = ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token = None).auth.authenticate_user(result["username"],result["password"])
+                sonar = ModifiedSonarCloudClient(sonarqube_url=result["sonarqube_url"],token = None,username =result["username"],password =result["password"])
             
             #the main function : 
             main(object=result , sonar = sonar)
@@ -72,7 +72,7 @@ if __name__ == "__main__":
         else : 
             sonar = None
             if result["auth"] == "t":
-                sonar=ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token=result["token"])
+                sonar=ModifiedSonarCloudClient(sonarqube_url=result["sonarqube_url"],token=result["token"])
             else :
-                sonar = ModifiedSonarCloudClient(sonarcloud_url=result["sonarqube_url"],token = None).auth.authenticate_user(result["username"],result["password"])
+                sonar = ModifiedSonarCloudClient(sonarqube_url=result["sonarqube_url"],token = None,username =result["username"],password =result["password"])
             main(object=result , sonar = sonar)

@@ -28,22 +28,6 @@ def get_componentKeys(sonar,arg_proj,args_branch,args_issue=None):
     return list(set_of_components)
 
 
-# def get_filemetrics(sonar,arg_proj,arg_branch, metrics=[]):
-#     comp =None 
-#     if arg_proj:
-#         if arg_branch:
-#             if metrics:
-#                 comp = sonar.measures.get_component_tree_with_specified_measures(component=arg_proj.key,branch=arg_branch.name,metricskeys=metrics)
-#             for c in comp.keys:
-#                 i=0
-#                 if c == "components":
-#                     for i in range(len(c)):
-#                         m=[]
-#                         measure_i=Measure()
-#                         measure_i.parse_jsonMetric(c[i]["measures"][j])
-#                         m.append(measure_i)
-#                         j=j+1
-
 def get_filemetrics(sonar,arg_proj,arg_branch, metrics):
     comp =None 
     if arg_proj:
